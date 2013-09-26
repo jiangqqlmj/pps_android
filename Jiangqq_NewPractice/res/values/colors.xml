@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<drawable name="darkgray">#808080FF</drawable>
+<drawable name="white">#FFFFFF</drawable>
+<drawable name="red">#7f00</drawable>
+<drawable name="blue">#ffdee7f7</drawable>
+<drawable name="orange">#00000000</drawable>
+<color name="color_ff6f84a3">#ff6f84a3</color>
+<color name="transparent">#00000000</color>
+<color name="white">#FFFFFF</color>
+<color name="orange_one">#FF6600</color>
+<color name="orange_two">#E6BD1A</color>
+<color name="detail_tv_color">#9C9EF7</color>
+<color name="black">#000000</color>
+</resources>

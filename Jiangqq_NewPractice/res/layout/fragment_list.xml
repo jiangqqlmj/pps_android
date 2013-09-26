@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#ffffff" >
+    <RelativeLayout
+        android:id="@+id/linear_title"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@drawable/pps_title"
+        >
+        <ImageButton 
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/btn_ic_title_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_title_menu"
+            android:background="@drawable/top_title_bg_selector"
+            />
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/btn_ic_title_menu"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/list_title_name"
+            android:paddingLeft="5dip"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="5dip" >
+
+            <Button
+                android:id="@+id/btn_top_grid_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/icon_top_grid" />
+
+            <Button
+                android:id="@+id/btn_bkg_poster_cover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/bkg_poster_cover_words"
+                android:text="@string/list_title_select" />
+        </LinearLayout>
+       
+   </RelativeLayout>   
+      <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <EditText 
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_area"
+                android:hint="@string/searche_et"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:paddingLeft="10dip"   
+                />
+        </LinearLayout>  
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+         <Button
+            android:id="@+id/btn_list_hot"
+            android:background="@drawable/tab_bar_sel" 
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/list_hot"/>
+           <Button
+            android:id="@+id/btn_list_new"
+            android:background="@drawable/tab_bar" 
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/list_new"/>
+            <Button
+            android:id="@+id/btn_list_score"
+            android:background="@drawable/tab_bar" 
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/list_score"/>
+            <Button
+            android:id="@+id/btn_list_letter"
+            android:background="@drawable/tab_bar" 
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/list_letter"/>
+    </LinearLayout>    
+    <LinearLayout 
+        android:id="@+id/list_grid_linear"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+            
+      <ListView 
+        android:id="@+id/lv_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/divider"
+       />
+        <!-- <com.pps.custom.PullToRefreshListView 
+        android:id="@+id/lv_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/divider">
+            
+        </com.pps.custom.PullToRefreshListView> -->
+      <GridView 
+        android:id="@+id/gv_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="8dip"
+        android:verticalSpacing="5dip"
+        android:numColumns="3"
+        android:visibility="gone"
+          />
+   </LinearLayout>
+   
+    <LinearLayout 
+        android:id="@+id/load_linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+        <ProgressBar
+            android:id="@+id/list_load_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+        <Button
+            android:id="@+id/list_load_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击加载更多..."
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+    
+</LinearLayout>

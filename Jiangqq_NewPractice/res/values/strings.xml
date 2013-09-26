@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">江清清_PPS</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="list_title_name">内地剧场</string>
+    <string name="list_title_select">筛选</string>
+    <string name="searche_et">在&lt;内地剧场&gt;中搜索</string>
+    
+    <string name="list_hot">最热</string>
+    <string name="list_new">最新</string>
+    <string name="list_score">评分</string>
+    <string name="list_letter">字母</string>
+    <string name="list_online">在线人数:</string>
+    
+    <string name="detail_collect">收藏</string>
+    <string name="detail_share">分享</string>
+    <string name="detail_comment">评论</string>
+    
+    <string name="detail_region">地区:</string>
+    <string name="detail_type">类型:</string>
+    <string name="detail_dirt">导演:</string>
+    <string name="detail_actor">主演:</string>
+    <string name="detail_play">立即播放</string>
+    <string name="detail_down">下载视频</string>
+    <string name="detail_story">杨幂饰演的首席房地产的千金夏晚晴,在遭遇好友算计,男友悔婚的窘境后，被刘恺威饰演的"花花公子"乔津帆一手解救,两人...</string>
+    
+    <string name="str_detail_name">家有儿女</string>
+    <string name="language">国语</string>
+    <string name="commom">普通</string>
+    <string name="high_definition">高清</string>
+    <string name="advance">预告</string>
+    <string name="titbits">花絮</string>
+    <string name="smooth">流畅</string>
+    
+    <string name="pull_to_refresh_pull_label">下拉可以刷新</string>
+    <string name="pull_to_refresh_release_label">松开可以刷新</string>
+    <string name="pull_to_refresh_refreshing_label">加载中...</string>
+    <string name="pull_to_refresh_tap_label">下拉可以刷新</string>
+    <string name="pull_to_refresh_update">最近更新：</string>
+</resources>

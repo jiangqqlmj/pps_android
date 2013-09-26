@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="ContentDescription" severity="ignore" />
+    <issue id="HandlerLeak" severity="ignore" />
+    <issue id="ManifestOrder" severity="ignore" />
+    <issue id="NewApi" severity="ignore" />
+    <issue id="ObsoleteLayoutParam" severity="ignore" />
+    <issue id="OldTargetApi" severity="ignore" />
+    <issue id="ResourceAsColor" severity="ignore" />
+    <issue id="ScrollViewSize" severity="ignore" />
+    <issue id="SdCardPath" severity="ignore" />
+    <issue id="TooDeepLayout" severity="ignore" />
+    <issue id="TypographyEllipsis" severity="ignore" />
+    <issue id="UseValueOf" severity="ignore" />
+    <issue id="UselessParent" severity="ignore" />
+</lint>

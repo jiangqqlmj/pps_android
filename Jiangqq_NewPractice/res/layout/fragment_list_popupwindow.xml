@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/area_sift"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal" 
+    android:id="@+id/linear_popupwindow">
+
+    <LinearLayout
+        android:layout_width="50dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+ <TextView
+            android:id="@+id/tv_popupwindow_type"
+            android:paddingTop="6dip"
+            android:paddingBottom="6dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="类型"
+            android:textSize="19sp"
+             />
+         
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/divider" />
+
+        <TextView
+            android:id="@+id/tv_popupwindow_year"
+            android:paddingTop="6dip"
+            android:paddingBottom="6dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="年份"
+            android:textSize="19sp" />
+       
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/divider" />
+
+        <TextView
+            android:id="@+id/tv_popupwindow_letter"
+            android:paddingTop="6dip"
+            android:paddingBottom="6dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="字母"
+            android:textSize="19sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <ListView
+            android:id="@+id/lv_popwindow"
+            android:layout_width="90dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:divider="@drawable/divider"
+            android:scrollbars="none" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

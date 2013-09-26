@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/welcome_bg"
+    android:id="@+id/welcome_ic_relative">
+    
+   <ImageView 
+       android:id="@+id/welcome_img_icon"
+       android:layout_width="250dip"
+       android:layout_height="250dip"
+       android:src="@drawable/welcome_icon"
+       android:layout_centerHorizontal="true"
+       android:scaleType="fitXY"
+       android:layout_marginTop="80dip"/>
+   
+   <ProgressBar 
+       android:id="@+id/welcome_img_progress"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:layout_marginBottom="10dip"
+       android:layout_below="@id/welcome_img_icon"
+       
+      />
+   <TextView
+       android:id="@+id/welcome_tv"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:text="正在初始化数据,请稍后..."
+       android:layout_below="@id/welcome_img_progress"
+       android:textSize="12sp"
+       android:layout_alignParentBottom="true"
+       />
+   <ImageView 
+       android:id="@+id/welcome_img_buttom"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:src="@drawable/welcome_bottom"
+       android:layout_centerHorizontal="true"
+       android:layout_alignParentBottom="true"/>
+   
+    
+</RelativeLayout>
