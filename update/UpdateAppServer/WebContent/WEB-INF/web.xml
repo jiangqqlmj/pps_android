@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>UpdateAppServer</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>UpdateAppServlet</display-name>
+    <servlet-name>UpdateAppServlet</servlet-name>
+    <servlet-class>com.jiangqq.servlet.UpdateAppServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateAppServlet</servlet-name>
+    <url-pattern>/UpdateAppServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DetectServlet</display-name>
+    <servlet-name>DetectServlet</servlet-name>
+    <servlet-class>com.jiangqq.servlet.DetectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DetectServlet</servlet-name>
+    <url-pattern>/DetectServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserActivityServlet</display-name>
+    <servlet-name>UserActivityServlet</servlet-name>
+    <servlet-class>com.jiangqq.servlet.UserActivityServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserActivityServlet</servlet-name>
+    <url-pattern>/UserActivityServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

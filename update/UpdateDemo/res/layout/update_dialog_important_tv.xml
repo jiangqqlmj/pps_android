@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/update_dialog_import_width"
+    android:layout_height="@dimen/update_progress_height"
+    android:background="@drawable/gengxin_kuang" >
+    
+    <TextView 
+        android:id="@+id/tv_update_dialog_import_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/update_dialog_import_title_textSize"
+        android:layout_marginTop="@dimen/update_dialog_import_title_marginTop"
+        android:layout_centerHorizontal="true"
+        android:text="@string/update_dialog_import_title"/>
+    
+    <ImageView 
+        android:id="@+id/img_update_dialog_import_imageview"
+        android:layout_width="@dimen/update_dialog_import_imageview_width"
+        android:layout_height="@dimen/update_dialog_import_imageview_height"
+        android:scaleType="fitXY"
+        android:src="@drawable/tongyong_line"
+        android:layout_marginTop="@dimen/update_dialog_import_imageview_marginTop"
+        android:layout_marginLeft="@dimen/update_dialog_import_imageview_marginLeft"
+        android:layout_marginRight="@dimen/update_dialog_import_imageview_marginRight"
+        android:layout_below="@id/tv_update_dialog_import_title" />
+    
+    <TextView 
+        android:id="@+id/tv_update_dialog_import_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/update_dialog_import_content_marginTop"
+        android:layout_marginLeft="@dimen/update_dialog_import_content_marginLeft"
+        android:layout_marginRight="@dimen/update_dialog_import_content_marginRight"
+        android:layout_below="@id/img_update_dialog_import_imageview"
+        android:textColor="#ffffff"
+        android:text="@string/update_dialog_import_content"
+        android:textSize="@dimen/update_dialog_import_content_textSize"
+        />
+    
+    <RelativeLayout 
+        android:id="@+id/relative_update_dialog_import"
+        android:layout_width="@dimen/relative_update_dialog_import_width"
+        android:layout_height="@dimen/relative_update_dialog_import_height"
+        android:layout_marginTop="@dimen/relative_update_dialog_import_marginTop"
+        android:layout_alignParentBottom="true"
+       >
+                
+        <Button
+            android:id="@+id/btn_update_dialog_import_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"       
+            android:background="@drawable/update_dialog_btn_selector"
+            android:paddingBottom="@dimen/update_dialog_paddingBottom"
+            android:paddingLeft="@dimen/update_dialog_paddingLeft"
+            android:paddingRight="@dimen/update_dialog_paddingRight"
+            android:paddingTop="@dimen/update_dialog_paddingTop"
+            android:text="@string/update_dialog_import_commit"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/update_dialog_import_commit_textSize" />        
+        <Button
+            android:id="@+id/btn_update_dialog_import_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/update_dialog_import_cancel"
+            android:textColor="#ffffff"          
+            android:layout_toRightOf="@id/btn_update_dialog_import_commit"
+            android:background="@drawable/update_dialog_btn_selector"
+            android:paddingTop="@dimen/update_dialog_paddingTop"
+            android:paddingRight="@dimen/update_dialog_paddingRight"
+            android:paddingBottom="@dimen/update_dialog_paddingBottom"
+            android:paddingLeft="@dimen/update_dialog_paddingLeft"
+            android:textSize="@dimen/update_dialog_import_commit_textSize"
+            android:layout_marginLeft="@dimen/update_dialog_import_cancle_marginLeft"
+            />
+       
+        <!-- 强制 退出应用 -->
+         <Button
+            android:id="@+id/btn_update_dialog_import_force"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/update_dialog_import_force"
+            android:textColor="#ffffff"           
+            android:layout_toRightOf="@id/btn_update_dialog_import_commit"
+            android:background="@drawable/update_dialog_btn_selector"
+            android:paddingTop="@dimen/update_dialog_paddingTop"
+            android:paddingRight="@dimen/update_dialog_paddingRight"
+            android:paddingBottom="@dimen/update_dialog_paddingBottom"
+            android:paddingLeft="@dimen/update_dialog_paddingLeft"
+            android:textSize="@dimen/update_dialog_import_commit_textSize"
+            android:layout_marginLeft="@dimen/update_dialog_import_cancle_marginLeft"
+            android:visibility="gone"
+            />
+    </RelativeLayout>    
+ <ImageView 
+        android:id="@+id/img_update_dialog_import_imageBottom"
+        android:layout_width="@dimen/update_dialog_import_imageview_width"
+        android:layout_height="@dimen/update_dialog_import_imageview_height"
+        android:scaleType="fitXY"
+        android:src="@drawable/tongyong_line"
+        android:layout_marginTop="@dimen/update_dialog_import_imageview_marginTop"
+        android:layout_marginLeft="@dimen/update_dialog_import_imageview_marginLeft"
+        android:layout_marginRight="@dimen/update_dialog_import_imageview_marginRight"
+        android:layout_above="@id/relative_update_dialog_import" />
+</RelativeLayout>

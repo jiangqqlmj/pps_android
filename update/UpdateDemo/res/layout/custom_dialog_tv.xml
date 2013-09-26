@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200px"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+    
+    <RelativeLayout 
+        android:layout_width="200px"
+        android:layout_height="110px"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="5px"
+        android:layout_marginBottom="5px"
+        android:background="@drawable/background_middle"
+      
+        >
+        <TextView 
+            android:id="@+id/tv_title_top"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="提示框"
+            android:background="@drawable/dialog_top"
+            android:gravity="center"
+            android:textColor="#ffffff"/>
+        <ProgressBar
+            android:id="@+id/progress_update"
+            android:layout_below="@id/tv_title_top"
+            android:layout_width="200px"
+            android:layout_height="15px"
+            android:max="100"
+            android:paddingTop="5dip"
+            style="@android:style/Widget.ProgressBar.Horizontal"/>
+        <TextView 
+            android:id="@+id/tv_progress_update"
+            android:layout_below="@id/progress_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/progress_update"
+            android:text="进度显示"
+            android:textSize="12sp"
+            android:layout_marginTop="5px"/>
+        <Button 
+            android:id="@+id/btn_cancel"
+            android:layout_width="70px"
+            android:layout_height="35px"
+            android:text="取消"
+            android:background="@drawable/button_title"
+            android:textColor="#ffffff"
+            android:layout_below="@id/tv_progress_update"
+            android:layout_marginTop="5px"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

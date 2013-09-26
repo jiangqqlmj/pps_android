@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300px"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+     >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    <ProgressBar
+		android:id="@+id/update_progress"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		style="?android:attr/progressBarStyleHorizontal"
+		android:max="100" 
+		android:layout_marginLeft="8dip"
+		android:layout_marginRight="8dip"
+		/>
+    <TextView 
+        android:id="@+id/update_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/update_progress"
+        android:layout_alignRight="@id/update_progress"
+        android:paddingTop="5dip"
+        android:text="进度显示"/>
+    
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/update_tv"
+        android:paddingTop="5dip"
+        android:layout_centerHorizontal="true"
+        android:text="取消"
+        />
+    </RelativeLayout>
+</LinearLayout>

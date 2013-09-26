@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/px_648"
+    android:layout_height="@dimen/px_533" 
+    android:background="@drawable/gengxin_kuang">
+    <LinearLayout
+        android:id="@+id/dialog_linearlayout_body"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+        <!-- 原popopWindow top bar
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/px_64_top"
+            android:layout_marginBottom="@dimen/px_20"
+            android:layout_marginLeft="@dimen/px_15"
+            android:layout_marginRight="@dimen/px_15"
+            layout="@layout/dialog_top" />
+        -->
+        <!-- 新添加 -->
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shuaixuan_tittle"
+            android:gravity="center"
+            >
+             <TextView 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="筛选"
+                 android:textSize="@dimen/px_32"
+                 android:textColor="#ffffff"/>           
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="none" >
+            <LinearLayout
+                android:id="@+id/channel_pop_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/px_20"
+                android:paddingRight="@dimen/px_20" >
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

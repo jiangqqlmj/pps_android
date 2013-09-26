@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="648px"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:background="@drawable/gengxin_kuang">
+    
+    <GridView 
+        android:id="@+id/gv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:horizontalSpacing="20px"
+        android:verticalSpacing="10px"
+        android:numColumns="6"
+        android:stretchMode="columnWidth"   
+        android:gravity="center"
+        android:cacheColorHint="@color/transparent"
+        android:listSelector="@color/transparent"
+        />
+     
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击截屏"
+        />
+    
+</LinearLayout>

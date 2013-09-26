@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">tv.pps.mobile</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+     
+    <string name="appname">pps</string>
+    
+    <string name="update_dialog_info_title">发现新版本， 建议立即更新使用。</string>
+    <string name="update_dialog_info_version">新版本(v1.5.1)更新提示:</string>
+    <string name="update_dialog_info_content">1.修复了列 \" 筛选 \" 无法使用的问题。\n2.UI细节优化\n3.其他若干细节优化</string>
+    <string name="btn_update_commit">确定</string>
+    <string name="btn_update_cancel">跳过</string>
+    <string name="update_progress_contenxt">文件大小  (0M/0M)</string>
+    <string name="update_dilaog_title">版本更新</string>
+    <string name="update_dialog_import_title">更新提示</string>
+    <string name="update_dialog_import_content">下载失败,是否要重新下载?</string>
+    <string name="update_dialog_import_commit">下载</string>
+    <string name="update_dialog_import_cancel">跳过</string>
+    <string name="update_dialog_import_force">退出</string>
+</resources>

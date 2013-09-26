@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/update_progress_width"
+    android:layout_height="@dimen/update_progress_height"
+    android:background="@drawable/gengxin_kuang">
+    
+    <TextView 
+        android:id="@+id/tv_update_progress_title"
+        android:text="更新中..."
+        android:textSize="@dimen/update_progress_title_textSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginTop="@dimen/update_progress_marginTop"
+        android:layout_centerHorizontal="true"/>
+    
+    <ImageView
+        android:id="@+id/img_update_progress_imageview"
+        android:layout_width="@dimen/update_progress_imageview_width"
+        android:layout_height="@dimen/update_progress_imageview_height"
+        android:scaleType="fitXY"
+        android:src="@drawable/tongyong_line"
+        android:layout_below="@id/tv_update_progress_title"
+        android:layout_marginLeft="@dimen/update_progress_imageview_marginLeft"
+        android:layout_marginRight="@dimen/update_progress_imageview_marginRight"
+        android:layout_marginTop="@dimen/update_progress_imageview_marginTop"/>
+    
+    
+    <TextView 
+        android:id="@+id/tv_update_progress_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/update_progress_schedule_textSize"
+        android:textColor="#b7b7b7"
+        android:layout_below="@id/img_update_progress_imageview"
+        android:layout_marginTop="@dimen/update_progress_schedule_marginTop"
+        android:layout_centerHorizontal="true"
+        />
+    
+    <ProgressBar 
+        android:id="@+id/progressbar_update_progress"
+        android:layout_width="@dimen/progressbar_update_progress_width"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_update_progress_schedule"
+        android:layout_marginTop="@dimen/progressbar_update_progress_marginTop"
+        android:max="100"
+        style="@style/updateProgressTheme"  
+        android:layout_marginLeft="@dimen/progressbar_update_progress_marginLeft"
+        android:layout_marginRight="@dimen/progressbar_update_progress_marginRight"
+                
+        />
+    
+    <TextView 
+        android:id="@+id/tv_update_progress_contenxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressbar_update_progress"
+        android:text="@string/update_progress_contenxt"
+        android:textSize="@dimen/update_progress_contenxt_textSize"
+        android:layout_marginTop="@dimen/update_progress_contenxt_marginTop"
+        android:textColor="#b7b7b7"
+        android:layout_alignRight="@id/progressbar_update_progress"
+        />
+    
+    <RelativeLayout 
+        android:id="@+id/relative_update_progress"
+        android:layout_width="@dimen/relative_update_progress_width"
+        android:layout_height="@dimen/relative_update_progress_height"
+        android:layout_below="@id/tv_update_progress_contenxt">
+        
+    </RelativeLayout>
+</RelativeLayout>

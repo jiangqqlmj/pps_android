@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    >
+    
+    <TextView
+        android:id="@+id/channel_pop_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:gravity="top"
+        android:layout_marginTop="@dimen/px_24"
+        android:textSize="@dimen/px_26" 
+        android:layout_marginLeft="@dimen/px_20"
+        android:text="类型:"
+        android:focusable="false"/>
+
+    <tv.pps.tv.common.MultiGridView
+        android:id="@+id/channel_pop_gridview"
+        android:layout_marginTop="@dimen/px_20" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="4"
+        android:layout_marginLeft="@dimen/px_34"
+        android:layout_toRightOf="@id/channel_pop_textview"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="7px" 
+        android:layout_marginRight="@dimen/px_20"
+        
+        >
+    </tv.pps.tv.common.MultiGridView>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/px_4"
+        android:layout_marginTop="@dimen/px_20"
+        android:layout_below="@id/channel_pop_gridview"
+        android:src="@drawable/tongyong_line"
+        android:layout_marginRight="@dimen/px_19" 
+        android:layout_marginLeft="@dimen/px_19"
+        android:scaleType="fitXY"/>
+
+</RelativeLayout>

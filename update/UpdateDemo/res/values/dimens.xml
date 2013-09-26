@@ -1,0 +1,147 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    
+    
+    <!-- 1280x600 更新弹出框 -->
+    <dimen name="update_dialog_width">520px</dimen>
+    <dimen name="update_dialog_height">360px</dimen>
+    <dimen name="update_dilaog_title_textsize">32px</dimen>
+    <dimen name="update_dilaog_title_height">60px</dimen>
+    <dimen name="update_dilaog_title_marginTop">14px</dimen>
+    <dimen name="update_dilaog_title_marginLeft">172px</dimen>
+    <dimen name="update_dilaog_title_marginRight">172px</dimen>
+    <dimen name="update_dilaog_title_marginBottom">14px</dimen>
+    
+    <dimen name="update_dialog_image_width">466px</dimen>
+    <dimen name="update_dialog_image_height">4px</dimen>
+    <dimen name="update_dialog_image_marginLeft">28px</dimen>
+    <dimen name="update_dialog_image_marginRight">28px</dimen>
+    <dimen name="update_dialog_image_marginTop">14px</dimen>
+    <dimen name="update_dialog_info_title_marginLeft">37px</dimen>
+    <dimen name="update_dialog_info_title_marginRight">38px</dimen>
+    <dimen name="update_dialog_info_title_marginTop">13px</dimen>
+    <dimen name="update_dialog_info_title_textSize">24px</dimen>
+    <dimen name="update_dialog_info_title_width">410px</dimen>
+    <dimen name="update_dialog_info_content_marginLeft">38px</dimen>
+    <dimen name="update_dialog_info_content_marginRight">38px</dimen>
+    <dimen name="update_dialog_info_content_marginTop">13px</dimen>
+    <dimen name="update_dialog_info_content_textSize">24px</dimen>
+    <dimen name="update_dialog_info_content_spacingExtra">12px</dimen>
+    <dimen name="update_dialog_info_content_width">410px</dimen>
+
+    <!-- 下面两个Button -->
+    <dimen name="update_dialog_btn_relative_height">88px</dimen>
+    <dimen name="update_dialog_commit_textSize">27px</dimen>
+    <dimen name="update_dialog_commit_width">122px</dimen>
+    <dimen name="update_dialog_commit_height">49px</dimen>
+    <dimen name="update_dialog_commit_marginLeft">84px</dimen>
+    <dimen name="update_dialog_commit_marginRight">84px</dimen>
+    <dimen name="update_dialog_commit_marginTop">11px</dimen>
+    <dimen name="update_dialog_commit_marginBottom">11px</dimen>
+    <dimen name="update_dialog_cancel_textSize">27px</dimen>
+    <dimen name="update_dialog_cancel_width">122px</dimen>
+    <dimen name="update_dialog_cancel_height">49px</dimen>
+    <dimen name="update_dialog_cancel_marginLeft">75px</dimen>
+    <dimen name="update_dialog_cancel_marginRight">84px</dimen>
+    <dimen name="update_dialog_cancel_marginTop">11px</dimen>
+    <dimen name="update_dialog_cancel_marginBottom">11px</dimen>
+    <!-- 强制升级按钮 -->
+    <dimen name="update_dialog_force_textSize">27px</dimen>
+    <dimen name="update_dialog_force_width">122px</dimen>
+    <dimen name="update_dialog_force_height">49px</dimen>
+    <dimen name="update_dialog_force_marginTop">11px</dimen>
+    <dimen name="update_dialog_force_marginBottom">11px</dimen>
+    <dimen name="update_dialog_force_marginLeft">182px</dimen>
+    <dimen name="update_dialog_paddingLeft">36px</dimen>
+    <dimen name="update_dialog_paddingRight">36px</dimen>
+    <dimen name="update_dialog_paddingTop">12px</dimen>
+    <dimen name="update_dialog_paddingBottom">12px</dimen>
+    
+    
+    <!-- 进度框 -->
+    <dimen name="update_progress_width">487px</dimen>
+    <dimen name="update_progress_height">326px</dimen>
+    <dimen name="update_progress_title_textSize">32px</dimen>
+    <dimen name="update_progress_marginTop">13px</dimen>
+    <dimen name="update_progress_marginBottom">14px</dimen>
+    <dimen name="update_progress_marginLeft">184px</dimen>
+    <dimen name="update_progress_marginRight">185px</dimen>
+    
+    <dimen name="update_progress_imageview_width">467px</dimen>
+    <dimen name="update_progress_imageview_height">4px</dimen>
+    <dimen name="update_progress_imageview_marginTop">14px</dimen>
+    <dimen name="update_progress_imageview_marginLeft">10px</dimen>
+    <dimen name="update_progress_imageview_marginRight">10px</dimen>
+    
+    <dimen name="update_progress_schedule_textSize">27px</dimen>
+    <dimen name="update_progress_schedule_marginTop">56px</dimen>
+    <dimen name="update_progress_schedule_marginLeft">217px</dimen>
+    <dimen name="update_progress_schedule_marginRight">217px</dimen>
+    
+    <dimen name="progressbar_update_progress_width">377px</dimen>
+    <dimen name="progressbar_update_progress_marginTop">20px</dimen>
+    <dimen name="progressbar_update_progress_marginLeft">55px</dimen>
+    <dimen name="progressbar_update_progress_marginRight">55px</dimen>
+    
+    
+    <dimen name="update_progress_contenxt_textSize">16px</dimen>
+    <dimen name="update_progress_contenxt_marginTop">13px</dimen>
+    <dimen name="update_progress_contenxt_marginRight">55px</dimen>
+    <dimen name="update_progress_contenxt_marginBottom">114px</dimen>
+    
+    <dimen name="relative_update_progress_width">487px</dimen>
+    <dimen name="relative_update_progress_height">114px</dimen>
+    
+     <!--下载失败提示弹出框 -->
+     <dimen name="update_dialog_import_width">486px</dimen>
+     <dimen name="update_dialog_import_title_textSize">32px</dimen>
+     <dimen name="update_dialog_import_title_marginTop">14px</dimen>
+     
+     <dimen name="update_dialog_import_imageview_width">475px</dimen>
+     <dimen name="update_dialog_import_imageview_height">4px</dimen>
+     <dimen name="update_dialog_import_imageview_marginTop">14px</dimen>
+     <dimen name="update_dialog_import_imageview_marginLeft">7px</dimen>
+     <dimen name="update_dialog_import_imageview_marginRight">7px</dimen>
+     
+     <dimen name="update_dialog_import_content_textSize">24px</dimen>
+     <dimen name="update_dialog_import_content_marginTop">13px</dimen>
+     <dimen name="update_dialog_import_content_marginLeft">38px</dimen>
+     <dimen name="update_dialog_import_content_marginRight">38px</dimen>
+     
+     <dimen name="relative_update_dialog_import_width">486px</dimen>
+     <dimen name="relative_update_dialog_import_height">71px</dimen>
+     <dimen name="relative_update_dialog_import_marginTop">11px</dimen>
+     
+     <dimen name="update_dialog_import_commit_marginLeft">84px</dimen>
+     <dimen name="update_dialog_import_commit_marginRight">75px</dimen>
+     <dimen name="update_dialog_import_commit_textSize">27px</dimen>
+     <dimen name="update_dialog_import_cancle_marginLeft">75px</dimen>
+     <dimen name="update_dialog_import_cancle_marginRight">84px</dimen>
+     
+     
+     
+     
+     <!-- 筛选popopWindow -->
+     <dimen name="px_648">648px</dimen>
+     <dimen name="px_533">533px</dimen>
+     <dimen name="px_50">50px</dimen>
+     <dimen name="px_32">32px</dimen>
+     <dimen name="px_20">20px</dimen>
+     <dimen name="px_24">24px</dimen>
+     <dimen name="px_26">26px</dimen>
+     <dimen name="px_34">34px</dimen>
+     <dimen name="px_4">4px</dimen>
+     <dimen name="px_19">19px</dimen>
+     <!-- 筛选框 GridVieW  Item -->
+     <dimen name="px_104">104px</dimen>
+     <dimen name="px_36">36px</dimen>
+     <dimen name="px_10">10px</dimen>
+     <dimen name="px_7">7px</dimen>
+     <dimen name="px_14">14px</dimen>
+     <!-- 筛选框popupWindow  item GirdView -->
+      
+</resources>
