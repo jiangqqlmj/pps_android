@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/renren_news_first_image_bg"
+    android:orientation="vertical" >
+    <!-- 顶部头像，姓名，标签 -->
+    <include layout="@layout/left_bottom_top" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <!-- 常用 -->
+            <TextView
+                android:id="@+id/left_tv_commom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dip"
+                android:paddingLeft="20dip"
+                android:paddingTop="3dip"
+                android:text="@string/left_bottom_commom"
+                android:textColor="@color/whilte" />
+                     
+           <ImageView
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/v5_0_1_divider_new"/>
+           <!-- 常用列表 --><!-- 常用列表与更多列表使用同一个item布局 自定义适配器 -->
+           <com.pps.myrenren.custom.MyListView 
+               android:id="@+id/listview_common"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:cacheColorHint="#00000000"
+               android:divider="@drawable/v5_0_1_divider_line_new"/>
+            <TextView
+                android:id="@+id/left_tv_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dip"
+                android:paddingLeft="20dip"
+                android:paddingTop="3dip"
+                android:text="@string/left_bottom_more"
+                android:textColor="@color/whilte" />
+           <ImageView
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/v5_0_1_divider_new"/>
+           <!-- 更多列表 -->
+           <com.pps.myrenren.custom.MyListView  
+               android:id="@+id/listview_more"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:cacheColorHint="#00000000"
+               android:divider="@drawable/v5_0_1_divider_line_new"/>
+         <!--     <TextView
+                android:id="@+id/left_tv_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dip"
+                android:paddingLeft="20dip"
+                android:paddingTop="3dip"
+                android:text="@string/left_bottom_recommend"
+                android:textColor="@color/whilte" />
+           <ImageView
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/v5_0_1_divider_line_new"/>
+     
+          
+           <ListView 
+               android:id="@+id/listview_recommend"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:cacheColorHint="#00000000"
+               android:divider="@drawable/v5_0_1_divider_new"/>
+           <TextView
+                android:id="@+id/left_tv_app"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dip"
+                android:paddingLeft="20dip"
+                android:paddingTop="3dip"
+                android:text="@string/left_bottom_app"
+                android:textColor="@color/whilte" />
+           
+           <ImageView
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/v5_0_1_divider_line_new"/>
+           
+           <ListView 
+               android:id="@+id/listview_app"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:cacheColorHint="#00000000"
+               android:divider="@drawable/v5_0_1_divider_new"/>  -->
+           <TextView
+                android:id="@+id/left_tv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dip"
+                android:paddingLeft="20dip"
+                android:paddingTop="3dip"
+                android:text="@string/left_bottom_setting"
+                android:textColor="@color/whilte" />       
+           <ImageView
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/v5_0_1_divider_new"/>
+           <com.pps.myrenren.custom.MyListView  
+               android:id="@+id/listview_setting"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:cacheColorHint="#00000000"
+               android:divider="@drawable/v5_0_1_divider_line_new"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+     >
+     <ImageView
+        android:paddingTop="4dip"
+        android:paddingBottom="4dip" 
+        android:paddingLeft="20dip"
+        android:layout_centerVertical="true"
+        android:id="@+id/setting_image_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/v_5_8day_mode_unselected"/>
+    <TextView 
+        android:layout_centerVertical="true"
+        android:id="@+id/commom_or_more_text_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="亮度:正常"
+        android:layout_toRightOf="@id/setting_image_icon"
+        android:layout_marginLeft="10dip"
+        android:textColor="@color/whilte"/>
+
+</RelativeLayout>

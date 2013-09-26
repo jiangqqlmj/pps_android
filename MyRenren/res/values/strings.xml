@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MyRenren</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="tv_top_center">新鲜事</string>
+    <string name="tv_voice">录语音</string>
+    <string name="tv_statues">发状态</string>
+    <string name="tv_photo">传照片</string>
+    <string name="tv_checkin">报道</string>
+    
+    <string name="left_bottom_commom">常用</string>
+    <string name="left_bottom_more">更多</string>
+    <string name="left_bottom_recommend">推荐应用</string>
+    <string name="left_bottom_app">我的应用</string>
+    <string name="left_bottom_setting">操作</string>
+</resources>

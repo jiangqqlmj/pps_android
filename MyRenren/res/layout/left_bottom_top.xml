@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+     > 
+    <ImageView 
+        android:id="@+id/img_icon_top"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:layout_centerVertical="true"
+        android:src="@drawable/v_5_9_lbs_nearby_person_portrait_default"
+        />
+     <TextView 
+        android:id="@+id/tv_name_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="王老三"
+        android:layout_toRightOf="@id/img_icon_top"
+        android:textSize="20sp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dip"
+        android:textColor="@color/whilte"/>  
+        
+     <ImageButton 
+         android:id="@+id/imgbtn_toggle_top"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:background="@drawable/v5_3_0_profile_arrow_back"
+         android:layout_alignParentRight="true"
+         android:layout_centerInParent="true"
+         android:layout_marginRight="15dip"/>
+</RelativeLayout>

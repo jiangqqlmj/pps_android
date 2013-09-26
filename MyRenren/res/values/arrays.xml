@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arrays_commom">
+        <item >新鲜事</item>
+        <item >消息</item>
+        <item >聊天</item>
+        <item >好友</item>
+        <item >找人</item>
+        <item >二维码</item>
+    </string-array>
+    
+    <string-array name="arrays_more">
+        <item >附近</item>
+        <item >公共主页</item>
+        <item >热门分享</item>
+        <item >应用与游戏</item>       
+    </string-array>
+    
+    <string-array name="arrays_recommend">
+        <item >人人优推</item>
+        <item >热血足球经理</item>
+        <item >9游棋牌</item>    
+    </string-array>
+    
+    <string-array name="arrays_setting">
+        <item >亮度:正常</item>
+        <item >选项</item>
+        <item >注销登录</item>    
+    </string-array>
+</resources>
