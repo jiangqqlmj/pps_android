@@ -25,7 +25,7 @@ import android.widget.RelativeLayout;
  */
 public class LogoActivity extends Activity {
     private RelativeLayout logo_relativelayout;
-    private List<SharpModel> mLists; 
+    public static List<SharpModel> mLists; 
     private DBManager mDbManager;
     private Handler mHandler=new Handler(){
 
@@ -63,20 +63,20 @@ public class LogoActivity extends Activity {
 				Log.d("jiangqq", ">>>>>>>>>>>>开始读取数据");
 				mLists = FileUtils.getSharpModels(LogoActivity.this);
 				Log.d("jiangqq", ">>>>>>>>>>>>读取数据成功");
-				Log.d("jiangqq", ">>>>>>>>>>>>准备开始保存数据到数据库");
-				mDbManager=new DBManager(LogoActivity.this);
-				boolean result= mDbManager.insertSharpByList(mLists);
+				//Log.d("jiangqq", ">>>>>>>>>>>>准备开始保存数据到数据库");
+				//mDbManager=new DBManager(LogoActivity.this);
+				//boolean result= mDbManager.insertSharpByList(mLists);
 				Message msg=mHandler.obtainMessage();
-				if(result)
-				{
-					Log.d("jiangqq", ">>>>>>>>>>>>保存数据到数据库成功");
-					msg.what=1;
-					mHandler.sendMessage(msg);
-				}else {
-					Log.d("jiangqq", ">>>>>>>>>>>>保存数据到数据库失败");
-					msg.what=-1;
-					mHandler.sendMessage(msg);
-				}
+			    if(null!=mLists&&mLists.size()>0)
+			    {
+			    	msg.what=1;
+			    	mHandler.handleMessage(msg);
+			    }else
+			    {
+			    	msg.what=-1;
+			    	mHandler.handleMessage(msg);
+			    }
+			    
 				
 			}
 		}).start();
