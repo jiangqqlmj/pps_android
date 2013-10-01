@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sharpturn"
+    package="com.pps.sharpturn"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.sharpturn.LogoActivity"
+            android:name="com.pps.sharpturn.LogoActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,12 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.sharpturn.MainActivity"/>
-        <activity android:name="com.example.sharpturn.BookActivity"/>
-        <activity android:name="com.example.sharpturn.SmoothActivity"/>
-        <activity android:name="com.example.sharpturn.DetailsSmoothActivity"/>
-        <activity android:name="com.example.sharpturn.DetailsRandomActivity"/>
-        <activity android:name="com.example.sharpturn.RandomActivity"/>
+        <activity android:name="com.pps.sharpturn.MainActivity"/>
+        <activity android:name="com.pps.sharpturn.BookActivity"/>
+        <activity android:name="com.pps.sharpturn.SmoothActivity"/>
+        <activity android:name="com.pps.sharpturn.DetailsSmoothActivity"/>
+        <activity android:name="com.pps.sharpturn.DetailsRandomActivity"/>
+        <activity android:name="com.pps.sharpturn.RandomActivity"/>
+        <activity android:name="com.pps.sharpturn.DetailsBookActivity"/>
     </application>
 
 </manifest>

@@ -5,10 +5,36 @@
     android:orientation="vertical" 
     android:background="@drawable/main_bg">
     
+ <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@drawable/bg_button_j1"
+        >
+        <Button
+            android:id="@+id/book_head_leftbtn"
+            android:layout_width="70dip"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginTop="2dip"
+            android:minHeight="45dip"
+            android:background="@drawable/w_left02"
+            android:text="返回"
+            android:textSize="18sp" />
+        <TextView 
+            android:id="@+id/book_head_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收藏盒子"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
     
-    <TextView 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="收藏"/>
-    
+ <ListView 
+     android:id="@+id/book_listview"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:divider="@drawable/divider"
+     android:dividerHeight="3dip"
+     android:cacheColorHint="#00000000"/>
 </LinearLayout>

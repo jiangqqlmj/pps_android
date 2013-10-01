@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/book_item_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="5dip"
+        android:text="0001-有对一模一样的双胞胎兄弟，哥哥的屁股有黑痣，而弟弟没有。但即使这对双胞胎穿着相同的服饰，仍然有人可立刻知道谁是哥哥，谁是弟弟。究竟是谁呢？"/>
+    <TextView 
+        android:id="@+id/book_item_answer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:textSize="17sp"
+        android:maxLines="1"
+        android:text="答案:有对一模一样的双胞胎兄弟，哥哥的屁股有黑痣，"
+        android:ellipsize="end"/>
+</LinearLayout>

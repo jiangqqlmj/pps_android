@@ -2,7 +2,140 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@drawable/main_bg">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@drawable/bg_button_j1"
+        >
+
+        <Button
+            android:id="@+id/details_random_head_leftbtn"
+            android:layout_width="70dip"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginTop="2dip"
+            android:minHeight="45dip"
+            android:background="@drawable/w_left02"
+            android:text="返回"
+            android:textSize="18sp" />
+        <TextView 
+            android:id="@+id/details_random_head_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第一道题目"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
     
+     <RelativeLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:orientation="horizontal">
+         
+        
+             <ImageView 
+                 android:layout_marginLeft="3dip"
+                 android:id="@+id/details_random_prev"
+                 android:layout_width="50dip"
+                 android:layout_height="50dip"
+                 android:src="@drawable/prev"
+                 android:background="#00000000"
+                 android:layout_alignParentLeft="true"
+                 android:layout_centerVertical="true"/>
+          
+            <ImageView 
+                 android:layout_marginRight="3dip"
+                 android:id="@+id/details_random_next"
+                 android:layout_alignParentRight="true"
+                 android:layout_centerVertical="true"
+                 android:layout_width="50dip"
+                 android:layout_height="50dip"
+                 android:src="@drawable/next"
+                 android:background="#00000000"/>
+                   
+                       
+            <LinearLayout 
+             android:id="@+id/details_smooth_center"
+             android:layout_toRightOf="@id/details_random_prev"
+             android:layout_toLeftOf="@id/details_random_next"
+             android:layout_width="wrap_content"
+             android:layout_height="fill_parent"
+             android:orientation="vertical"
+             android:layout_centerHorizontal="true"
+             android:layout_marginLeft="3dip"
+             android:layout_marginRight="3dip"
+             android:layout_marginTop="4dip"
+             >
+                <TextView 
+                    android:id="@+id/details_random_tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dip"
+                    android:paddingTop="4dip"
+                    android:paddingRight="10dip"
+                    android:text="有对一模一样的双胞胎兄弟，哥哥的屁股有黑痣，而弟弟没有。但即使这对双胞胎穿着相同的服饰，仍然有人可立刻知道谁是哥哥，谁是弟弟。究竟是谁呢？"
+                    android:gravity="center"
+                    android:background="@drawable/answer"/>
+                
+                <ImageView 
+                    android:layout_marginTop="4dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/biankuang1"/>
+                
+                <TextView 
+                    android:id="@+id/details_random_tv_answer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/answer_bg"
+                    android:text="思考中:15s"
+                    android:layout_marginTop="10dip"
+                    android:gravity="center"
+                    android:textStyle="italic|bold"
+                    android:textColor="#FF0000"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="2dip"
+                    android:textSize="18sp"/>
+                
+                <!-- 收藏和显示答案 -->
+                <LinearLayout 
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dip"
+                    android:gravity="center">
+                    
+                    <Button
+                        android:layout_gravity="center"
+                        android:id="@+id/detalis_random_btn_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="收藏"
+                        android:textSize="20sp"
+                        android:paddingLeft="3dip"
+                        android:paddingRight="3dip"
+                        android:background="@drawable/bg_button_j1"/>
+                    
+                      <Button
+                        android:layout_gravity="center"
+                        android:id="@+id/detalis_random_btn_answer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="答案"
+                        android:textSize="20sp"
+                        android:paddingLeft="3dip"
+                        android:paddingRight="3dip"
+                        android:layout_marginLeft="5dip"
+                        android:background="@drawable/bg_button_j1"/>
+                    
+                </LinearLayout>
+            </LinearLayout>
+                  
+     </RelativeLayout>
 
 </LinearLayout>

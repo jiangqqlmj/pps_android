@@ -12,7 +12,7 @@
         >
 
         <Button
-            android:id="@+id/details_smooth_head_leftbtn"
+            android:id="@+id/details_book_head_leftbtn"
             android:layout_width="70dip"
             android:layout_height="fill_parent"
             android:layout_marginBottom="2dip"
@@ -23,7 +23,7 @@
             android:text="返回"
             android:textSize="18sp" />
         <TextView 
-            android:id="@+id/details_smooth_head_textview"
+            android:id="@+id/details_book_head_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="第一道题目"
@@ -39,29 +39,31 @@
         
              <ImageView 
                  android:layout_marginLeft="3dip"
-                 android:id="@+id/details_smooth_prev"
+                 android:id="@+id/details_book_prev"
                  android:layout_width="50dip"
                  android:layout_height="50dip"
                  android:src="@drawable/prev"
                  android:background="#00000000"
+                 android:visibility="invisible"
                  android:layout_alignParentLeft="true"
                  android:layout_centerVertical="true"/>
           
             <ImageView 
                  android:layout_marginRight="3dip"
-                 android:id="@+id/details_smooth_next"
+                 android:id="@+id/details_book_next"
                  android:layout_alignParentRight="true"
                  android:layout_centerVertical="true"
                  android:layout_width="50dip"
                  android:layout_height="50dip"
                  android:src="@drawable/next"
+                 android:visibility="invisible"
                  android:background="#00000000"/>
                    
                        
             <LinearLayout 
-             android:id="@+id/details_smooth_center"
-             android:layout_toRightOf="@id/details_smooth_prev"
-             android:layout_toLeftOf="@id/details_smooth_next"
+             android:id="@+id/details_book_center"
+             android:layout_toRightOf="@id/details_book_prev"
+             android:layout_toLeftOf="@id/details_book_next"
              android:layout_width="wrap_content"
              android:layout_height="fill_parent"
              android:orientation="vertical"
@@ -71,13 +73,12 @@
              android:layout_marginTop="4dip"
              >
                 <TextView 
-                    android:id="@+id/details_smooth_tv_name"
+                    android:id="@+id/details_book_tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dip"
                     android:paddingTop="4dip"
                     android:paddingRight="10dip"
-                    android:text="有对一模一样的双胞胎兄弟，哥哥的屁股有黑痣，而弟弟没有。但即使这对双胞胎穿着相同的服饰，仍然有人可立刻知道谁是哥哥，谁是弟弟。究竟是谁呢？"
                     android:gravity="center"
                     android:background="@drawable/answer"/>
                 
@@ -88,11 +89,10 @@
                     android:src="@drawable/biankuang1"/>
                 
                 <TextView 
-                    android:id="@+id/details_smooth_tv_answer"
+                    android:id="@+id/details_book_tv_answer"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/answer_bg"
-                    android:text="思考中:15s"
                     android:layout_marginTop="10dip"
                     android:gravity="center"
                     android:textStyle="italic|bold"
@@ -112,13 +112,15 @@
                     
                     <Button
                         android:layout_gravity="center"
-                        android:id="@+id/detalis_smooth_btn_book"
+                        android:id="@+id/detalis_book_btn_book"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="收藏"
+                        android:text="取消收藏"
                         android:textSize="20sp"
+                        android:paddingLeft="5dip"
+                        android:paddingRight="5dip"
                         android:background="@drawable/bg_button_j1"/>
-                     <Button
+                   <!--   <Button
                         android:layout_gravity="center"
                         android:id="@+id/detalis_smooth_btn_answer"
                         android:layout_width="wrap_content"
@@ -126,7 +128,7 @@
                         android:text="答案"
                         android:textSize="20sp"
                         android:layout_marginLeft="10dip"
-                        android:background="@drawable/bg_button_j1"/>
+                        android:background="@drawable/bg_button_j1"/> -->
                 </LinearLayout>
             </LinearLayout>
                   
