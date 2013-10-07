@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:baiduadsdk="http://schemas.android.com/apk/res/com.pps.sharpturn"
     android:orientation="vertical" 
     android:background="@drawable/main_bg">
 
     <RelativeLayout
+        android:id="@+id/relative_title"
         android:layout_width="fill_parent"
         android:layout_height="45dip"
         android:background="@drawable/bg_button_j1"
@@ -32,6 +34,7 @@
     </RelativeLayout>
     
      <RelativeLayout 
+         android:layout_below="@id/relative_title"
          android:layout_width="fill_parent"
          android:layout_height="fill_parent"
          android:orientation="horizontal">
@@ -133,5 +136,13 @@
             </LinearLayout>
                   
      </RelativeLayout>
+     <com.baidu.mobads.AdView android:id="@+id/adView"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"  
+		baiduadsdk:adSize="0"
+		baiduadsdk:adId = ""/>
+	<!-- 注： baiduadsdk:adId可以指定为"",表示默认广告位-->
 
-</LinearLayout>
+</RelativeLayout>
