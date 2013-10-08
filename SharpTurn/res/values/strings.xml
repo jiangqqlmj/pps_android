@@ -7,4 +7,5 @@
     <string name="btn_random">随机查看</string>
     <string name="btn_smooth">顺序查看</string>
     <string name="btn_book">收藏盒子</string>
+    <string name="btn_recommand">精彩推荐</string>
 </resources>

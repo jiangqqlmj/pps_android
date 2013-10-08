@@ -1,11 +1,13 @@
 package com.pps.sharpturn;
 
+import com.baidu.mobads.appoffers.OffersManager;
 import com.pps.sharpturn.R;
 
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +25,7 @@ public class MainActivity extends Activity {
 	private Button main_btn_random;
 	private Button main_btn_smooth;
 	private Button main_btn_book;
+	private Button main_btn_recommand;
 	private Intent mIntent;
 	private Dialog mDialog;
 	private LayoutInflater mLayoutInflater;
@@ -47,6 +50,7 @@ public class MainActivity extends Activity {
 		main_btn_random = (Button) findViewById(R.id.main_btn_random);
 		main_btn_smooth = (Button) findViewById(R.id.main_btn_smooth);
 		main_btn_book = (Button) findViewById(R.id.main_btn_book);
+		main_btn_recommand=(Button)findViewById(R.id.main_btn_recommand);
 	}
 
 	/**
@@ -64,7 +68,7 @@ public class MainActivity extends Activity {
 		main_btn_random.setOnClickListener(new MySetOnClickListener());
 		main_btn_smooth.setOnClickListener(new MySetOnClickListener());
 		main_btn_book.setOnClickListener(new MySetOnClickListener());
-		
+		main_btn_recommand.setOnClickListener(new MySetOnClickListener());
 	}
 
 	class MySetOnClickListener implements OnClickListener {
@@ -87,6 +91,13 @@ public class MainActivity extends Activity {
 				mIntent.setClass(MainActivity.this, BookActivity.class);
 				MainActivity.this.startActivity(mIntent);
 				MainActivity.this.finish();
+				break;
+			case R.id.main_btn_recommand:
+				String jifen=OffersManager.getCurrencyName(MainActivity.this);
+				Log.d("jiangqq","积分单位："+jifen);
+				int points=OffersManager.getPoints(MainActivity.this);
+				Log.d("jiangqq", "当前积分："+points);
+				OffersManager.showOffers(MainActivity.this);
 				break;
 			case R.id.dialog_btn_commit:
 				// close this activity
