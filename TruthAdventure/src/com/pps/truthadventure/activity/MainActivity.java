@@ -1,6 +1,7 @@
 package com.pps.truthadventure.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,6 +18,7 @@ public class MainActivity extends Activity {
 	private Button main_btn_number;
 	private Button main_btn_name;
 	private Button main_btn_function;
+	private Intent mIntent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class MainActivity extends Activity {
 	}
 
 	private void initValidata() {
-
+		mIntent=new Intent();
 	}
 
 	private void initListener() {
@@ -55,7 +57,9 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			switch (v.getId()) {
 			case R.id.main_btn_number:  //代号玩法
-
+				mIntent.setClass(MainActivity.this, SymbolActivity.class);
+				MainActivity.this.startActivity(mIntent);
+				MainActivity.this.finish();
 				break;
 			case R.id.main_btn_name:    //姓名玩法
 
