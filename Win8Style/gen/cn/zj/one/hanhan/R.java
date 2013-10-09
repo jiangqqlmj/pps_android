@@ -12,19 +12,20 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int rootblock_default_bg=0x7f020001;
-        public static final int rootblock_icon_add=0x7f020002;
-        public static final int rootblock_icon_add_bg=0x7f020003;
-        public static final int rootblock_icon_add_selected=0x7f020004;
-        public static final int rootblock_icon_clear=0x7f020005;
-        public static final int rootblock_icon_clear_bg=0x7f020006;
-        public static final int rootblock_icon_clear_selected=0x7f020007;
-        public static final int rootblock_icon_download=0x7f020008;
-        public static final int rootblock_icon_download_bg=0x7f020009;
-        public static final int rootblock_icon_download_selected=0x7f02000a;
-        public static final int rootblock_icon_set=0x7f02000b;
-        public static final int rootblock_icon_set_bg=0x7f02000c;
-        public static final int rootblock_icon_set_selected=0x7f02000d;
+        public static final int main_bg=0x7f020001;
+        public static final int rootblock_default_bg=0x7f020002;
+        public static final int rootblock_icon_add=0x7f020003;
+        public static final int rootblock_icon_add_bg=0x7f020004;
+        public static final int rootblock_icon_add_selected=0x7f020005;
+        public static final int rootblock_icon_clear=0x7f020006;
+        public static final int rootblock_icon_clear_bg=0x7f020007;
+        public static final int rootblock_icon_clear_selected=0x7f020008;
+        public static final int rootblock_icon_download=0x7f020009;
+        public static final int rootblock_icon_download_bg=0x7f02000a;
+        public static final int rootblock_icon_download_selected=0x7f02000b;
+        public static final int rootblock_icon_set=0x7f02000c;
+        public static final int rootblock_icon_set_bg=0x7f02000d;
+        public static final int rootblock_icon_set_selected=0x7f02000e;
     }
     public static final class id {
         public static final int download_btn=0x7f050000;

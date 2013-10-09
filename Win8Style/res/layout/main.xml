@@ -6,7 +6,7 @@
     android:paddingTop="30dp"
     android:paddingBottom="30dp"
     android:paddingLeft="20dp"
-    android:background="@drawable/rootblock_default_bg"
+    android:background="@drawable/main_bg"
     >
     <LinearLayout 
      	android:layout_width="wrap_content"
