@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+     
+    <RelativeLayout 
+        android:id="@+id/relative_title_head"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@drawable/title_head_bg"
+        >
+        <Button 
+           android:id="@+id/btn_head_back"
+           android:layout_width="60dip"
+           android:layout_height="40dip"
+           android:text="返回"
+           android:textColor="#ffffff"
+           android:layout_marginLeft="5dip"
+           android:layout_centerVertical="true"
+           android:background="@drawable/btn_left"/>
+        <TextView 
+            android:id="@+id/tv_title_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="国产汽车"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+    
+    <ListView 
+        android:id="@+id/lv_list_sign"
+        android:layout_below="@+id/relative_title_head"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/divider"
+        />
+
+</RelativeLayout>

@@ -22,6 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.pps.carsign.activity.MainActivity"/>
+        <activity android:name="com.pps.carsign.activity.DetailsSignActivity"/>
+        <activity android:name="com.pps.carsign.activity.ListSignActivity"/>
     </application>
-
 </manifest>

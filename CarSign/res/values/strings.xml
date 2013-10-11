@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">玩转汽车标志大全</string>
+    <string name="app_name">玩转汽车标志大全与简介</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    
+    <string name="string_title_head">玩转汽车标志大全</string>
 </resources>

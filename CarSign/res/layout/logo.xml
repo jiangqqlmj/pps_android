@@ -1,7 +1,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    android:background="@drawable/background"
+    android:id="@+id/relative_log">
 
-
+    <ImageView 
+        android:id="@+id/logo_img_head"
+        android:layout_width="wrap_content"
+        android:layout_height="90dip"
+        android:src="@drawable/title_bar_icon"/>
+     <ImageView 
+        android:layout_width="150dip"
+        android:layout_height="150dip"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo_icon"/>
+   <ImageView 
+        android:id="@+id/logo_image_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/words"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dip"/>
+         
+    <TextView 
+        android:id="@+id/logo_text_init"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="数据正在初始化. . ."
+        android:layout_above="@id/logo_image_bottom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dip"
+        android:textColor="#ffffff"/>
+    <ProgressBar 
+        android:id="@+id/logo_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:layout_above="@id/logo_text_init"
+        />
 </RelativeLayout>
