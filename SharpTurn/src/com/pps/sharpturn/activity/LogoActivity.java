@@ -1,11 +1,6 @@
-package com.pps.sharpturn;
+package com.pps.sharpturn.activity;
 
 import java.util.List;
-
-import com.pps.sharpturn.R;
-import com.pps.sharpturn.db.DBManager;
-import com.pps.sharpturn.model.SharpModel;
-import com.pps.sharpturn.utils.FileUtils;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,6 +13,11 @@ import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.RelativeLayout;
+
+import com.pps.sharpturn.R;
+import com.pps.sharpturn.db.DBManager;
+import com.pps.sharpturn.model.SharpModel;
+import com.pps.sharpturn.utils.FileUtils;
 
 /**
  *
@@ -53,6 +53,8 @@ public class LogoActivity extends Activity {
 	        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
 	                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.logo);
+		
+		
 		logo_relativelayout=(RelativeLayout)this.findViewById(R.id.logo_relativelayout);
 		Animation mAlphaAnimation=new AlphaAnimation(0.2f,1.0f);
 		mAlphaAnimation.setDuration(4500);

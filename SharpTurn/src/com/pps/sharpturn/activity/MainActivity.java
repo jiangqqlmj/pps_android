@@ -1,7 +1,4 @@
-package com.pps.sharpturn;
-
-import com.baidu.mobads.appoffers.OffersManager;
-import com.pps.sharpturn.R;
+package com.pps.sharpturn.activity;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -14,6 +11,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+
+import com.baidu.mobads.appoffers.OffersManager;
+import com.pps.sharpturn.MyApplication;
+import com.pps.sharpturn.R;
 
 /**
  * 脑经急转弯的主界面
@@ -31,13 +32,14 @@ public class MainActivity extends Activity {
 	private LayoutInflater mLayoutInflater;
 	private Button dialog_btn_commit;
 	private Button dialog_btn_cancel;
-
+ 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
+		
+		
 		initView();
 		initValidata();
 		initListener();

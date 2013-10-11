@@ -1,8 +1,10 @@
-package com.pps.sharpturn;
+package com.pps.sharpturn.activity;
 
 import java.util.List;
 
 import com.pps.sharpturn.R;
+import com.pps.sharpturn.R.id;
+import com.pps.sharpturn.R.layout;
 import com.pps.sharpturn.adapter.SharpBookAdapter;
 import com.pps.sharpturn.db.DBManager;
 import com.pps.sharpturn.model.SharpModel;

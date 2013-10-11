@@ -1,4 +1,4 @@
-package com.pps.sharpturn;
+package com.pps.sharpturn.activity;
 
 import java.util.List;
 import java.util.Timer;
@@ -18,6 +18,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pps.sharpturn.R;
+import com.pps.sharpturn.R.id;
+import com.pps.sharpturn.R.layout;
 import com.pps.sharpturn.db.DBManager;
 import com.pps.sharpturn.model.SharpModel;
 import com.pps.sharpturn.utils.FileUtils;

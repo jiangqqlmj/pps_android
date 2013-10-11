@@ -1,4 +1,4 @@
-package com.pps.sharpturn;
+package com.pps.sharpturn.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
