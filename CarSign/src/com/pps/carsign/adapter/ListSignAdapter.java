@@ -65,7 +65,7 @@ public class ListSignAdapter extends BaseAdapter {
 	}
 
 	
-	static class Hondler
+	private class Hondler
 	{
       ImageView img_list_sign;
       TextView tv_list_title;

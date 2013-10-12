@@ -1,19 +1,21 @@
 package com.pps.carsign.activity;
 
-import com.pps.carsign.adapter.ListSignAdapter;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
+
+import com.pps.carsign.adapter.ListSignAdapter;
 
 /**
  * 根据汽车的产地 进行显示相应的汽车品牌列表
@@ -169,6 +171,26 @@ public class ListSignActivity extends Activity {
 	{
 		btn_head_back.setOnClickListener(new MySetOnClickListener());
 		lv_list_sign.setOnItemClickListener(new MySetOnItemClickListener());
+		
+	    // 进行滚动的时候进行实时记载显示图片,防止出现卡顿现象
+		lv_list_sign.setOnScrollListener(new OnScrollListener() {
+			
+			@Override
+			public void onScrollStateChanged(AbsListView view, int scrollState) {
+				if(scrollState==OnScrollListener.SCROLL_STATE_IDLE)
+				{
+					//停止滚动
+					
+				}
+				
+			}
+			
+			@Override
+			public void onScroll(AbsListView view, int firstVisibleItem,
+					int visibleItemCount, int totalItemCount) {
+				
+			}
+		});
 	}
 	
 	// 按钮自定义监听器
