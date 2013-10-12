@@ -60,8 +60,7 @@ public class AchieveUserActivityManagerImp implements
 	 */
 	@Override
 	public String getUserUid() {
-		//return DeviceInfoStatistic.getUid();
-		return mSharedPreferences.getString("uuid", 0+"");
+		return mSharedPreferences.getString("uuid", "-");
 	}
 
 	/*
@@ -71,7 +70,7 @@ public class AchieveUserActivityManagerImp implements
 	 */
 	@Override
 	public String getUserLogin() {
-		//return DeviceInfoStatistic.getLoginId();
+
 		return mSharedPreferences.getString("loginID", "-");
 	}
 
@@ -85,7 +84,6 @@ public class AchieveUserActivityManagerImp implements
 	@Override
 	public String getUserPlatform() {
 		
-		//return mDeviceInfoStatistic.getPlatform();
 		return mSharedPreferences.getString("platform", "pps_android");
 	}
 

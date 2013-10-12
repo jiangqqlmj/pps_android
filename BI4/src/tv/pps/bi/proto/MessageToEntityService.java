@@ -2,7 +2,6 @@ package tv.pps.bi.proto;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import tv.pps.bi.proto.imp.AchieveUserActivityManagerImp;
 import tv.pps.bi.proto.model.App;

@@ -219,7 +219,7 @@ public class ProtoBuffUserActivityService {
         	}
          }
         
-        //活动窗口的标题名称, client only
+         //活动窗口的标题名称, client only
          List<WindowProto> mWindows=  pUserActivity.getWindow();
          if(null!=mWindows&&mWindows.size()>0)
          {

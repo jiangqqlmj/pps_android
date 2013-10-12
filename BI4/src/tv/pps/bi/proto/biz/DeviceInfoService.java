@@ -19,6 +19,9 @@ import android.view.WindowManager;
  * @author jiangqingqing
  * @time 2013/09/05 17:13
  */
+
+
+
 public class DeviceInfoService {
 
 	public final static String TAG = "DeviceInfo";
@@ -37,31 +40,47 @@ public class DeviceInfoService {
 		WindowManager mWindowManager = (WindowManager) mContext
 				.getSystemService(Context.WINDOW_SERVICE);
 		String imei = tm.getDeviceId();
-		if(null!=imei){
-			
-		deviceInfo.setImei(imei);// 手机串号
+		if (null != imei) {
+			deviceInfo.setImei(imei);// 手机串号
+		} else {
+			deviceInfo.setImei("null");
 		}
+
 		String imsi = tm.getSubscriberId();
 		if (null != imsi) {
 			deviceInfo.setImsi(imsi);
+		} else {
+			deviceInfo.setImsi("null");
 		}
 
 		String manufacturer = Build.MANUFACTURER;// 制造商
-		deviceInfo.setManufacturer(manufacturer);
+		if (null != manufacturer) {
+			deviceInfo.setManufacturer(manufacturer);
+		} else {
+			deviceInfo.setManufacturer("null");
+		}
+		
 		String model = Build.MODEL;// 类型
+		if(null!=model){
 		deviceInfo.setModel(model);
-
+		}else {
+			deviceInfo.setModel("null");
+		}
 		int width = mWindowManager.getDefaultDisplay().getWidth();
 		int height = mWindowManager.getDefaultDisplay().getHeight();
 		String screen_resolution = width + "*" + height;
 		deviceInfo.setScreen_resolution(screen_resolution);// 分辨率
-		String os_version = Build.VERSION.RELEASE;// Build.VERSION.SDK_INT+ "";
-		deviceInfo.setOs_version(os_version);
+
+		String os_version = Build.VERSION.RELEASE; // Build.VERSION.SDK_INT+ "";
+        if(null!=os_version){
+		deviceInfo.setOs_version(os_version);}else {
+			deviceInfo.setOs_version("null");
+		}
 		/** case1 手机root 返回 root case 2 手机没有root 设置为"" */
 		if (isRoot()) {
 			deviceInfo.setOs_custermize("root");
 		} else {
-			deviceInfo.setOs_custermize("");
+			deviceInfo.setOs_custermize("null");
 		}
 		return deviceInfo;
 	}

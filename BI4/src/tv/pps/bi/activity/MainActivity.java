@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
 		LogUtils.setShowLog(true);
 
 		DeviceInfoStatistic.setUid(UUID.randomUUID().toString(),this);
-		DeviceInfoStatistic.setLoginId("login00001",this);
+		DeviceInfoStatistic.setLoginId("1922333",this);
 		DeviceInfoStatistic.setPlatform("pps_android",this);
 		
 		IntervalTimeConstance.setStartDeliverServiceTime(2*60*1000);
