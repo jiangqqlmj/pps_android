@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
@@ -18,6 +19,7 @@ public class MainActivity extends Activity {
 	private Integer[] mImageView;;
 	private TypeAdapter mTypeAdapter;
 
+	private long exitTime=0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,7 +39,7 @@ public class MainActivity extends Activity {
 	private void initValidata() {
 		mImageView = new Integer[] { R.drawable.china, R.drawable.germany,
 				R.drawable.usa, R.drawable.uk, R.drawable.france,
-				R.drawable.japan, R.drawable.korea, R.drawable.italy };
+				R.drawable.japan, R.drawable.korea, R.drawable.italy,R.drawable.other};
 		mTypeAdapter=new TypeAdapter(this, mImageView);
 	}
 
@@ -58,7 +60,8 @@ public class MainActivity extends Activity {
 				long id) {
 	       		Log.d("jiangqq", ">>>>点击了GirdView的第"+position+"Item");
 	       		Intent mIntent=new Intent();
-	       		mIntent.putExtra("list_item", position);
+	       		//mIntent.putExtra("list_item", position);
+	       		ListSignActivity.list_item=position;
 	       		mIntent.setClass(MainActivity.this, ListSignActivity.class);
 	       		MainActivity.this.startActivity(mIntent);
 	       		MainActivity.this.finish();
@@ -70,7 +73,17 @@ public class MainActivity extends Activity {
         
 		if(keyCode==KeyEvent.KEYCODE_BACK)
 		{
-		   showDialog();	
+			if ((System.currentTimeMillis() - exitTime) > 2000) {
+				Toast.makeText(this, "再按一次退出程序!", Toast.LENGTH_SHORT)
+						.show();
+				exitTime = System.currentTimeMillis();
+			} else {
+//				ActivityManager activityMgr= (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
+//				activityMgr.restartPackage(this.getPackageName());
+//				System.exit(0);
+				android.os.Process.killProcess(android.os.Process.myPid());
+				System.exit(0);
+			}
 		}
 		return super.onKeyDown(keyCode, event);
 	}

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/main_bg">
+    android:background="@drawable/game_zhubg">
     
     <RelativeLayout 
         android:layout_width="wrap_content"
@@ -10,35 +10,37 @@
         android:layout_centerInParent="true"
         >
         <Button
+            android:layout_centerHorizontal="true"
             android:id="@+id/main_btn_number"
-            android:layout_width="wrap_content"
-            android:layout_height="100dip"
-            android:background="@drawable/answer"
+            android:layout_width="250dip"
+            android:layout_height="65dip"
+            android:background="@drawable/border"
             android:text="@string/main_button_number"
             android:textSize="20sp"
-            android:paddingTop="15dip"
             />
          <Button
+            android:layout_centerHorizontal="true"
             android:id="@+id/main_btn_name"
-            android:layout_width="wrap_content"
-            android:layout_height="100dip"
-            android:background="@drawable/answer"
+            android:layout_width="250dip"
+            android:layout_height="65dip"
+            android:background="@drawable/border"
             android:text="@string/main_button_name"
             android:textSize="20sp"
             android:layout_below="@id/main_btn_number"
-             android:paddingTop="15dip"
+            android:layout_marginTop="15dip"
             />
          
       
           <Button
+            android:layout_centerHorizontal="true"
             android:id="@+id/main_btn_function"
-            android:layout_width="wrap_content"
-            android:layout_height="100dip"
-            android:background="@drawable/answer"
+            android:layout_width="250dip"
+            android:layout_height="65dip"
+            android:background="@drawable/border"
             android:text="@string/main_button_function"
             android:textSize="20sp"
             android:layout_below="@id/main_btn_name"
-             android:paddingTop="15dip"
+            android:layout_marginTop="15dip"
             />
         
     </RelativeLayout>

@@ -1,10 +1,13 @@
 package com.pps.truthadventure.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 
@@ -51,7 +54,7 @@ public class MainActivity extends Activity {
 
 	}
 
-	class MySetOnClickListener implements OnClickListener {
+	class MySetOnClickListener implements  android.view.View.OnClickListener {
 
 		@Override
 		public void onClick(View v) {
@@ -59,16 +62,37 @@ public class MainActivity extends Activity {
 			case R.id.main_btn_number:  //代号玩法
 				mIntent.setClass(MainActivity.this, SymbolActivity.class);
 				MainActivity.this.startActivity(mIntent);
-				MainActivity.this.finish();
 				break;
 			case R.id.main_btn_name:    //姓名玩法
-
+				mIntent.setClass(MainActivity.this, SurnameActivity.class);
+				MainActivity.this.startActivity(mIntent);
 				break;
 			case R.id.main_btn_function:  //功能设置
-
+				mIntent.setClass(MainActivity.this, SettingActivity.class);
+				MainActivity.this.startActivity(mIntent);
 				break;
 			}
 		}
-
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		
+		if(keyCode==KeyEvent.KEYCODE_BACK){
+			// 监听返回键 来退出应用
+	      AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+	      builder.setTitle("温馨提示");
+	      builder.setMessage("你确定要退出应用?");
+	      builder.setPositiveButton("确定",new OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				MainActivity.this.finish();
+				dialog.dismiss();
+			}
+		}).setNegativeButton("取消", null).create();
+	      builder.show();
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 }

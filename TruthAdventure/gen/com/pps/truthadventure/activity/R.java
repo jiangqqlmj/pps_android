@@ -22,11 +22,15 @@ public final class R {
     }
     public static final class drawable {
         public static final int answer=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int icon=0x7f020002;
-        public static final int logo_bg=0x7f020003;
-        public static final int main_bg=0x7f020004;
-        public static final int words=0x7f020005;
+        public static final int border=0x7f020001;
+        public static final int game_zhubg=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int icon=0x7f020004;
+        public static final int logo_bg=0x7f020005;
+        public static final int main_bg=0x7f020006;
+        public static final int main_head=0x7f020007;
+        public static final int rent_detail_tips=0x7f020008;
+        public static final int words=0x7f020009;
     }
     public static final class id {
         public static final int action_settings=0x7f080007;
@@ -39,8 +43,9 @@ public final class R {
         public static final int relative_logo_bg=0x7f080000;
     }
     public static final class layout {
-        public static final int logo=0x7f030000;
-        public static final int main=0x7f030001;
+        public static final int dialog_layout=0x7f030000;
+        public static final int logo=0x7f030001;
+        public static final int main=0x7f030002;
     }
     public static final class menu {
         public static final int logo=0x7f070000;

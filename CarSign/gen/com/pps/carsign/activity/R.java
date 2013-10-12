@@ -12,8 +12,40 @@ public final class R {
         public static final int china_car_contents=0x7f040002;
         public static final int china_car_names=0x7f040001;
         public static final int country=0x7f040000;
+        public static final int france_car_contents=0x7f04000a;
+        public static final int france_car_names=0x7f040009;
+        public static final int germary_car_content=0x7f040004;
+        public static final int germary_car_names=0x7f040003;
+        public static final int italy_car_contents=0x7f040010;
+        public static final int italy_car_names=0x7f04000f;
+        public static final int japan_car_contents=0x7f04000c;
+        public static final int japan_car_names=0x7f04000b;
+        public static final int korea_car_contents=0x7f04000e;
+        public static final int korea_car_names=0x7f04000d;
+        public static final int other_car_contents=0x7f040012;
+        public static final int other_car_names=0x7f040011;
+        public static final int uk_car_contents=0x7f040008;
+        public static final int uk_car_names=0x7f040007;
+        public static final int usa_car_contents=0x7f040006;
+        public static final int usa_car_names=0x7f040005;
     }
     public static final class attr {
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int adId=0x7f010001;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int adSize=0x7f010000;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -47,53 +79,139 @@ public final class R {
         public static final int china_20=0x7f020012;
         public static final int china_21=0x7f020013;
         public static final int china_22=0x7f020014;
-        public static final int china_3=0x7f020015;
-        public static final int china_4=0x7f020016;
-        public static final int china_5=0x7f020017;
-        public static final int china_6=0x7f020018;
-        public static final int china_7=0x7f020019;
-        public static final int china_8=0x7f02001a;
-        public static final int china_9=0x7f02001b;
-        public static final int divider=0x7f02001c;
-        public static final int france=0x7f02001d;
-        public static final int germany=0x7f02001e;
-        public static final int ic_launcher=0x7f02001f;
-        public static final int ic_list_right=0x7f020020;
-        public static final int italy=0x7f020021;
-        public static final int japan=0x7f020022;
-        public static final int korea=0x7f020023;
-        public static final int logo_icon=0x7f020024;
-        public static final int main_bg=0x7f020025;
-        public static final int title_bar_icon=0x7f020026;
-        public static final int title_head_bg=0x7f020027;
-        public static final int uk=0x7f020028;
-        public static final int usa=0x7f020029;
-        public static final int words=0x7f02002a;
+        public static final int china_23=0x7f020015;
+        public static final int china_24=0x7f020016;
+        public static final int china_25=0x7f020017;
+        public static final int china_26=0x7f020018;
+        public static final int china_27=0x7f020019;
+        public static final int china_28=0x7f02001a;
+        public static final int china_29=0x7f02001b;
+        public static final int china_3=0x7f02001c;
+        public static final int china_30=0x7f02001d;
+        public static final int china_31=0x7f02001e;
+        public static final int china_32=0x7f02001f;
+        public static final int china_33=0x7f020020;
+        public static final int china_34=0x7f020021;
+        public static final int china_35=0x7f020022;
+        public static final int china_36=0x7f020023;
+        public static final int china_37=0x7f020024;
+        public static final int china_38=0x7f020025;
+        public static final int china_39=0x7f020026;
+        public static final int china_4=0x7f020027;
+        public static final int china_40=0x7f020028;
+        public static final int china_5=0x7f020029;
+        public static final int china_6=0x7f02002a;
+        public static final int china_7=0x7f02002b;
+        public static final int china_8=0x7f02002c;
+        public static final int china_9=0x7f02002d;
+        public static final int divider=0x7f02002e;
+        public static final int france=0x7f02002f;
+        public static final int france_1=0x7f020030;
+        public static final int france_2=0x7f020031;
+        public static final int france_3=0x7f020032;
+        public static final int france_4=0x7f020033;
+        public static final int germany=0x7f020034;
+        public static final int germany_1=0x7f020035;
+        public static final int germary_10=0x7f020036;
+        public static final int germary_2=0x7f020037;
+        public static final int germary_3=0x7f020038;
+        public static final int germary_4=0x7f020039;
+        public static final int germary_5=0x7f02003a;
+        public static final int germary_6=0x7f02003b;
+        public static final int germary_7=0x7f02003c;
+        public static final int germary_8=0x7f02003d;
+        public static final int germary_9=0x7f02003e;
+        public static final int ic_launcher=0x7f02003f;
+        public static final int ic_list_right=0x7f020040;
+        public static final int icon=0x7f020041;
+        public static final int italy=0x7f020042;
+        public static final int italy_1=0x7f020043;
+        public static final int italy_2=0x7f020044;
+        public static final int italy_3=0x7f020045;
+        public static final int italy_4=0x7f020046;
+        public static final int italy_5=0x7f020047;
+        public static final int italy_6=0x7f020048;
+        public static final int japan=0x7f020049;
+        public static final int japan_1=0x7f02004a;
+        public static final int japan_10=0x7f02004b;
+        public static final int japan_11=0x7f02004c;
+        public static final int japan_2=0x7f02004d;
+        public static final int japan_3=0x7f02004e;
+        public static final int japan_4=0x7f02004f;
+        public static final int japan_5=0x7f020050;
+        public static final int japan_6=0x7f020051;
+        public static final int japan_7=0x7f020052;
+        public static final int japan_8=0x7f020053;
+        public static final int japan_9=0x7f020054;
+        public static final int korea=0x7f020055;
+        public static final int korea_1=0x7f020056;
+        public static final int korea_2=0x7f020057;
+        public static final int korea_3=0x7f020058;
+        public static final int logo_icon=0x7f020059;
+        public static final int main_bg=0x7f02005a;
+        public static final int other=0x7f02005b;
+        public static final int other_1=0x7f02005c;
+        public static final int other_2=0x7f02005d;
+        public static final int other_3=0x7f02005e;
+        public static final int other_4=0x7f02005f;
+        public static final int other_5=0x7f020060;
+        public static final int other_6=0x7f020061;
+        public static final int title_bar_icon=0x7f020062;
+        public static final int title_head_bg=0x7f020063;
+        public static final int uk=0x7f020064;
+        public static final int uk_1=0x7f020065;
+        public static final int uk_2=0x7f020066;
+        public static final int uk_3=0x7f020067;
+        public static final int uk_4=0x7f020068;
+        public static final int uk_5=0x7f020069;
+        public static final int uk_6=0x7f02006a;
+        public static final int usa=0x7f02006b;
+        public static final int usa_1=0x7f02006c;
+        public static final int usa_10=0x7f02006d;
+        public static final int usa_11=0x7f02006e;
+        public static final int usa_2=0x7f02006f;
+        public static final int usa_3=0x7f020070;
+        public static final int usa_4=0x7f020071;
+        public static final int usa_5=0x7f020072;
+        public static final int usa_6=0x7f020073;
+        public static final int usa_7=0x7f020074;
+        public static final int usa_8=0x7f020075;
+        public static final int usa_9=0x7f020076;
+        public static final int words=0x7f020077;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000f;
-        public static final int btn_head_back=0x7f090002;
-        public static final int gv_main=0x7f09000e;
-        public static final int img_gv_item=0x7f090000;
-        public static final int img_list_right=0x7f090007;
-        public static final int img_list_sign=0x7f090005;
-        public static final int linear_title_head=0x7f09000d;
-        public static final int logo_image_bottom=0x7f09000a;
-        public static final int logo_img_head=0x7f090009;
-        public static final int logo_progress_bar=0x7f09000c;
-        public static final int logo_text_init=0x7f09000b;
-        public static final int lv_list_sign=0x7f090004;
-        public static final int relative_log=0x7f090008;
-        public static final int relative_title_head=0x7f090001;
-        public static final int tv_list_title=0x7f090006;
-        public static final int tv_title_head=0x7f090003;
+        public static final int action_settings=0x7f090017;
+        public static final int adView=0x7f090003;
+        public static final int btn_details_head_back=0x7f090001;
+        public static final int btn_head_back=0x7f09000a;
+        public static final int gv_main=0x7f090016;
+        public static final int img_details=0x7f090006;
+        public static final int img_gv_item=0x7f090008;
+        public static final int img_list_right=0x7f09000f;
+        public static final int img_list_sign=0x7f09000d;
+        public static final int linear_details=0x7f090005;
+        public static final int linear_title_head=0x7f090015;
+        public static final int logo_image_bottom=0x7f090012;
+        public static final int logo_img_head=0x7f090011;
+        public static final int logo_progress_bar=0x7f090014;
+        public static final int logo_text_init=0x7f090013;
+        public static final int lv_list_sign=0x7f09000c;
+        public static final int relative_details_title_head=0x7f090000;
+        public static final int relative_log=0x7f090010;
+        public static final int relative_title_head=0x7f090009;
+        public static final int scroll_details=0x7f090004;
+        public static final int tv_details_content=0x7f090007;
+        public static final int tv_details_title_head=0x7f090002;
+        public static final int tv_list_title=0x7f09000e;
+        public static final int tv_title_head=0x7f09000b;
     }
     public static final class layout {
-        public static final int gridview_item=0x7f030000;
-        public static final int list_sign=0x7f030001;
-        public static final int list_sign_item=0x7f030002;
-        public static final int logo=0x7f030003;
-        public static final int main=0x7f030004;
+        public static final int details=0x7f030000;
+        public static final int gridview_item=0x7f030001;
+        public static final int list_sign=0x7f030002;
+        public static final int list_sign_item=0x7f030003;
+        public static final int logo=0x7f030004;
+        public static final int main=0x7f030005;
     }
     public static final class menu {
         public static final int logo=0x7f080000;
@@ -121,4 +239,49 @@ public final class R {
          */
         public static final int AppTheme=0x7f070001;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a com_baidu_mobads_AdView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #com_baidu_mobads_AdView_adId com.pps.carsign.activity:adId}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_baidu_mobads_AdView_adSize com.pps.carsign.activity:adSize}</code></td><td></td></tr>
+           </table>
+           @see #com_baidu_mobads_AdView_adId
+           @see #com_baidu_mobads_AdView_adSize
+         */
+        public static final int[] com_baidu_mobads_AdView = {
+            0x7f010000, 0x7f010001
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.pps.carsign.activity.R.attr#adId}
+          attribute's value can be found in the {@link #com_baidu_mobads_AdView} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:adId
+        */
+        public static final int com_baidu_mobads_AdView_adId = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.pps.carsign.activity.R.attr#adSize}
+          attribute's value can be found in the {@link #com_baidu_mobads_AdView} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:adSize
+        */
+        public static final int com_baidu_mobads_AdView_adSize = 0;
+    };
 }
