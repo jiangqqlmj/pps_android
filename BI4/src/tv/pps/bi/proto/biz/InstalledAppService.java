@@ -43,7 +43,7 @@ public class InstalledAppService {
 			if ((appInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
 				List<AppActivity> appdatas 	= db.getData(packagename);//通过appname获取app的使用情况
 				app_info.setName(appName);// 应用名称
-				app_info.setVersion(temp.versionName);// 版本名称
+				app_info.setVersion(temp.versionName!=null?temp.versionName:"1.0");// 版本名称
 				app_info.setActivity(appdatas);// app的使用情况list集合
 				appinfos.add(app_info);
 			}

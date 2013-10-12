@@ -9,6 +9,7 @@ import tv.pps.bi.db.config.DBConstance;
 import tv.pps.bi.db.config.IntervalTimeConstance;
 import tv.pps.bi.proto.model.AppActivity;
 import tv.pps.bi.utils.DataFormat;
+import tv.pps.bi.utils.LogUtils;
 import tv.pps.bi.utils.Utils;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
@@ -25,7 +26,7 @@ import android.content.pm.PackageInfo;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
-import android.util.Log;
+
 
 @SuppressLint("HandlerLeak")
 public class ListenService extends Service {
@@ -48,7 +49,8 @@ public class ListenService extends Service {
 	public void onStart(Intent intent, int startId) {
 
 	}
-		
+	
+	
 	SharedPreferences sp;
 	public void onCreate() {
 		super.onCreate();
@@ -92,7 +94,7 @@ public class ListenService extends Service {
 					edit.commit();
 				}
 				//gps信息无增量插入数据库
-				Log.v("bi","第"+count+ "次--开始插入数据库--"+Utils.formatTimeStamp(System.currentTimeMillis(),"yyyyMMddhhmmss"));
+				LogUtils.v("bi","第"+count+ "次--开始插入数据库--"+Utils.formatTimeStamp(System.currentTimeMillis(),"yyyyMMddhhmmss"));
 				operation.insertTableGPS();
 				//url 信息增量信息插入数据库
 				operation.insertUrlIntoTable();
@@ -110,15 +112,15 @@ public class ListenService extends Service {
 				if(shut_timestamp!=0L)
 					operation.updateTimestampInControlTable(mContext,"shut", shut_timestamp);
 				//电话增量信息插入数据库
-				operation.insertTablePhone();
-				long phone_timestamp = operation.queryTimestamp(mContext,DBConstance.TABLE_PHONE);
-				if(phone_timestamp!=0L)
-					operation.updateTimestampInControlTable(mContext,"phone", phone_timestamp);
+//				operation.insertTablePhone();
+//				long phone_timestamp = operation.queryTimestamp(mContext,DBConstance.TABLE_PHONE);
+//				if(phone_timestamp!=0L)
+//					operation.updateTimestampInControlTable(mContext,"phone", phone_timestamp);
 				//短信增量信息插入数据库
-				operation.insertTableSMS();
-				long sms_timestamp = operation.queryTimestamp(mContext,DBConstance.TABLE_SMS);
-				if(sms_timestamp!=0L)
-					operation.updateTimestampInControlTable(mContext,"sms", sms_timestamp);
+//				operation.insertTableSMS();
+//				long sms_timestamp = operation.queryTimestamp(mContext,DBConstance.TABLE_SMS);
+//				if(sms_timestamp!=0L)
+//					operation.updateTimestampInControlTable(mContext,"sms", sms_timestamp);
 				operation.close();
 				operation = null;
 				handler.sendEmptyMessageDelayed(USERINFO, IntervalTimeConstance.START_USERINFO_SEARCH_TIME);
@@ -140,7 +142,7 @@ public class ListenService extends Service {
 				start = System.currentTimeMillis();
 				Date curDate = new Date(start);
 				String start_time = DataFormat.formatData(curDate);
-				Log.v(TAG, running + "  开始时间：" + start_time);
+				LogUtils.v(TAG, running + "  开始时间：" + start_time);
 				data.setPackageName(running);
 				data.setStart_timestamp(start_time);
 				isFirst = false;
@@ -148,7 +150,7 @@ public class ListenService extends Service {
 				stop = System.currentTimeMillis();
 				Date curDate = new Date(stop);
 				String stop_time = DataFormat.formatData(curDate);
-				Log.v(TAG, packageName + " 结束时间：" + stop_time);
+				LogUtils.v(TAG, packageName + " 结束时间：" + stop_time);
 				int duration = (int)(stop - start)/1000; //d单位为s
 				data.setDuration(duration);
 				db.save(data); //存放到数据库中

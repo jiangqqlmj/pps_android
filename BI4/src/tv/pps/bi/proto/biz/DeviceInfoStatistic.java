@@ -11,6 +11,51 @@ import android.util.DisplayMetrics;
 public class DeviceInfoStatistic {// ok
 
 	private Context mContext;
+	private static String uid;
+	private static String loginId;
+	private static String platform;
+		
+	/**
+	 * @return the uid
+	 */
+	public static String getUid() {
+		return uid;
+	}
+
+	/**
+	 * @return the loginId
+	 */
+	public static String getLoginId() {
+		return loginId;
+	}
+
+	/**
+	 * @param uid the uid to set
+	 */
+	public static void setUid(String uid,Context pContext) {
+		//DeviceInfoStatistic.uid = uid;
+	   pContext.getSharedPreferences("bi4sdk", pContext.MODE_PRIVATE).edit().putString("uuid", uid).commit();
+		
+	}
+
+	/**
+	 * @param loginId the loginId to set
+	 */
+	public static void setLoginId(String loginId,Context pContext) {
+		//DeviceInfoStatistic.loginId = loginId;
+		pContext.getSharedPreferences("bi4sdk", pContext.MODE_PRIVATE).edit().putString("loginID", loginId).commit();
+	}
+
+	/**
+	 * @param platform the platform to set
+	 */
+	public static void setPlatform(String platform,Context pContext) {
+		//DeviceInfoStatistic.platform = platform;
+		pContext.getSharedPreferences("bi4sdk", pContext.MODE_PRIVATE).edit().putString("platform", platform).commit();
+	}
+
+
+	
 
 	public DeviceInfoStatistic(Context pContext) {
 		this.mContext = pContext;
@@ -33,7 +78,7 @@ public class DeviceInfoStatistic {// ok
 	}
 
 	public String getPlatform() {// ªÒ»°platform
-		return "pps_android";
+		return platform;
 	}
 
 	public String getIMEI() {

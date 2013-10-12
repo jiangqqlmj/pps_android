@@ -3,12 +3,13 @@ package tv.pps.bi.receiver;
 import java.util.List;
 
 import tv.pps.bi.service.ListenService;
+import tv.pps.bi.utils.LogUtils;
 import tv.pps.bi.utils.NetworkUtils;
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+
 
 public class AlarmReceiver extends BroadcastReceiver {
 	private static final String TAG = "bi";
@@ -20,7 +21,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 			Intent service = new Intent();
 			service.setClass(context, ListenService.class);
 			context.startService(service);
-			Log.v(TAG, "start service");
+			LogUtils.v(TAG, "start service");
 		}else if("deliver".equals(intent.getAction())){
 			if(NetworkUtils.isNetworkConnected(context)){//2个小时之后，有网络则进行开启服务
 				Intent deliver = new Intent();

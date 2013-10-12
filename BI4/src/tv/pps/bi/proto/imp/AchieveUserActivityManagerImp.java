@@ -2,8 +2,10 @@ package tv.pps.bi.proto.imp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import tv.pps.bi.db.DBOperation;
 import tv.pps.bi.proto.AchieveUserActivityManagerInterface;
@@ -34,18 +36,19 @@ public class AchieveUserActivityManagerImp implements
 
 	private Context mContext;
 	private DBOperation operation;
+	
 	private DeviceInfoStatistic mDeviceInfoStatistic;
 
+	
+	private SharedPreferences mSharedPreferences;
+	
 	public AchieveUserActivityManagerImp(Context pContext) {
 		this.mContext = pContext;
 		operation = new DBOperation(mContext);
 		mDeviceInfoStatistic=new DeviceInfoStatistic(mContext);
+		mSharedPreferences=pContext.getSharedPreferences("bi4sdk", pContext.MODE_PRIVATE);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see tv.pps.bi.proto.AchieveUserActivityManagerInterface#close()
-	 */
 	public void close(){
 		if(operation!=null)
 			operation.close();
@@ -57,7 +60,8 @@ public class AchieveUserActivityManagerImp implements
 	 */
 	@Override
 	public String getUserUid() {
-		return null;
+		//return DeviceInfoStatistic.getUid();
+		return mSharedPreferences.getString("uuid", 0+"");
 	}
 
 	/*
@@ -67,7 +71,8 @@ public class AchieveUserActivityManagerImp implements
 	 */
 	@Override
 	public String getUserLogin() {
-		return null;
+		//return DeviceInfoStatistic.getLoginId();
+		return mSharedPreferences.getString("loginID", "-");
 	}
 
 	/*
@@ -80,7 +85,8 @@ public class AchieveUserActivityManagerImp implements
 	@Override
 	public String getUserPlatform() {
 		
-		return mDeviceInfoStatistic.getPlatform();
+		//return mDeviceInfoStatistic.getPlatform();
+		return mSharedPreferences.getString("platform", "pps_android");
 	}
 
 	/*

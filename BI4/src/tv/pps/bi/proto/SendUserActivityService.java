@@ -6,6 +6,7 @@ import tv.pps.bi.db.DBAPPManager;
 import tv.pps.bi.db.DBOperation;
 import tv.pps.bi.db.config.DBConstance;
 import tv.pps.bi.proto.model.UserActivity;
+import tv.pps.bi.utils.LogUtils;
 import tv.pps.bi.utils.ProtoNetWorkManager;
 import android.app.Service;
 import android.content.Context;
@@ -53,10 +54,11 @@ public class SendUserActivityService extends Service {
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		mMsgService = new MessageToEntityService(mContext);
 		mUserActivity = mMsgService.getMsgUserEntity();
+		//mMsgService.close();//关闭数据库
 		mProtoBuffUserActivityService = new ProtoBuffUserActivityService();
 		infoBytes = mProtoBuffUserActivityService
 				.getConstructorData(mUserActivity);
-		Log.v("bi", "要post的ProtoBuff数据为:" + new String(infoBytes));
+		LogUtils.v("bi", "要post的ProtoBuff数据为:" + new String(infoBytes));
 		// 进行加密
 		// base64 = new Base64();
 		// post_str = new String(base64.encodeBase64Chunked(infoBytes));
@@ -91,6 +93,7 @@ public class SendUserActivityService extends Service {
 							base64.encodeBase64Chunked(infoBytes),ProtoNetWorkManager.DELIVER_URL);
 			if (result) {
 				//删除发送成功的数据表中的数据
+				LogUtils.i("sendData", "增量数据发送成功，准备删除数据库中的数据表");
 				DBAPPManager manager=DBAPPManager.getDBManager(mContext); 	
 				manager.delete();
 				DBOperation operation = new DBOperation(mContext);
@@ -101,9 +104,10 @@ public class SendUserActivityService extends Service {
 				operation.deleteRecordsInTable(DBConstance.TABLE_PHONE); //删除打电话时间的信息数据
 				operation.deleteRecordsInTable(DBConstance.TABLE_SMS); //删除发短信信息数据
 				operation.close();
-				Log.v("bi", "Post请求返回结果为：成功");
+				LogUtils.i("sendData", "成功删除数据库中的数据表");
+				LogUtils.v("sendData", "Post请求返回结果为：成功");
 			} else {
-				Log.v("bi", "Post请求返回结果为：失败");
+				LogUtils.v("sendData", "Post请求返回结果为：失败");
 			}
 		}
 	};

@@ -16,7 +16,6 @@ import tv.pps.bi.proto.model.UserActivity;
 import tv.pps.bi.proto.model.WindowActivity;
 import tv.pps.bi.proto.model.WindowProto;
 import android.content.Context;
-import android.content.SharedPreferences;
 
 /**
  * 将获取的进行进行封装成用户行为实体对象
@@ -25,34 +24,21 @@ import android.content.SharedPreferences;
  * @time 2013/09/03 17:50
  */
 public class MessageToEntityService {
+	
 
 	private UserActivity mUserActivity;
 	private Context mContext;
 	private AchieveUserActivityManagerInterface mActivityManagerInterface;
-	private SharedPreferences mSharedPreferences;
 
-	public void close() {
+	public void close(){
 		mActivityManagerInterface.close();
 	}
-
 	// 初始化用户行为对象
-	@SuppressWarnings("deprecation")
 	public MessageToEntityService(Context pContext) {
 
 		this.mContext = pContext;
 		mUserActivity = new UserActivity();
-		mSharedPreferences = mContext.getSharedPreferences("protobuff",
-				Context.MODE_WORLD_READABLE);
 		mActivityManagerInterface = new AchieveUserActivityManagerImp(mContext);
-	}
-
-	private String getUid(SharedPreferences pSharedPreferences) {
-		return pSharedPreferences
-				.getString("uid", UUID.randomUUID().toString());
-	}
-
-	private String getLoginId(SharedPreferences pSharedPreferences) {
-		return pSharedPreferences.getString("login", "");
 	}
 
 	/**
@@ -62,10 +48,10 @@ public class MessageToEntityService {
 	 */
 	public UserActivity getMsgUserEntity() {
 
-		mUserActivity.setUid(getUid(mSharedPreferences)); // 唯一标示该客户端的匿名用户id。客户端为：flash
+		mUserActivity.setUid(mActivityManagerInterface.getUserUid()); // 唯一标示该客户端的匿名用户id。客户端为：flash
 															// cookie
 															// id；移动端为open udid
-		mUserActivity.setLogin(getLoginId(mSharedPreferences)); // 注册用户登录id
+		mUserActivity.setLogin(mActivityManagerInterface.getUserLogin()); // 注册用户登录id
 		mUserActivity.setPlatform(mActivityManagerInterface.getUserPlatform()); // 可取值：pps_ios
 																				// |
 																				// pps_android
@@ -97,45 +83,43 @@ public class MessageToEntityService {
 		}
 
 		// 在百度等搜索网站的搜索关键词
-		List<String> keywordLists = mActivityManagerInterface
-				.getUserSearch_keyword();
-		if (null != keywordLists) {
+		List<String> keywordLists=mActivityManagerInterface.getUserSearch_keyword();
+		if(null!=keywordLists)
+		{
 			mUserActivity.setSearch_keyword(keywordLists);
 		}
-
+		
 		// 访问网页历史记录
-		List<String> urlLists = mActivityManagerInterface.getUserUrl();
-		if (null != urlLists) {
+		List<String> urlLists= mActivityManagerInterface.getUserUrl();
+		if(null!=urlLists)
+		{
 			mUserActivity.setUrl(urlLists);
 
 		}
-
+		
 		// 开机时间戳
-		List<String> boot_timestampLists = mActivityManagerInterface
-				.getUserBoot_timestamp();
-		if (null != boot_timestampLists) {
-			mUserActivity.setBoot_timestamp(boot_timestampLists);
+		List<String> boot_timestampLists = mActivityManagerInterface.getUserBoot_timestamp();
+		if(null!=boot_timestampLists){
+		mUserActivity.setBoot_timestamp(boot_timestampLists);
 		}
-
+		
 		// 关机时间戳
-		List<String> shutdown_timestampLists = mActivityManagerInterface
-				.getUserShutdown_timestamp();
-		if (null != shutdown_timestampLists) {
-			mUserActivity.setShutdown_timestamp(shutdown_timestampLists);
+		List<String> shutdown_timestampLists =mActivityManagerInterface.getUserShutdown_timestamp();
+		if(null!=shutdown_timestampLists){
+		mUserActivity.setShutdown_timestamp(shutdown_timestampLists);
 		}
-
+		
+		
 		// 打电话的时间，时长
-		List<PhoneActivity> phone_activityLists = mActivityManagerInterface
-				.getUserPhone_activity();
-		if (null != phone_activityLists) {
-			mUserActivity.setPhone_activity(phone_activityLists);
+		List<PhoneActivity> phone_activityLists = mActivityManagerInterface.getUserPhone_activity();
+		if(null!=phone_activityLists){
+		mUserActivity.setPhone_activity(phone_activityLists);
 		}
-
+		
 		// 短信发送时间戳
-		List<String> sms_sent_timestampLists = mActivityManagerInterface
-				.getUserShutdown_timestamp();
-		if (null != sms_sent_timestampLists) {
-			mUserActivity.setSms_sent_timestamp(sms_sent_timestampLists);
+		List<String> sms_sent_timestampLists =mActivityManagerInterface.getUserShutdown_timestamp();
+		if(null!=sms_sent_timestampLists){
+		mUserActivity.setSms_sent_timestamp(sms_sent_timestampLists);
 		}
 		// 第三方视频被客户端的播放历史记录
 		// getThirdVideoActivity();
@@ -150,7 +134,8 @@ public class MessageToEntityService {
 		if (null != mDeviceInfo) {
 			mUserActivity.setDevice_info(mDeviceInfo);
 		}
-		mActivityManagerInterface.close();  //进行关闭数据库
+		
+		mActivityManagerInterface.close();
 		return mUserActivity;
 	}
 

@@ -3,6 +3,7 @@ package tv.pps.bi.proto;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import tv.pps.bi.proto.model.App;
 import tv.pps.bi.proto.model.AppActivity;
 import tv.pps.bi.proto.model.DeviceInfo;
@@ -14,6 +15,7 @@ import tv.pps.bi.proto.model.ThirdPartyVideoActivity;
 import tv.pps.bi.proto.model.UserActivity;
 import tv.pps.bi.proto.model.WindowActivity;
 import tv.pps.bi.proto.model.WindowProto;
+import tv.pps.bi.utils.LogUtils;
 import user_activity.UserActivityData;
 
 /**
@@ -23,7 +25,7 @@ import user_activity.UserActivityData;
  */
 public class ProtoBuffUserActivityService {
 
-	
+
 	/**
 	 * @deprecated 进程信息废弃,全部放入到getConstructorData(UserActivity pUserActivity)中进行获取
 	 */
@@ -60,14 +62,15 @@ public class ProtoBuffUserActivityService {
 		builder_UserActivity=UserActivityData.UserActivity.newBuilder();
 	}
 
-	
 	/**
 	 * 获取构造成功用户行为protobuff数据
 	 * @param pUserActivity  需要进行构造的实体类对象
 	 * @return byte[] 构造成功之后的protobuff数据
 	 */
+	public static int count = 0;
 	public byte[] getConstructorData(UserActivity pUserActivity)
 	{
+		LogUtils.i("jiangqingqing", "第"+(++count)+"次发送数据 == "+pUserActivity.toString());
 		builder_UserActivity.setUid(pUserActivity.getUid()); //唯一标示该客户端的匿名用户id。
 		builder_UserActivity.setLogin(pUserActivity.getLogin()); //注册用户登录id
 		builder_UserActivity.setPlatform(pUserActivity.getPlatform());//可取值：pps_ios | pps_android | pps_pc | iqiyi_ios | iqiyi_android | iqiyi_pc
@@ -297,7 +300,6 @@ public class ProtoBuffUserActivityService {
 		
 		return builder_App;
 	}
-	
 	
 	
 	/**

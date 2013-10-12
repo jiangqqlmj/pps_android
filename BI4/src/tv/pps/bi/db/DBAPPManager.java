@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 public class DBAPPManager  {
 	private DBAPPHelper dbHelper;
 	private SQLiteDatabase db ;
-	public static  DBAPPManager dm ;
+	private static  DBAPPManager dm = null;
 	private DBAPPManager(Context context) {
 		this.dbHelper = new DBAPPHelper(context);
 		this.db = dbHelper.getWritableDatabase();

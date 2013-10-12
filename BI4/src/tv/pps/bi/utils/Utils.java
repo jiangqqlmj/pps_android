@@ -248,6 +248,7 @@ public class Utils {
 				if(out!=null) out.close();
 				if(process!=null)process.destroy();
 			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 		return returnValue;
