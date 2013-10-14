@@ -43,28 +43,28 @@ public class DeviceInfoService {
 		if (null != imei) {
 			deviceInfo.setImei(imei);// 手机串号
 		} else {
-			deviceInfo.setImei("null");
+			deviceInfo.setImei("-");
 		}
 
 		String imsi = tm.getSubscriberId();
 		if (null != imsi) {
 			deviceInfo.setImsi(imsi);
 		} else {
-			deviceInfo.setImsi("null");
+			deviceInfo.setImsi("-");
 		}
 
 		String manufacturer = Build.MANUFACTURER;// 制造商
 		if (null != manufacturer) {
 			deviceInfo.setManufacturer(manufacturer);
 		} else {
-			deviceInfo.setManufacturer("null");
+			deviceInfo.setManufacturer("-");
 		}
 		
 		String model = Build.MODEL;// 类型
 		if(null!=model){
 		deviceInfo.setModel(model);
 		}else {
-			deviceInfo.setModel("null");
+			deviceInfo.setModel("-");
 		}
 		int width = mWindowManager.getDefaultDisplay().getWidth();
 		int height = mWindowManager.getDefaultDisplay().getHeight();
@@ -74,13 +74,13 @@ public class DeviceInfoService {
 		String os_version = Build.VERSION.RELEASE; // Build.VERSION.SDK_INT+ "";
         if(null!=os_version){
 		deviceInfo.setOs_version(os_version);}else {
-			deviceInfo.setOs_version("null");
+			deviceInfo.setOs_version("-");
 		}
 		/** case1 手机root 返回 root case 2 手机没有root 设置为"" */
 		if (isRoot()) {
 			deviceInfo.setOs_custermize("root");
 		} else {
-			deviceInfo.setOs_custermize("null");
+			deviceInfo.setOs_custermize("-");
 		}
 		return deviceInfo;
 	}

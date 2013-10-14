@@ -84,7 +84,7 @@ public class AchieveUserActivityManagerImp implements
 	@Override
 	public String getUserPlatform() {
 		
-		return mSharedPreferences.getString("platform", "pps_android");
+		return mSharedPreferences.getString("platform", "-");
 	}
 
 	/*
@@ -94,7 +94,7 @@ public class AchieveUserActivityManagerImp implements
 	 */
 	@Override
 	public String getUserMac() {
-		return mDeviceInfoStatistic.getMacAddress()!=null?mDeviceInfoStatistic.getMacAddress():"检测MAC地址失败";
+		return mDeviceInfoStatistic.getMacAddress()!=null?mDeviceInfoStatistic.getMacAddress():"-";
 	}
 
 	/*
@@ -104,7 +104,7 @@ public class AchieveUserActivityManagerImp implements
 	 */
 	@Override
 	public String getUserModel() {
-		return mDeviceInfoStatistic.getModel()!=null?mDeviceInfoStatistic.getModel():"检测不出来型号";
+		return mDeviceInfoStatistic.getModel()!=null?mDeviceInfoStatistic.getModel():"-";
 	}
 
 	/*
