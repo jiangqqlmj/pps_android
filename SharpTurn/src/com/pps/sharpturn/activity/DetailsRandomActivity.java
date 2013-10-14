@@ -4,14 +4,6 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.pps.sharpturn.R;
-import com.pps.sharpturn.R.id;
-import com.pps.sharpturn.R.layout;
-import com.pps.sharpturn.db.DBManager;
-import com.pps.sharpturn.model.SharpModel;
-import com.pps.sharpturn.utils.FileUtils;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,7 +17,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class DetailsRandomActivity extends Activity {
+import com.pps.sharpturn.BaseActivity;
+import com.pps.sharpturn.R;
+import com.pps.sharpturn.db.DBManager;
+import com.pps.sharpturn.model.SharpModel;
+import com.pps.sharpturn.utils.FileUtils;
+
+public class DetailsRandomActivity extends BaseActivity {
 	private Button details_random_head_leftbtn;
 	private TextView details_random_head_textview;
 	private ImageView details_random_prev;

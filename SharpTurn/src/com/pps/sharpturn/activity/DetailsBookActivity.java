@@ -1,12 +1,5 @@
 package com.pps.sharpturn.activity;
 
-import com.pps.sharpturn.R;
-import com.pps.sharpturn.R.id;
-import com.pps.sharpturn.R.layout;
-import com.pps.sharpturn.db.DBManager;
-import com.pps.sharpturn.model.SharpModel;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -17,7 +10,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class DetailsBookActivity extends Activity {
+import com.pps.sharpturn.BaseActivity;
+import com.pps.sharpturn.R;
+import com.pps.sharpturn.db.DBManager;
+import com.pps.sharpturn.model.SharpModel;
+
+public class DetailsBookActivity extends BaseActivity {
 	private Button details_book_head_leftbtn;
 	private TextView details_book_head_textview;
 	private TextView details_book_tv_name;

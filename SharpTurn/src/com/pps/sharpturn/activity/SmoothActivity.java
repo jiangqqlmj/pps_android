@@ -1,6 +1,5 @@
 package com.pps.sharpturn.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,23 +12,20 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.pps.sharpturn.BaseActivity;
 import com.pps.sharpturn.R;
-import com.pps.sharpturn.R.array;
-import com.pps.sharpturn.R.id;
-import com.pps.sharpturn.R.layout;
 import com.pps.sharpturn.adapter.SharpTurnAdapter;
 /**
  * 脑筋转转转 按照标签进行选择问题列表
  * @author jiangqingqing
  * @time 2013/09/30 12:50
  */
-public class SmoothActivity extends Activity {
+public class SmoothActivity extends BaseActivity {
 	private Button smooth_btn_return;
 	private String[] mSharp;
 	private ListView smooth_lv;
 	private Intent mIntent;
 	private SharpTurnAdapter mSharpTurnAdapter;
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);

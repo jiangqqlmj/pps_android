@@ -1,6 +1,5 @@
 package com.pps.sharpturn.activity;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +12,8 @@ import android.view.Window;
 import android.widget.Button;
 
 import com.baidu.mobads.appoffers.OffersManager;
-import com.pps.sharpturn.MyApplication;
+import com.pps.sharpturn.BaseActivity;
+import com.pps.sharpturn.ExitAppUtil;
 import com.pps.sharpturn.R;
 
 /**
@@ -22,7 +22,7 @@ import com.pps.sharpturn.R;
  * @author jiangqingqing
  * @time 2013/09/30
  */
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 	private Button main_btn_random;
 	private Button main_btn_smooth;
 	private Button main_btn_book;
@@ -106,7 +106,8 @@ public class MainActivity extends Activity {
 				if(mDialog!=null&&mDialog.isShowing()){
 					mDialog.dismiss();
 				}
-				MainActivity.this.finish();
+				ExitAppUtil.getInstance().exit();
+				System.exit(0);
 				break;
 				
 			case R.id.dialog_btn_cancel:

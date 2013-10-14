@@ -19,7 +19,7 @@
 		<activity android:name="com.baidu.mobads.AppActivity" android:configChanges="keyboard|keyboardHidden|orientation" />
 		<!-- 您从百度移动联盟网站获取的APPSID -->
 		<meta-data android:name="BaiduMobAd_APP_ID" android:value="debug" /> 
-		<!-- aeca6c90 -->
+		<!-- aeca6c90 自管理 -->
 		<!-- 您从百度移动联盟网站获取的计费名 -->
 		<meta-data android:name="BaiduMobAd_APP_SEC" android:value="debug" />
         <activity

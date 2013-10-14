@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,9 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pps.sharpturn.BaseActivity;
 import com.pps.sharpturn.R;
-import com.pps.sharpturn.R.id;
-import com.pps.sharpturn.R.layout;
 import com.pps.sharpturn.db.DBManager;
 import com.pps.sharpturn.model.SharpModel;
 import com.pps.sharpturn.utils.FileUtils;
@@ -30,7 +28,7 @@ import com.pps.sharpturn.utils.FileUtils;
  * @author jiangqingqing
  *
  */
-public class DetailsSmoothActivity extends Activity {
+public class DetailsSmoothActivity extends BaseActivity {
 	private int mPosition;
 	private int mCurrent=0;
 	private int index=15;

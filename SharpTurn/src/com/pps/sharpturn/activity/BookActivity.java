@@ -2,14 +2,6 @@ package com.pps.sharpturn.activity;
 
 import java.util.List;
 
-import com.pps.sharpturn.R;
-import com.pps.sharpturn.R.id;
-import com.pps.sharpturn.R.layout;
-import com.pps.sharpturn.adapter.SharpBookAdapter;
-import com.pps.sharpturn.db.DBManager;
-import com.pps.sharpturn.model.SharpModel;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -21,12 +13,18 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.pps.sharpturn.BaseActivity;
+import com.pps.sharpturn.R;
+import com.pps.sharpturn.adapter.SharpBookAdapter;
+import com.pps.sharpturn.db.DBManager;
+import com.pps.sharpturn.model.SharpModel;
+
 /**
  * 脑筋转转转  收藏盒子
  * @author jiangqingqing
  * @time 2013/09/30
  */
-public class BookActivity extends Activity {
+public class BookActivity extends BaseActivity {
 	private Button book_head_leftbtn;
 	private ListView book_listview;
 	private Intent mIntent;
@@ -34,7 +32,6 @@ public class BookActivity extends Activity {
 	private DBManager mDBManager;
 	private SharpBookAdapter mBookAdapter;
 	
-   @Override
 protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	this.requestWindowFeature(Window.FEATURE_NO_TITLE);

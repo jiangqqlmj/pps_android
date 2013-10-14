@@ -2,7 +2,6 @@ package com.pps.sharpturn.activity;
 
 import java.util.List;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,6 +13,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.RelativeLayout;
 
+import com.pps.sharpturn.BaseActivity;
 import com.pps.sharpturn.R;
 import com.pps.sharpturn.db.DBManager;
 import com.pps.sharpturn.model.SharpModel;
@@ -24,7 +24,7 @@ import com.pps.sharpturn.utils.FileUtils;
  * @author jiangqingqing
  * @time 2013/09/30 10:44
  */
-public class LogoActivity extends Activity {
+public class LogoActivity extends BaseActivity {
     private RelativeLayout logo_relativelayout;
     public static List<SharpModel> mLists; 
     private DBManager mDbManager;
