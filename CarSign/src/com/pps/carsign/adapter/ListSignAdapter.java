@@ -1,5 +1,7 @@
 package com.pps.carsign.adapter;
 
+import java.util.List;
+
 import com.pps.carsign.activity.R;
 
 import android.content.Context;
@@ -18,27 +20,27 @@ import android.widget.TextView;
 public class ListSignAdapter extends BaseAdapter {
 
 	private Context mContext;
-	private Integer[] mImageView_Icons;
+	private List<Integer> mLists;
 	private String[] mCar_Names;
 	private LayoutInflater mLayoutInflater;
 	
 	
-	public ListSignAdapter(Context pContext,Integer[] pImageView_Icons,String[] pCar_Names)
+	public ListSignAdapter(Context pContext,List<Integer> pLists,String[] pCar_Names)
 	{
 		this.mContext=pContext;
-		this.mImageView_Icons=pImageView_Icons;
+		this.mLists=pLists;
 		this.mCar_Names=pCar_Names;
 		mLayoutInflater=LayoutInflater.from(mContext);
 	}
 	
 	@Override
 	public int getCount() {
-		return mImageView_Icons!=null?mImageView_Icons.length:0;
+		return mLists!=null?mLists.size():0;
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return mImageView_Icons[position];
+		return mLists.get(position);
 	}
 
 	@Override
@@ -46,6 +48,10 @@ public class ListSignAdapter extends BaseAdapter {
 		return position;
 	}
 
+	public void addItem(Integer pRes)
+	{
+		mLists.add(pRes);
+	}
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		Hondler _Hondler;
@@ -59,7 +65,7 @@ public class ListSignAdapter extends BaseAdapter {
 		}else {
 			_Hondler=(Hondler)convertView.getTag();
 		}
-		_Hondler.img_list_sign.setImageResource(mImageView_Icons[position]);
+		_Hondler.img_list_sign.setImageResource(mLists.get(position));
 		_Hondler.tv_list_title.setText(mCar_Names[position]);
 		return convertView;
 	}

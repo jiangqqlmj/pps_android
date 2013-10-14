@@ -41,6 +41,9 @@ public class TypeAdapter extends BaseAdapter {
 		return position;
 	}
 
+	public void addItem()
+	{
+	}
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		Hondler _Hondler;
