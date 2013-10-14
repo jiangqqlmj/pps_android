@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:baiduadsdk="http://schemas.android.com/apk/res/com.pps.carsign.activity"
+    android:background="@drawable/background" >
+    <RelativeLayout 
+        android:id="@+id/relative_details_title_head"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@drawable/title_head_bg"
+        >
+        <Button 
+           android:id="@+id/btn_details_head_back"
+           android:layout_width="60dip"
+           android:layout_height="40dip"
+           android:text="返回"
+           android:textColor="#ffffff"
+           android:layout_marginLeft="5dip"
+           android:layout_centerVertical="true"
+           android:background="@drawable/btn_left"/>
+        <TextView 
+            android:id="@+id/tv_details_title_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="陆风汽车"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+    
+    
+     <com.baidu.mobads.AdView android:id="@+id/adView"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"  
+		baiduadsdk:adSize="0"
+		baiduadsdk:adId = ""/>
+	<!-- 注： baiduadsdk:adId可以指定为"",表示默认广告位-->
+    
+    <ScrollView 
+        android:layout_above="@id/adView"
+        android:id="@+id/scroll_details"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative_details_title_head">
+        
+        <LinearLayout 
+            android:id="@+id/linear_details"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <ImageView 
+                android:id="@+id/img_details"
+                android:layout_width="250dip"
+                android:layout_height="150dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/china_1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dip"/>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="5dip"
+                android:textSize="20sp"
+                android:text="简介:"/>
+            
+            <TextView 
+                android:id="@+id/tv_details_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_marginBottom="5dip"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                />
+        </LinearLayout>    
+    </ScrollView>
+
+   
+</RelativeLayout>
