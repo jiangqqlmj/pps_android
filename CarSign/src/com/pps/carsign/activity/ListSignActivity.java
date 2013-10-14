@@ -1,6 +1,5 @@
 package com.pps.carsign.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -15,6 +14,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.pps.carsign.BaseActivity;
 import com.pps.carsign.adapter.ListSignAdapter;
 
 /**
@@ -24,7 +24,7 @@ import com.pps.carsign.adapter.ListSignAdapter;
  * @time 2013/10/11 15:21
  */
 
-public class ListSignActivity extends Activity {
+public class ListSignActivity extends BaseActivity {
 	private Button btn_head_back;
 	private TextView tv_title_head;
 	private ListView lv_list_sign;

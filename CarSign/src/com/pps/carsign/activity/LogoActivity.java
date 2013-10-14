@@ -1,6 +1,5 @@
 package com.pps.carsign.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
@@ -10,7 +9,9 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.RelativeLayout;
 
-public class LogoActivity extends Activity {
+import com.pps.carsign.BaseActivity;
+
+public class LogoActivity extends BaseActivity {
     private RelativeLayout relative_log;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

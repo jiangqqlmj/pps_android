@@ -6,4 +6,6 @@
     <string name="hello_world">Hello world!</string>
     
     <string name="string_title_head">玩转汽车标志大全</string>
+    <string name="string_tv_lv_foot">点击加载更多...</string>
+    <string name="string_tv_lv_foot_load">正在加载...</string>
 </resources>

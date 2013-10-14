@@ -1,6 +1,5 @@
 package com.pps.carsign.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -11,12 +10,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.pps.carsign.BaseActivity;
+
 /**
  * 显示汽车标志的详情页
  * @author jiangqingqing
  * @time 2013/10/13 9:33
  */
-public class DetailsSignActivity extends Activity {
+public class DetailsSignActivity extends BaseActivity {
 	private Button btn_details_head_back;
 	private TextView tv_details_title_head;
 	private ImageView img_details;

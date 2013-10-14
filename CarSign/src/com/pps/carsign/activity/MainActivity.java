@@ -1,6 +1,5 @@
 package com.pps.carsign.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,19 +7,20 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.Toast;
 
+import com.pps.carsign.BaseActivity;
+import com.pps.carsign.ExitAppUtil;
 import com.pps.carsign.adapter.TypeAdapter;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 	private GridView gv_main;
 	private Integer[] mImageView;;
 	private TypeAdapter mTypeAdapter;
 
 	private long exitTime=0;
-	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -78,10 +78,9 @@ public class MainActivity extends Activity {
 						.show();
 				exitTime = System.currentTimeMillis();
 			} else {
-//				ActivityManager activityMgr= (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
-//				activityMgr.restartPackage(this.getPackageName());
-//				System.exit(0);
-				android.os.Process.killProcess(android.os.Process.myPid());
+
+				//完整退出应用
+				ExitAppUtil.getInstance().exit();
 				System.exit(0);
 			}
 		}
@@ -95,4 +94,6 @@ public class MainActivity extends Activity {
 	{
 		
 	}
+
+
 }
