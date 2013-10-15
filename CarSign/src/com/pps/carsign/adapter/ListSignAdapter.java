@@ -48,10 +48,15 @@ public class ListSignAdapter extends BaseAdapter {
 		return position;
 	}
 
+	/**
+	 * 添加数据到集合中，使用adapter进行刷新数据
+	 * @param pRes
+	 */
 	public void addItem(Integer pRes)
 	{
 		mLists.add(pRes);
 	}
+	
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		Hondler _Hondler;

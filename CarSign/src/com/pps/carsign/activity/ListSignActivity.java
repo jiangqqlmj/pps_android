@@ -17,7 +17,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.pps.carsign.BaseActivity;
@@ -42,7 +41,7 @@ public class ListSignActivity extends BaseActivity {
 	
 	private ListSignAdapter mListSignAdapter;
 	private Intent mIntent;
-	private ProgressBar progress_lv_foot;
+	//private ProgressBar progress_lv_foot;
 	private TextView tv_lv_foot;
 	
 	private boolean isRefresh=false;    
@@ -87,7 +86,7 @@ public class ListSignActivity extends BaseActivity {
 	private void initValidata()
 	{
 		lv_foot=LayoutInflater.from(this).inflate(R.layout.foot, null);
-		progress_lv_foot=(ProgressBar)lv_foot.findViewById(R.id.progress_lv_foot);
+		//progress_lv_foot=(ProgressBar)lv_foot.findViewById(R.id.progress_lv_foot);
 		tv_lv_foot=(TextView)lv_foot.findViewById(R.id.tv_lv_foot);
 		lv_list_sign.addFooterView(lv_foot);
 		
@@ -109,10 +108,21 @@ public class ListSignActivity extends BaseActivity {
 			mLists=new ArrayList<Integer>();
 			length=mImageView_Icons.length;
 			MaxDataNum=length;
-			for(int i=0;i<length;i++)
+			//进行判断初始化的条数
+			if(MaxDataNum<=NUM)
 			{
-				mLists.add(mImageView_Icons[i]);
+				tv_lv_foot.setVisibility(View.GONE);
+				for(int i=0;i<MaxDataNum;i++)
+				{
+					mLists.add(mImageView_Icons[i]);
+				}
+			}else {
+				for(int i=0;i<NUM;i++)
+				{
+					mLists.add(mImageView_Icons[i]);	
+				}
 			}
+			
 			
 			mCar_Names=getResources().getStringArray(R.array.china_car_names);
 			mCar_Contents=getResources().getStringArray(R.array.china_car_contents);
@@ -128,9 +138,19 @@ public class ListSignActivity extends BaseActivity {
         	mLists=new ArrayList<Integer>();
 			length=mImageView_Icons.length;
 			MaxDataNum=length;
-			for(int i=0;i<length;i++)
+			//进行判断初始化的条数
+			if(MaxDataNum<=NUM)
 			{
-				mLists.add(mImageView_Icons[i]);
+				tv_lv_foot.setVisibility(View.GONE);
+				for(int i=0;i<MaxDataNum;i++)
+				{
+					mLists.add(mImageView_Icons[i]);
+				}
+			}else {
+				for(int i=0;i<NUM;i++)
+				{
+					mLists.add(mImageView_Icons[i]);	
+				}
 			}
         	mCar_Names=getResources().getStringArray(R.array.germary_car_names);
 			mCar_Contents=getResources().getStringArray(R.array.germary_car_content);
@@ -144,9 +164,19 @@ public class ListSignActivity extends BaseActivity {
         	mLists=new ArrayList<Integer>();
         	length=mImageView_Icons.length;
         	MaxDataNum=length;
-			for(int i=0;i<length;i++)
+        	//进行判断初始化的条数
+			if(MaxDataNum<=NUM)
 			{
-				mLists.add(mImageView_Icons[i]);
+				tv_lv_foot.setVisibility(View.GONE);
+				for(int i=0;i<MaxDataNum;i++)
+				{
+					mLists.add(mImageView_Icons[i]);
+				}
+			}else {
+				for(int i=0;i<NUM;i++)
+				{
+					mLists.add(mImageView_Icons[i]);	
+				}
 			}
         	mCar_Names=getResources().getStringArray(R.array.usa_car_names);
 			mCar_Contents=getResources().getStringArray(R.array.usa_car_contents);
@@ -158,9 +188,19 @@ public class ListSignActivity extends BaseActivity {
         	mLists=new ArrayList<Integer>();
         	length=mImageView_Icons.length;
         	MaxDataNum=length;
-			for(int i=0;i<length;i++)
+        	//进行判断初始化的条数
+			if(MaxDataNum<=NUM)
 			{
-				mLists.add(mImageView_Icons[i]);
+				tv_lv_foot.setVisibility(View.GONE);
+				for(int i=0;i<MaxDataNum;i++)
+				{
+					mLists.add(mImageView_Icons[i]);
+				}
+			}else {
+				for(int i=0;i<NUM;i++)
+				{
+					mLists.add(mImageView_Icons[i]);	
+				}
 			}
         	mCar_Names=getResources().getStringArray(R.array.uk_car_names);
 			mCar_Contents=getResources().getStringArray(R.array.uk_car_contents);
@@ -173,9 +213,19 @@ public class ListSignActivity extends BaseActivity {
         	mLists=new ArrayList<Integer>();
         	length=mImageView_Icons.length;
         	MaxDataNum=length;
-			for(int i=0;i<length;i++)
+        	//进行判断初始化的条数
+			if(MaxDataNum<=NUM)
 			{
-				mLists.add(mImageView_Icons[i]);
+				tv_lv_foot.setVisibility(View.GONE);
+				for(int i=0;i<MaxDataNum;i++)
+				{
+					mLists.add(mImageView_Icons[i]);
+				}
+			}else {
+				for(int i=0;i<NUM;i++)
+				{
+					mLists.add(mImageView_Icons[i]);	
+				}
 			}
         	mCar_Names=getResources().getStringArray(R.array.france_car_names);
 			mCar_Contents=getResources().getStringArray(R.array.france_car_contents);
@@ -191,9 +241,19 @@ public class ListSignActivity extends BaseActivity {
         	mLists=new ArrayList<Integer>();
         	length=mImageView_Icons.length;
         	MaxDataNum=length;
-			for(int i=0;i<length;i++)
+        	//进行判断初始化的条数
+			if(MaxDataNum<=NUM)
 			{
-				mLists.add(mImageView_Icons[i]);
+				tv_lv_foot.setVisibility(View.GONE);
+				for(int i=0;i<MaxDataNum;i++)
+				{
+					mLists.add(mImageView_Icons[i]);
+				}
+			}else {
+				for(int i=0;i<NUM;i++)
+				{
+					mLists.add(mImageView_Icons[i]);	
+				}
 			}
         	mCar_Names=getResources().getStringArray(R.array.japan_car_names);
 			mCar_Contents=getResources().getStringArray(R.array.japan_car_contents);
@@ -206,9 +266,19 @@ public class ListSignActivity extends BaseActivity {
         	mLists=new ArrayList<Integer>();
         	length=mImageView_Icons.length;
         	MaxDataNum=length;
-			for(int i=0;i<length;i++)
+        	//进行判断初始化的条数
+			if(MaxDataNum<=NUM)
 			{
-				mLists.add(mImageView_Icons[i]);
+				tv_lv_foot.setVisibility(View.GONE);
+				for(int i=0;i<MaxDataNum;i++)
+				{
+					mLists.add(mImageView_Icons[i]);
+				}
+			}else {
+				for(int i=0;i<NUM;i++)
+				{
+					mLists.add(mImageView_Icons[i]);	
+				}
 			}
         	mCar_Names=getResources().getStringArray(R.array.korea_car_names);
 			mCar_Contents=getResources().getStringArray(R.array.korea_car_contents);
@@ -223,9 +293,19 @@ public class ListSignActivity extends BaseActivity {
         	mLists=new ArrayList<Integer>();
         	length=mImageView_Icons.length;
         	MaxDataNum=length;
-			for(int i=0;i<length;i++)
+        	//进行判断初始化的条数
+			if(MaxDataNum<=NUM)
 			{
-				mLists.add(mImageView_Icons[i]);
+				tv_lv_foot.setVisibility(View.GONE);
+				for(int i=0;i<MaxDataNum;i++)
+				{
+					mLists.add(mImageView_Icons[i]);
+				}
+			}else {
+				for(int i=0;i<NUM;i++)
+				{
+					mLists.add(mImageView_Icons[i]);	
+				}
 			}
         	mCar_Names=getResources().getStringArray(R.array.italy_car_names);
 			mCar_Contents=getResources().getStringArray(R.array.italy_car_contents);
@@ -241,9 +321,19 @@ public class ListSignActivity extends BaseActivity {
         	mLists=new ArrayList<Integer>();
         	length=mImageView_Icons.length;
         	MaxDataNum=length;
-			for(int i=0;i<length;i++)
+        	//进行判断初始化的条数
+			if(MaxDataNum<=NUM)
 			{
-				mLists.add(mImageView_Icons[i]);
+				tv_lv_foot.setVisibility(View.GONE);
+				for(int i=0;i<MaxDataNum;i++)
+				{
+					mLists.add(mImageView_Icons[i]);
+				}
+			}else {
+				for(int i=0;i<NUM;i++)
+				{
+					mLists.add(mImageView_Icons[i]);	
+				}
 			}
      		mCar_Names=getResources().getStringArray(R.array.other_car_names);
 			mCar_Contents=getResources().getStringArray(R.array.other_car_contents);
@@ -334,7 +424,6 @@ public class ListSignActivity extends BaseActivity {
 	}
 	
 	
-	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if(keyCode==KeyEvent.KEYCODE_BACK)
@@ -351,16 +440,21 @@ public class ListSignActivity extends BaseActivity {
 	 */
 	private void loadMore()
 	{
-		progress_lv_foot.setVisibility(View.VISIBLE);
-		tv_title_head.setText(getResources().getString(R.string.string_tv_lv_foot_load));
+		//progress_lv_foot.setVisibility(View.VISIBLE);
+		tv_lv_foot.setText(getResources().getString(R.string.string_tv_lv_foot_load));
 		mHandler.postDelayed(new Runnable() {
 			
 			@Override
 			public void run() {
 				loadData();
-				progress_lv_foot.setVisibility(View.GONE);
-				tv_title_head.setText(ListSignActivity.this.getResources().getString(R.string.string_tv_lv_foot));
+				//progress_lv_foot.setVisibility(View.GONE);
+				if(mListSignAdapter.getCount()==MaxDataNum)
+				{
+					lv_list_sign.removeFooterView(lv_foot);
+				}
+				tv_lv_foot.setText(ListSignActivity.this.getResources().getString(R.string.string_tv_lv_foot));
 				mListSignAdapter.notifyDataSetChanged();//刷新数据
+				
 			}
 		}, 1500);
 	}
@@ -376,13 +470,13 @@ public class ListSignActivity extends BaseActivity {
 		{
 			for(int i=count;i<count+8;i++)
 			{
-				
+				mListSignAdapter.addItem(mImageView_Icons[i]);
 			}
 		}else {
 			//数据已经不足8条
 			for(int i=count;i<MaxDataNum;i++)
 			{
-				
+				mListSignAdapter.addItem(mImageView_Icons[i]);
 			}
 		}
 	} 
