@@ -2,38 +2,46 @@ package tv.pps.bi.receiver;
 
 import java.util.List;
 
+import tv.pps.bi.db.config.IntervalTimeConstance;
+import tv.pps.bi.db.config.TagConstance;
 import tv.pps.bi.service.ListenService;
 import tv.pps.bi.utils.LogUtils;
-import tv.pps.bi.utils.NetworkUtils;
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-
+ 
 public class AlarmReceiver extends BroadcastReceiver {
-	private static final String TAG = "bi";
-	@Override
+	
+	String receiveType ;
 	public void onReceive(Context context, Intent intent) {
 		
-		// TODO Auto-generated method stub
+		if (!IntervalTimeConstance.isSTART_SERVICE_SWITCH()) { 
+			
+			if("tv.pps.alarmReceiver".equals(intent.getAction())){
+				if(isServiceRunning(context,"tv.pps.bi.service.ListenService")){
+					
+				receiveType = "监听服务运行中......即将被关闭";
+				Intent deliver = new Intent();
+				deliver.setClass(context, ListenService.class);
+				context.stopService(deliver);
+				}
+				else{
+					receiveType="监听服务已关闭";
+				}
+			}
+			else{
+				receiveType ="在广播中关闭其他服务";
+			}
+			LogUtils.e(TagConstance.TAG_SERVICE,receiveType );
+			return;
+		}
 		if("tv.pps.alarmReceiver".equals(intent.getAction())){
 			Intent service = new Intent();
 			service.setClass(context, ListenService.class);
 			context.startService(service);
-			LogUtils.v(TAG, "start service");
-		}else if("deliver".equals(intent.getAction())){
-			if(NetworkUtils.isNetworkConnected(context)){//2个小时之后，有网络则进行开启服务
-				Intent deliver = new Intent();
-				deliver.setClass(context, tv.pps.bi.proto.SendUserActivityService.class);
-				
-				context.startService(deliver);
-			}else{//没有网络停止服务
-				//
-				Intent deliver = new Intent();
-				deliver.setClass(context, tv.pps.bi.proto.SendUserActivityService.class);
-				context.stopService(deliver);
-			}
+			LogUtils.v(TagConstance.TAG_SERVICE, "开启监听服务");
 		}
 		
 	}

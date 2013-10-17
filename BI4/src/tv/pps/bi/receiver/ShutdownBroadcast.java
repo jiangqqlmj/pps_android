@@ -1,5 +1,6 @@
 package tv.pps.bi.receiver;
 
+import tv.pps.bi.db.config.TagConstance;
 import tv.pps.bi.utils.LogUtils;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -15,7 +16,7 @@ public class ShutdownBroadcast extends BroadcastReceiver{
 		 if(intent.getAction().equals("android.intent.action.ACTION_SHUTDOWN")){
 			edit.putLong("shutdown", time);
 			edit.commit();
-			LogUtils.v("bi", "i am shut down at "+time);
+			LogUtils.v(TagConstance.TAG_SERVICE, "i am shut down at "+time);
 		}
 	}
 }

@@ -7,9 +7,11 @@ import tv.pps.bi.db.DBAPPManager;
 import tv.pps.bi.db.DBOperation;
 import tv.pps.bi.db.config.DBConstance;
 import tv.pps.bi.db.config.IntervalTimeConstance;
+import tv.pps.bi.db.config.TagConstance;
 import tv.pps.bi.proto.model.AppActivity;
 import tv.pps.bi.utils.DataFormat;
 import tv.pps.bi.utils.LogUtils;
+import tv.pps.bi.utils.NetworkUtils;
 import tv.pps.bi.utils.Utils;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
@@ -26,11 +28,12 @@ import android.content.pm.PackageInfo;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.util.Log;
 
 
 @SuppressLint("HandlerLeak")
 public class ListenService extends Service {
-	private static final String TAG = "bi";
+
 	private ActivityManager am;
 	private String packageName = "tv.pps.bi.activity";//应用包名
 	boolean isFirst = true;
@@ -38,8 +41,9 @@ public class ListenService extends Service {
 	DBAPPManager db;
 	private Context mContext;
 	private DBOperation operation;
-	private static final int APPSTATUS =1;//app状态任务
- 	private static final int USERINFO=3; //每隔十分分钟去获取数据
+	private static final int APPSTATUS =1;//app查询
+	private static final int DELIVERY = 2;//投递数据
+ 	private static final int USERINFO=3; //用户行为查询
  	int count = 0;
 	public IBinder onBind(Intent intent) {
 		return null;
@@ -47,7 +51,8 @@ public class ListenService extends Service {
 
 	@Override
 	public void onStart(Intent intent, int startId) {
-
+		LogUtils.v(TagConstance.TAG_SERVICE,"监听服务开启onStart()");
+		
 	}
 	
 	
@@ -55,9 +60,7 @@ public class ListenService extends Service {
 	public void onCreate() {
 		super.onCreate();
 		mContext=this;
-
 		System.currentTimeMillis();
-		sendAlarmReceiver();
 		data = new AppActivity();
 		db = DBAPPManager.getDBManager(getApplicationContext());
 		am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
@@ -66,13 +69,29 @@ public class ListenService extends Service {
 		//启动查询用户信息任务
 		handler.sendEmptyMessage(USERINFO);
 		
-		
+		handler.sendEmptyMessageDelayed(DELIVERY, IntervalTimeConstance.START_DELIVER_SERVICE_TIME);
 		
 	}
-
+String behaviorType;
 	Handler handler = new Handler() {
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
+			if (!IntervalTimeConstance.isSTART_SERVICE_SWITCH()) { 
+				if(msg.what==APPSTATUS){
+					behaviorType = "停止app查询行为";
+				}else if(msg.what==DELIVERY){
+					behaviorType = "停止数据投递";
+				}else if(msg.what==USERINFO){
+					behaviorType = "停止用户行为查询";
+				}else{
+					behaviorType = "异常行为";
+				}
+				sendAlarmReceiver();
+				LogUtils.e(TagConstance.TAG_SERVICE,behaviorType);
+			
+				return;
+			}
+			
 			switch (msg.what) {
 			case APPSTATUS:
 				try {
@@ -82,6 +101,15 @@ public class ListenService extends Service {
 				}
 				handler.sendEmptyMessageDelayed(APPSTATUS, IntervalTimeConstance.START_APPUSEINFO_SEARCH_TIME);//10s中监听一次，
 				break;
+			case DELIVERY:
+				if(NetworkUtils.isNetworkConnected(mContext)){//2个小时之后，有网络则进行开启服务
+					Intent deliver = new Intent();
+					deliver.setClass(mContext, tv.pps.bi.proto.SendUserActivityService.class);
+					mContext.startService(deliver);
+					LogUtils.v(TagConstance.TAG_SERVICE, "开启数据投递");
+				}
+			  handler.sendEmptyMessageDelayed(DELIVERY, IntervalTimeConstance.START_DELIVER_SERVICE_TIME);
+             break;
 			case USERINFO://每隔三十分钟进行一次用户行为查询，并且插入数据库
 				count++;
 				operation = new DBOperation(mContext);
@@ -94,7 +122,7 @@ public class ListenService extends Service {
 					edit.commit();
 				}
 				//gps信息无增量插入数据库
-				LogUtils.v("bi","第"+count+ "次--开始插入数据库--"+Utils.formatTimeStamp(System.currentTimeMillis(),"yyyyMMddhhmmss"));
+				LogUtils.v(TagConstance.TAG_COLLECTDATA,"第"+count+ "次--开始插入数据库--"+Utils.formatTimeStamp(System.currentTimeMillis(),"yyyyMMddhhmmss"));
 				operation.insertTableGPS();
 				//url 信息增量信息插入数据库
 				operation.insertUrlIntoTable();
@@ -111,16 +139,6 @@ public class ListenService extends Service {
 				long shut_timestamp = operation.queryTimestamp(mContext,DBConstance.TABLE_SHUT_TIME);
 				if(shut_timestamp!=0L)
 					operation.updateTimestampInControlTable(mContext,"shut", shut_timestamp);
-				//电话增量信息插入数据库
-//				operation.insertTablePhone();
-//				long phone_timestamp = operation.queryTimestamp(mContext,DBConstance.TABLE_PHONE);
-//				if(phone_timestamp!=0L)
-//					operation.updateTimestampInControlTable(mContext,"phone", phone_timestamp);
-				//短信增量信息插入数据库
-//				operation.insertTableSMS();
-//				long sms_timestamp = operation.queryTimestamp(mContext,DBConstance.TABLE_SMS);
-//				if(sms_timestamp!=0L)
-//					operation.updateTimestampInControlTable(mContext,"sms", sms_timestamp);
 				operation.close();
 				operation = null;
 				handler.sendEmptyMessageDelayed(USERINFO, IntervalTimeConstance.START_USERINFO_SEARCH_TIME);
@@ -142,15 +160,15 @@ public class ListenService extends Service {
 				start = System.currentTimeMillis();
 				Date curDate = new Date(start);
 				String start_time = DataFormat.formatData(curDate);
-				LogUtils.v(TAG, running + "  开始时间：" + start_time);
+				LogUtils.v(TagConstance.TAG_COLLECTDATA, running + "  开始时间：" + start_time);
 				data.setPackageName(running);
 				data.setStart_timestamp(start_time);
 				isFirst = false;
-			} else if (!running.equals(packageName)) {
+			} else if (!isFirst && !running.equals(packageName)) {
 				stop = System.currentTimeMillis();
 				Date curDate = new Date(stop);
 				String stop_time = DataFormat.formatData(curDate);
-				LogUtils.v(TAG, packageName + " 结束时间：" + stop_time);
+				LogUtils.v(TagConstance.TAG_COLLECTDATA, packageName + " 结束时间：" + stop_time);
 				int duration = (int)(stop - start)/1000; //d单位为s
 				data.setDuration(duration);
 				db.save(data); //存放到数据库中
@@ -179,18 +197,25 @@ public class ListenService extends Service {
 	 */
 	@Override
 	public void onDestroy() {
-		removeAlarmReceiver();
+		
+		//Log.d("bi", ">>>>service被kill掉....");
+		if(operation!=null){
 		operation.close();
 		operation = null;
+		}
+		SharedPreferences sp = getSharedPreferences("bi4sdk",Context.MODE_PRIVATE);
+		Editor edit = sp.edit();
+		edit.putInt("beKilled", 1);
+		edit.putBoolean("switch",sp.getBoolean("switch", false));
+		edit.commit();
+		LogUtils.e(TagConstance.TAG_SERVICE, "监听服务onDestroy() = "+"beKilled = "+1+"--switch = "+sp.getBoolean("switch", false));
+		removeAlarmReceiver();
 		super.onDestroy();
 	}
 
 	private void sendAlarmReceiver(){
-		AlarmManager alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
-		Intent intent = new Intent("deliver");
-		PendingIntent sender = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-		
-		alarm.setRepeating(AlarmManager.RTC_WAKEUP,System.currentTimeMillis()+IntervalTimeConstance.START_DELIVER_SERVICE_TIME , IntervalTimeConstance.START_DELIVER_SERVICE_TIME, sender);//从2个小时后开始、每隔2小时发送一次
+		Intent intent = new Intent("tv.pps.alarmReceiver");
+		sendBroadcast(intent);
 	}
 	
 	private void removeAlarmReceiver(){

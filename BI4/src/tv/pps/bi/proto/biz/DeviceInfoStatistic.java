@@ -34,7 +34,7 @@ public class DeviceInfoStatistic {// ok
 	 */
 	public static void setUid(String uid,Context pContext) {
 		//DeviceInfoStatistic.uid = uid;
-	   pContext.getSharedPreferences("bi4sdk", pContext.MODE_PRIVATE).edit().putString("uuid", uid).commit();
+	   pContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE).edit().putString("uuid", uid).commit();
 		
 	}
 
@@ -43,7 +43,7 @@ public class DeviceInfoStatistic {// ok
 	 */
 	public static void setLoginId(String loginId,Context pContext) {
 		//DeviceInfoStatistic.loginId = loginId;
-		pContext.getSharedPreferences("bi4sdk", pContext.MODE_PRIVATE).edit().putString("loginID", loginId).commit();
+		pContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE).edit().putString("loginID", loginId).commit();
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class DeviceInfoStatistic {// ok
 	 */
 	public static void setPlatform(String platform,Context pContext) {
 		//DeviceInfoStatistic.platform = platform;
-		pContext.getSharedPreferences("bi4sdk", pContext.MODE_PRIVATE).edit().putString("platform", platform).commit();
+		pContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE).edit().putString("platform", platform).commit();
 	}
 
 

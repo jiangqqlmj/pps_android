@@ -1,12 +1,12 @@
 package tv.pps.bi.proto.biz;
 
+import tv.pps.bi.db.config.TagConstance;
 import tv.pps.bi.proto.model.GPS;
 import tv.pps.bi.utils.LogUtils;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.wifi.WifiManager;
-import android.util.Log;
 
 public class GPSInfoService {
 	public final static String TAG = "GPSInfo";
@@ -25,7 +25,7 @@ public class GPSInfoService {
 		boolean isNetworkOpen = locationManager
 				.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 		if (isGPSOpen) {
-			LogUtils.i(TAG, "gps provider正常使用");
+			LogUtils.i(TagConstance.TAG_COLLECTDATA, "gps provider正常使用");
 			location = locationManager
 					.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 			if (location != null) {
@@ -39,11 +39,11 @@ public class GPSInfoService {
 			}
 		}
 		if (isNetworkOpen) {
-			LogUtils.i(TAG, "network provider正常使用");
+			LogUtils.i(TagConstance.TAG_COLLECTDATA, "network provider正常使用");
 			WifiManager wifiManager = (WifiManager) context
 					.getSystemService(Context.WIFI_SERVICE);
 			if (wifiManager.isWifiEnabled()) {
-				LogUtils.i(TAG, "wifi正常开启");
+				LogUtils.i(TagConstance.TAG_COLLECTDATA, "wifi正常开启");
 				location = locationManager
 						.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 				if (location != null) {
@@ -54,7 +54,7 @@ public class GPSInfoService {
 					return gps;
 				}
 			} else {
-				LogUtils.i(TAG, "wifi未开启");
+				LogUtils.i(TagConstance.TAG_COLLECTDATA, "wifi未开启");
 				return null;
 			}
 		}

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import tv.pps.bi.db.config.TagConstance;
 import tv.pps.bi.proto.model.App;
 import tv.pps.bi.proto.model.AppActivity;
 import tv.pps.bi.proto.model.DeviceInfo;
@@ -70,7 +71,7 @@ public class ProtoBuffUserActivityService {
 	public static int count = 0;
 	public byte[] getConstructorData(UserActivity pUserActivity)
 	{
-		LogUtils.i("jiangqingqing", "第"+(++count)+"次发送数据 == "+pUserActivity.toString());
+	    LogUtils.i(TagConstance.TAG_SENDDATA, "第"+(++count)+"次发送数据 == "+pUserActivity.toString());
 		builder_UserActivity.setUid(pUserActivity.getUid()); //唯一标示该客户端的匿名用户id。
 		builder_UserActivity.setLogin(pUserActivity.getLogin()); //注册用户登录id
 		builder_UserActivity.setPlatform(pUserActivity.getPlatform());//可取值：pps_ios | pps_android | pps_pc | iqiyi_ios | iqiyi_android | iqiyi_pc

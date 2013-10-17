@@ -3,11 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <TextView
+
+    <Button
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" 
-        android:textSize="20sp"
-        android:textColor="@android:color/black"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="34dp"
+        android:text="开启服务" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:text="关闭服务" />
 
 </RelativeLayout>

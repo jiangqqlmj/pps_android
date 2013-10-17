@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import tv.pps.bi.db.config.TagConstance;
 import tv.pps.bi.proto.model.DeviceInfo;
 import tv.pps.bi.utils.LogUtils;
 import android.content.Context;
@@ -130,7 +131,7 @@ public class DeviceInfoService {
 					new InputStreamReader(process.getInputStream()));
 
 			for (String command : commands) {
-				LogUtils.i(TAG, "command: " + command);
+				LogUtils.i(TagConstance.TAG_COLLECTDATA, "command: " + command);
 				shellInput.write((command + " 2>&1\n").getBytes());
 			}
 
@@ -139,7 +140,7 @@ public class DeviceInfoService {
 
 			String line;
 			while ((line = shellOutput.readLine()) != null) {
-				LogUtils.i(TAG, "result: " + line);
+				LogUtils.i(TagConstance.TAG_COLLECTDATA, "result: " + line);
 				output.add(line);
 			}
 

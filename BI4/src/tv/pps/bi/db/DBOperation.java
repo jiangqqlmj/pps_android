@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tv.pps.bi.db.config.DBConstance;
+import tv.pps.bi.db.config.TagConstance;
 import tv.pps.bi.proto.biz.CallLogService;
 import tv.pps.bi.proto.biz.GPSInfoService;
 import tv.pps.bi.proto.biz.MessageInfoService;
@@ -36,7 +37,7 @@ public class DBOperation {
 		this.context = context;
 		helper = new DBHelper(context);
 		db = helper.getWritableDatabase();
-		LogUtils.i(TAG, "数据库" + DBConstance.DB_NAME + "打开或创建成功");
+		LogUtils.i(TagConstance.TAG_DATABASE, "数据库" + DBConstance.DB_NAME + "打开或创建成功");
 	}
 
 	public static DBOperation getDBOperation(Context context) {
@@ -57,7 +58,7 @@ public class DBOperation {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		LogUtils.i(TAG, "关闭数据库" + DBConstance.DB_NAME);
+		LogUtils.i(TagConstance.TAG_DATABASE, "关闭数据库" + DBConstance.DB_NAME);
 	}
 
 	/**
@@ -78,7 +79,7 @@ public class DBOperation {
 				return true;
 			}
 		} catch (Exception e) {
-			LogUtils.i(TAG, table + "表数据插入异常");
+			LogUtils.i(TagConstance.TAG_DATABASE, table + "表数据插入异常");
 		} finally {
 			db.endTransaction();
 		}
@@ -101,7 +102,7 @@ public class DBOperation {
 				return true;
 			}
 		} catch (Exception e) {
-			LogUtils.i(TAG, table + "表删除异常");
+			LogUtils.i(TagConstance.TAG_DATABASE, table + "表删除异常");
 		} finally {
 			db.endTransaction();
 		}
@@ -125,7 +126,7 @@ public class DBOperation {
 				return true;
 			}
 		} catch (Exception e) {
-			LogUtils.i(TAG, table + "表更新异常");
+			LogUtils.i(TagConstance.TAG_DATABASE, table + "表更新异常");
 		} finally {
 			db.endTransaction();
 		}
@@ -162,7 +163,7 @@ public class DBOperation {
 					if (c != null)
 						c.close();
 				} catch (Exception e) {
-					LogUtils.i(TAG, table + "表游标关闭异常");
+					LogUtils.i(TagConstance.TAG_DATABASE, table + "表游标关闭异常");
 				}
 				return 0L;
 			} else {
@@ -177,7 +178,7 @@ public class DBOperation {
 				return result;
 			}
 		} catch (Exception e1) {
-			LogUtils.i(TAG, table + "表查询时间戳异常");
+			LogUtils.i(TagConstance.TAG_DATABASE, table + "表查询时间戳异常");
 		} finally {
 			try {
 				if (c != null) {
@@ -219,7 +220,7 @@ public class DBOperation {
 
 			}
 		} catch (Exception e) {
-			LogUtils.i(TAG, "control表查询时间戳异常");
+			LogUtils.i(TagConstance.TAG_DATABASE, "control表查询时间戳异常");
 		} finally {
 			try {
 				if (c != null) {
@@ -268,7 +269,7 @@ public class DBOperation {
 			cv.put("timestamp", timestamp);
 			db.insert(table, null, cv);
 		}
-		LogUtils.i(TAG, DBConstance.TABLE_INFOMATION_CONTROL + "数据表初始化成功");
+		LogUtils.i(TagConstance.TAG_DATABASE, DBConstance.TABLE_INFOMATION_CONTROL + "数据表初始化成功");
 	}
 
 	/**
@@ -305,7 +306,7 @@ public class DBOperation {
 		int size = 0;
 		if (list != null)
 			size = list.size();
-		LogUtils.v(TAG, "上次插入的最后一条url时间--" + timestamp + "--记录条数 = " + size);
+		LogUtils.v(TagConstance.TAG_DATABASE, "上次插入的最后一条url时间--" + timestamp + "--记录条数 = " + size);
 		if (list != null) {
 			for (URLInfo url : list) {
 				String table = DBConstance.TABLE_URL;
@@ -365,7 +366,7 @@ public class DBOperation {
 		String str = " ！=null";
 		if (shut == null)
 			str = " ==null";
-		LogUtils.v(TAG, "上次插入的最后一条关机时间--" + timestamp + "--关机时间  " + str);
+		LogUtils.v(TagConstance.TAG_DATABASE, "上次插入的最后一条关机时间--" + timestamp + "--关机时间  " + str);
 		if (shut != null) {
 			String table = DBConstance.TABLE_SHUT_TIME;
 			ContentValues cv = new ContentValues();
@@ -422,7 +423,7 @@ public class DBOperation {
 		String str = "";
 		if (boot == null)
 			str = "";
-		LogUtils.v(TAG, "上次插入的最后一条开机时间--" + timestamp + "--开机时间 " + str);
+		LogUtils.v(TagConstance.TAG_DATABASE, "上次插入的最后一条开机时间--" + timestamp + "--开机时间 " + str);
 		if (boot != null) {
 			String table = DBConstance.TABLE_BOOT_TIME;
 			ContentValues cv = new ContentValues();
@@ -478,7 +479,7 @@ public class DBOperation {
 		MessageInfoService message = new MessageInfoService();
 		long timestamp = queryTimestampInControlTable(context, "sms");
 		ArrayList<SMS> smsList = message.getMessageInfo(context, timestamp);
-		LogUtils.v(TAG, "上次插入的最后一条短信时间--" + timestamp + "--短信数量 = " + smsList.size());
+		LogUtils.v(TagConstance.TAG_DATABASE, "上次插入的最后一条短信时间--" + timestamp + "--短信数量 = " + smsList.size());
 		if (smsList != null) {
 			for (SMS sms : smsList) {
 				String table = DBConstance.TABLE_SMS;
@@ -534,7 +535,7 @@ public class DBOperation {
 		long timestamp = queryTimestampInControlTable(context, "phone");
 		ArrayList<PhoneActivity> phones = calllog.getCallLogInfo(context,
 				timestamp);
-		LogUtils.v(TAG,
+		LogUtils.v(TagConstance.TAG_DATABASE,
 				"上次插入的最后一条电话时间--" + timestamp + "-- 电话记录数量 = " + phones.size());
 		if (phones != null) {
 			for (PhoneActivity phone : phones) {

@@ -73,8 +73,9 @@ public class MessageToEntityService {
 
 		// 地图POI信息，gps坐标附近300米内的地图信息
 		List<String> mPoiLists = mActivityManagerInterface.getUserPoi();
+		if(mPoiLists!=null){
 		mUserActivity.setPoi(mPoiLists);
-
+		}
 		// 安装的APP信息以及使用情况
 		List<App> mAppsLists = mActivityManagerInterface.getUserInstalled_app();
 		if (null != mAppsLists) {

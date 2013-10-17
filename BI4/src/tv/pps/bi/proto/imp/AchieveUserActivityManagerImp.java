@@ -2,10 +2,6 @@ package tv.pps.bi.proto.imp;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-
-import android.content.Context;
-import android.content.SharedPreferences;
 
 import tv.pps.bi.db.DBOperation;
 import tv.pps.bi.proto.AchieveUserActivityManagerInterface;
@@ -23,6 +19,8 @@ import tv.pps.bi.proto.model.Shutdown;
 import tv.pps.bi.proto.model.ThirdPartyVideoActivity;
 import tv.pps.bi.proto.model.URLInfo;
 import tv.pps.bi.proto.model.WindowProto;
+import android.content.Context;
+import android.content.SharedPreferences;
 
 /**
  * 获取用户行为信息管理类接口
@@ -46,7 +44,7 @@ public class AchieveUserActivityManagerImp implements
 		this.mContext = pContext;
 		operation = new DBOperation(mContext);
 		mDeviceInfoStatistic=new DeviceInfoStatistic(mContext);
-		mSharedPreferences=pContext.getSharedPreferences("bi4sdk", pContext.MODE_PRIVATE);
+		mSharedPreferences=pContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE);
 	}
 
 	public void close(){
@@ -131,12 +129,19 @@ public class AchieveUserActivityManagerImp implements
 	public List<String> getUserPoi() {
 		List<String> mPoiLists=new ArrayList<String>();
 		List<GPS> mGpsLists=operation.queryTableGPS();
-		if(null!=mGpsLists&&mGpsLists.size()>0)
+		int size=mGpsLists!=null?mGpsLists.size():0;
+		if(null!=mGpsLists&&size>0)
 		{
-			for (GPS gps : mGpsLists) {
-				mPoiLists.add("longitude="+gps.getLatitude()+",latitude="+gps.getLatitude());
+//			for (GPS gps : mGpsLists) {
+//				mPoiLists.add("-");
+//			}
+			for(int i=0;i<size;i++)
+			{
+				mPoiLists.add("-");
 			}
+			
 			return mPoiLists;
+			
 		}
 		return null;
 	}
