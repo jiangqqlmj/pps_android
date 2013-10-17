@@ -508,7 +508,7 @@ public class MyListFragment extends Fragment {
 			// 直接弹出进度框，去后台下载数据
 			mProgressDialog = new ProgressDialog(mContext);
 			mProgressDialog.setMessage("正在加载....");
-			mProgressDialog.setCancelable(false);
+			// mProgressDialog.setCancelable(false);
 			mProgressDialog.show();
 			Thread thread = new Thread(runnable_id);
 			thread.start();

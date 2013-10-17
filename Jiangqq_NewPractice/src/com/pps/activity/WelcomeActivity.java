@@ -1,7 +1,7 @@
 package com.pps.activity;
 
 import java.io.File;
-import android.app.Activity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +9,8 @@ import android.os.Message;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.pps.BaseActivity;
 import com.pps.utils.DownXML;
 import com.pps.utils.ZipToFile;
 
@@ -18,7 +20,7 @@ import com.pps.utils.ZipToFile;
  * @time 2013/09/12
  */
 
-public class WelcomeActivity extends Activity {
+public class WelcomeActivity extends BaseActivity {
     public static final String TAG="jiangqq";
 	
     private static final int DOWNLOAD_SUCCESS=1;
