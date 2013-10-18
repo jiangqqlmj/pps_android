@@ -268,7 +268,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:adId
+          @attr name com.pps.carsign.activity:adId
         */
         public static final int com_baidu_mobads_AdView_adId = 1;
         /**
@@ -282,7 +282,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:adSize
+          @attr name com.pps.carsign.activity:adSize
         */
         public static final int com_baidu_mobads_AdView_adSize = 0;
     };
