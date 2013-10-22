@@ -12,19 +12,19 @@ import android.widget.ImageView;
 
 public class FootView extends ImageView {
 
-	private float mTouchX; //触摸点的x坐标
-	private float mTouchY; //触摸点的y坐标
-	private float x;       //x坐标
-	private float y;       //y坐标
-	private int   startX;     
-	private int   startY;
+	private float mTouchX;    //触摸点的x坐标
+	private float mTouchY;    //触摸点的y坐标
+	private float x;          //x坐标
+	private float y;          //y坐标
+	private int   startX;     //初次触摸点的x坐标    
+	private int   startY;     //初次触摸点的y坐标
 	
 	boolean isShow = false;  
 	private OnClickListener mOnClickListener;
 	private int controlledSpace = 20;   
 	
 	private int imgId=R.drawable.ic_launcher;
-	private int screenWidth;  // WindowManager视图默认宽度
+	private int screenWidth;  //WindowManager视图默认宽度
 	private WindowManager mWindowManager;
 	private WindowManager.LayoutParams windowManagerParams=new WindowManager.LayoutParams();
 	public FootView(Context context) {
@@ -59,10 +59,16 @@ public class FootView extends ImageView {
 	 	
 	}
 
+	/*
+	 * (non-Javadoc) 进行出门时间的捕捉控制
+	 * @see android.view.View#onTouchEvent(android.view.MotionEvent)
+	 */
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
+		
 		x=event.getRawX();
 		y=event.getRawY();
+		
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
 			mTouchX=event.getX();
@@ -83,7 +89,8 @@ public class FootView extends ImageView {
 		    		mOnClickListener.onClick(this);
 		    	}
 		    }
-		    Log.i("jiangqq", "x="+x+" startX+"+startX+" y="+y+" startY="+startY);  
+		    Log.i("jiangqq", "x = "+x+" startX = "+startX+" y = "+y+" startY = "+startY);  
+		    
 		    if(x<screenWidth/2)
 		    {
 		    	x=0;
@@ -98,6 +105,7 @@ public class FootView extends ImageView {
 		return super.onTouchEvent(event);
 	}
 	
+	
 	/**
 	 * 设置图片资源
 	 * @param resId
@@ -106,6 +114,8 @@ public class FootView extends ImageView {
 	{
 		this.imgId=resId;
 	}
+	
+	
 	/**
 	 * 添加监听器
 	 */
@@ -113,6 +123,7 @@ public class FootView extends ImageView {
 	{
 		this.mOnClickListener=pOnClickListener;
 	}
+	
 	/**
 	 * 隐藏该窗体
 	 */
@@ -124,6 +135,7 @@ public class FootView extends ImageView {
 			isShow=false;
 		}
 	}
+	
 	/**
 	 * 显示该窗体
 	 */
