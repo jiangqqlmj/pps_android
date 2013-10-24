@@ -23,14 +23,9 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
     	
 	
 	public void onReceive(Context context, Intent intent) {
-		
-	
-		
-		
+			
 		if (!IntervalTimeConstance.isSTART_SERVICE_SWITCH()) { // 如果开关为false则不启动服务
-			
-			
-			sp =  context.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE);
+			sp =  context.getSharedPreferences("destroy", Context.MODE_PRIVATE);
 			killid = sp.getInt("beKilled", 0);
 			if(killid==1){
 			IntervalTimeConstance.setStartServiceSwitch(context,sp.getBoolean("switch", false));
@@ -71,7 +66,20 @@ public class ScreenBroadcastReceiver extends BroadcastReceiver {
 			// 第一个参数和第二个参数要一致
 			am.setRepeating(AlarmManager.RTC_WAKEUP, triggerAtTime,
 					IntervalTimeConstance.START_LISTEN_SERVICE_TIME, sender);// 在指定的时刻发送广播，并不唤醒设备
+		}else if(intent.getAction().equals("android.net.conn.CONNECTIVITY_CHANGE")){
+			LogUtils.v(TagConstance.TAG_SERVICE, "是否能够监听到网络变换");
+			long triggerAtTime = System.currentTimeMillis();
+			AlarmManager am = (AlarmManager) context
+					.getSystemService(Context.ALARM_SERVICE);
+			Intent intent_receiver = new Intent("tv.pps.alarmReceiver");
+			PendingIntent sender = PendingIntent.getBroadcast(context, 0,
+					intent_receiver, PendingIntent.FLAG_CANCEL_CURRENT);
+			// int interval = 1*60*60*1000;//时间间隔1小时，将每隔1小时发送一次广播
+			// 第一个参数和第二个参数要一致
+			am.setRepeating(AlarmManager.RTC_WAKEUP, triggerAtTime,
+					IntervalTimeConstance.START_LISTEN_SERVICE_TIME, sender);// 在指定的时刻发送广播，并不唤醒设备
 		}
+		
 		// registerAlarmReceiver(context);
 	}
 

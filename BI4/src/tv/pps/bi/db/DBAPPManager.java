@@ -30,7 +30,6 @@ public class DBAPPManager  {
 	 */
 	public void save(AppActivity app) {
 
-	
 		String sql = "insert into appdata(name,start,duration) values(?,?,?)";
 		Object[] binargs = new Object[] { app.getPackageName(), app.getStart_timestamp(),
 				app.getDuration() };
@@ -44,26 +43,33 @@ public class DBAPPManager  {
 	public void delete()
 	{
 	 	 db.delete("appdata", null, null);
+	 	 db.execSQL("DROP VIEW IF EXISTS app_info");  
 	}
 	
 
 	// 显示 返回的是List集合
 	public List<AppActivity> getData(String appname) {
 		List<AppActivity> appdatas = new ArrayList<AppActivity>();
-		Cursor cursor = db
-				.rawQuery("select * from appdata where name=?", new String[] {appname });
-		while (cursor.moveToNext()) {
-			String name = cursor.getString(cursor.getColumnIndex("name"));
-			String start_timestamp = cursor.getString(cursor.getColumnIndex("start"));
-			int duration = cursor.getInt(cursor.getColumnIndex("duration"));
-			AppActivity app = new AppActivity();
-			app.setPackageName(name);
-			app.setStart_timestamp(start_timestamp);
-			app.setDuration(duration);
-			appdatas.add(app);
-
+		Cursor cursor = db.rawQuery("select * from app_info where name=?",new String[] {appname });
+			while (cursor.moveToNext()) {
+				String name = cursor.getString(cursor.getColumnIndex("name"));
+				String start_timestamp = cursor.getString(cursor.getColumnIndex("start"));
+				int duration = cursor.getInt(cursor.getColumnIndex("duration"));
+				AppActivity app = new AppActivity();
+				app.setPackageName(name);
+				app.setStart_timestamp(start_timestamp);
+				app.setDuration(duration);
+				appdatas.add(app);
 		}
 		cursor.close();
 		return appdatas;
+	}
+	
+	
+	// 创建视图
+	public void createView() {
+		String sql = "create view app_info as select *from appdata order by appid desc limit 300";
+		db.execSQL("DROP VIEW IF EXISTS app_info");  
+		db.execSQL(sql);
 	}
 }

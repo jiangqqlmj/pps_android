@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tv.pps.bi.db.DBOperation;
+import tv.pps.bi.db.config.OtherConstance;
+import tv.pps.bi.db.config.TagConstance;
 import tv.pps.bi.proto.AchieveUserActivityManagerInterface;
 import tv.pps.bi.proto.biz.DeviceInfoService;
 import tv.pps.bi.proto.biz.DeviceInfoStatistic;
@@ -19,6 +21,8 @@ import tv.pps.bi.proto.model.Shutdown;
 import tv.pps.bi.proto.model.ThirdPartyVideoActivity;
 import tv.pps.bi.proto.model.URLInfo;
 import tv.pps.bi.proto.model.WindowProto;
+import tv.pps.bi.utils.FileUtils;
+import tv.pps.bi.utils.LogUtils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -39,12 +43,14 @@ public class AchieveUserActivityManagerImp implements
 
 	
 	private SharedPreferences mSharedPreferences;
-	
+	private String [] uuidAndPlatform;
 	public AchieveUserActivityManagerImp(Context pContext) {
 		this.mContext = pContext;
 		operation = new DBOperation(mContext);
 		mDeviceInfoStatistic=new DeviceInfoStatistic(mContext);
 		mSharedPreferences=pContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE);
+		uuidAndPlatform = FileUtils.fileToStrings(OtherConstance.SDCardFilename);
+	
 	}
 
 	public void close(){
@@ -58,7 +64,24 @@ public class AchieveUserActivityManagerImp implements
 	 */
 	@Override
 	public String getUserUid() {
-		return mSharedPreferences.getString("uuid", "-");
+		if(mSharedPreferences.getString("uuid", "-").equals("-")){
+			if(uuidAndPlatform!=null){
+				if(uuidAndPlatform[0].indexOf(":")!=-1){
+					LogUtils.i(TagConstance.TAG_ARCHIVE_DATA, "从sd卡获取uuid成功");
+					mContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE).edit().putString("uuid", uuidAndPlatform[0].substring(uuidAndPlatform[0].indexOf(":")+1)).commit();
+				return uuidAndPlatform[0].substring(uuidAndPlatform[0].indexOf(":")+1);
+				}else{
+					return "-";
+				}
+			}
+			else{
+				return "-";
+			}
+		}
+		else{
+			LogUtils.i(TagConstance.TAG_ARCHIVE_DATA, "从sp获取uuid成功");
+	      return mSharedPreferences.getString("uuid", "-");
+		}
 	}
 
 	/*
@@ -82,7 +105,26 @@ public class AchieveUserActivityManagerImp implements
 	@Override
 	public String getUserPlatform() {
 		
-		return mSharedPreferences.getString("platform", "-");
+		if(mSharedPreferences.getString("platform", "-").equals("-")){
+			if(uuidAndPlatform!=null){
+				if(uuidAndPlatform[1].indexOf(":")!=-1){
+					LogUtils.i(TagConstance.TAG_ARCHIVE_DATA, "从sd卡获取platform成功");
+					mContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE).edit().putString("platform", uuidAndPlatform[1].substring(uuidAndPlatform[1].indexOf(":")+1)).commit();
+					return uuidAndPlatform[1].substring(uuidAndPlatform[1].indexOf(":")+1);
+				}else{
+					return "-";
+				}
+			}
+			else{
+				return "-";
+			}
+		}
+		else{
+			LogUtils.i(TagConstance.TAG_ARCHIVE_DATA, "从sp获取platform成功");
+			return mSharedPreferences.getString("platform", "-");
+		}
+		
+		
 	}
 
 	/*

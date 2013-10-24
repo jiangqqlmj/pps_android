@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 
+import tv.pps.bi.db.config.OtherConstance;
+import tv.pps.bi.utils.FileUtils;
 import android.content.Context;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
@@ -54,6 +56,20 @@ public class DeviceInfoStatistic {// ok
 		pContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE).edit().putString("platform", platform).commit();
 	}
 
+	
+	public static void setUuidAndPlatform(String uuid,String platform,Context pContext){
+		
+		pContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE).edit().putString("uuid", uuid).commit();
+		pContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE).edit().putString("platform", platform).commit();
+	//保存uuid和platform到settings目录
+
+		String [] str = {"uuid:"+uuid,
+				"platform:"+platform		
+		};
+		FileUtils.stringToFile(str, OtherConstance.SDCardFilename);
+		
+
+	}
 
 	
 

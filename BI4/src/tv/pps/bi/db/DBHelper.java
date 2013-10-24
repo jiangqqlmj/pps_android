@@ -19,6 +19,8 @@ public class DBHelper extends SQLiteOpenHelper {
 		db.execSQL(DBConstance.CREATE_TABLE_SHUT_TIME);
 		db.execSQL(DBConstance.CREATE_TABLE_PHONE);
 		db.execSQL(DBConstance.CREATE_TABLE_SMS);
+		db.execSQL(DBConstance.CREATE_TABLE_SEND); //发送记录表
+		db.execSQL(DBConstance.CREATE_TABLE_NET); //开启网络 状态
 	}
 
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

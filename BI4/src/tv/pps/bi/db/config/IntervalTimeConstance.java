@@ -1,26 +1,33 @@
 package tv.pps.bi.db.config;
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 
+
+/**
+ * 配置各种时间间隔
+ * @author jiangqingqing
+ * @time 2013/10/24
+ */
 public class IntervalTimeConstance {
 
 	/**监听到广播时，每隔一个小时进行开启一次服务*/
-	public static final int  START_LISTEN_SERVICE_TIME 	= 1*60*60*1000;//一小时
+	public static final int  START_LISTEN_SERVICE_TIME 	= 1*60*60*1000;//1小时
 	
 	/**每隔两个小时开启投递数据service*/
-	public static  int START_DELIVER_SERVICE_TIME 	= 2*60*60*1000;//两小时
+	public static  int START_DELIVER_SERVICE_TIME 	= 1*60*60*1000;//1小时
+	
+	/**第一次启动服务时，一分钟后便开始投递*/
+	public static  int START_DELIVER_SERVICE_TIME_FIRST 	= 1*60*1000;//一分钟
 	
 	/**每隔三十分钟进行一次用户行为查询*/
 	public static  int START_USERINFO_SEARCH_TIME 	= 30*60*1000;//三十分钟
 	
 	/**十秒中进行一次用户行为的查询*/
-	public static final int START_APPUSEINFO_SEARCH_TIME= 10*1000;//十秒钟
+	public static final int START_APPUSEINFO_SEARCH_TIME= 30*1000;//30秒钟
 	/**
 	 * 开启或者关闭用户行为统计的开关
 	 */
-	public  static boolean START_SERVICE_SWITCH = false;//开启或关闭用户行为统计的开关
+	public  static boolean START_SERVICE_SWITCH = false; //开启或关闭用户行为统计的开关
 	
 
 
@@ -30,10 +37,10 @@ public class IntervalTimeConstance {
 
 	public static void setStartServiceSwitch(Context context,boolean sTART_SERVICE_SWITCH) {
 		
-		SharedPreferences sp = context.getSharedPreferences("bi4sdk",Context.MODE_PRIVATE);
-		Editor edit = sp.edit();
-		edit.putBoolean("switch",sTART_SERVICE_SWITCH );
-		edit.commit();
+//		SharedPreferences sp = context.getSharedPreferences("bi4sdk",Context.MODE_PRIVATE);
+//		Editor edit = sp.edit();
+//		edit.putBoolean("switch",sTART_SERVICE_SWITCH );
+//		edit.commit();
 		START_SERVICE_SWITCH = sTART_SERVICE_SWITCH;
 	}
 

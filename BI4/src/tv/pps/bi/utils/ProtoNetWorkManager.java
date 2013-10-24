@@ -27,10 +27,6 @@ import tv.pps.bi.proto.model.UserActivity;
  */
 public class ProtoNetWorkManager {
 
-	public static final String DELIVER_URL="http://c.uaa.iqiyi.com/m.gif";
-	
-	//public static final String DELIVER_URL="http://10.1.35.27:8080/UpdateAppServer/UserActivityServlet";
-
 	/**
 	 * 通过Post请求发送序列化后的实体类对象
 	 * 
@@ -58,7 +54,9 @@ public class ProtoNetWorkManager {
            mHttpURLConnection.setRequestMethod("POST");  
            mHttpURLConnection.setDoOutput(true);  
            mHttpURLConnection.setDoInput(true);  
-           mHttpURLConnection.setUseCaches(false); 
+           mHttpURLConnection.setUseCaches(false);
+           // 设置超时时间
+           mHttpURLConnection.setConnectTimeout(20*1000);
            mHttpURLConnection.getOutputStream().write(pByte);
            mHttpURLConnection.getOutputStream().flush();
            int result_code=mHttpURLConnection.getResponseCode();

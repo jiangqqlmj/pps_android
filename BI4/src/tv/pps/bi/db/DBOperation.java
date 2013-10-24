@@ -12,8 +12,10 @@ import tv.pps.bi.proto.biz.ShutdownInfoService;
 import tv.pps.bi.proto.biz.URLService;
 import tv.pps.bi.proto.model.Bootup;
 import tv.pps.bi.proto.model.GPS;
+import tv.pps.bi.proto.model.NetTime;
 import tv.pps.bi.proto.model.PhoneActivity;
 import tv.pps.bi.proto.model.SMS;
+import tv.pps.bi.proto.model.SendTime;
 import tv.pps.bi.proto.model.Shutdown;
 import tv.pps.bi.proto.model.URLInfo;
 import tv.pps.bi.utils.LogUtils;
@@ -26,7 +28,6 @@ import android.database.sqlite.SQLiteDatabase;
 public class DBOperation {
 
 	public final static String TAG = "DBOperation";
-
 	SQLiteDatabase db;
 	DBHelper helper;
 	Context context;
@@ -61,6 +62,170 @@ public class DBOperation {
 		LogUtils.i(TagConstance.TAG_DATABASE, "关闭数据库" + DBConstance.DB_NAME);
 	}
 
+	
+	/**
+	 * 网络断开与否 实体进行插入
+	 * @auther jiangqingqing
+	 * @param pNetTime
+	 * @return
+	 */
+	public boolean insertNetTime(NetTime pNetTime)
+	{
+	    try {
+	    	ContentValues mContentValues=new ContentValues();
+		    mContentValues.put("net_time", pNetTime.getNettime());
+		    mContentValues.put("net_flag", pNetTime.getFlag());
+		    long result = db.insert(DBConstance.TABLE_NET_INFO, null, mContentValues);
+		    if(result!=-1)
+		    {
+		    	return true;
+		    }
+		} catch (Exception e) {
+			LogUtils.i(TagConstance.TAG_DATABASE, "netinfo" + "表数据插入异常");
+		}
+		
+		return false;
+	}
+	
+
+	/**
+	 * 进行删除
+	 * @auther jiangqingqing
+	 * @param pNetTime
+	 * @return
+	 */
+	public boolean deleteNetTime(NetTime pNetTime)
+	{
+		
+		 try {
+			int result= db.delete(DBConstance.TABLE_NET_INFO, "net_flag = ?", new String[]{String.valueOf(pNetTime.getFlag())});
+		    if(result!=0)
+		    {
+		    	return true;
+		    }
+		 } catch (Exception e) {
+			LogUtils.i(TagConstance.TAG_DATABASE, "netinfo" + "表数据删除异常");
+		}
+		 return false;
+	}
+	
+	
+	/**
+	 * 
+	 * @auther jiangqingqing
+	 * @param pNetTime
+	 * @return
+	 */
+	public boolean updateNetTime(NetTime pNetTime)
+	{
+		try {
+			ContentValues mContentValues=new ContentValues();
+			mContentValues.put("net_time", pNetTime.getNettime());
+		    mContentValues.put("net_flag", pNetTime.getFlag());
+			int result= db.update(DBConstance.TABLE_NET_INFO, mContentValues, "net_flag = ?", new String[]{String.valueOf(pNetTime.getFlag())});
+			if(result!=0)
+			{
+				return true;
+			}
+		} catch (Exception e) {
+			LogUtils.i(TagConstance.TAG_DATABASE, "netinfo" + "表数据更新异常");
+		}
+		return false;
+	}
+	
+	
+	/**
+	 * 删除所有的网络变化表中的数据
+	 * @auther jiangqingqing
+	 * @return
+	 */
+			
+	public boolean delteAllNetTime()
+	{
+		try {
+		  int result=db.delete(DBConstance.TABLE_NET_INFO, null, null);
+		  if(result!=0)
+		  {
+			  return true;
+		  }	
+		} catch (Exception e) {
+			LogUtils.i(TagConstance.TAG_DATABASE, "netinfo" + "表数据删除异常");
+		}
+		return false;
+	}
+	
+	
+	/**
+	 * 把投递记录 插入到数据库中
+	 * @auther jiangqingqing
+	 * @param pSendTime 投递数据实体类
+	 * @return
+	 */
+	public boolean insertSendTime(SendTime pSendTime)
+	{
+		try {
+			ContentValues mContentValues=new ContentValues(1);
+			mContentValues.put("send_time", String.valueOf(pSendTime.getSendtime()));
+			long result=db.insert(DBConstance.TABLE_SEND_DATA, null, mContentValues);
+			if(result!=-1)
+			{
+				return true;
+			}
+			
+		} catch (Exception e) {
+			LogUtils.i(TagConstance.TAG_DATABASE, "send_data" + "表数据插入异常");
+		}
+		return false;
+	}
+	
+
+	/**
+	 * 删除投递数据记录表
+	 * @auther jiangqingqing
+	 * @return
+	 */
+	public boolean deleteSendTime()
+	{
+		try {
+			long result= db.delete(DBConstance.TABLE_SEND_DATA, null, null);
+			if(result!=0)
+			{
+				return true;
+			}
+		} catch (Exception e) {
+			LogUtils.i(TagConstance.TAG_DATABASE, "send_data" + "表数据删除异常");
+		}
+		return false;
+	}
+	
+	
+	/**
+	 * 获取
+	 * @return
+	 */
+	public SendTime getSendTime()
+	{
+		try {
+			List<SendTime> mList=new ArrayList<SendTime>();
+			SendTime mSendTime;
+			Cursor mCursor= db.query(DBConstance.TABLE_SEND_DATA, new String[]{"send_time"}, null, null, null, null, null);
+		    if(mCursor!=null&&mCursor.getCount()>=0)
+		    {
+		    	while(mCursor.moveToNext())
+		    	{
+		    		mSendTime=new SendTime();
+		    		mSendTime.setSendtime(Long.valueOf(mCursor.getString(mCursor.getColumnIndex("send_time"))));
+		    		mList.add(mSendTime);
+		    	}
+		    	return mList.get(mList.size()-1);
+		    }
+		} catch (Exception e) {
+			LogUtils.i(TagConstance.TAG_DATABASE, "send_data" + "表数据查询异常");
+		}
+		
+		return null;
+	}
+	
 	/**
 	 * 插入数据
 	 * 
@@ -269,6 +434,12 @@ public class DBOperation {
 			cv.put("timestamp", timestamp);
 			db.insert(table, null, cv);
 		}
+		
+		//初始化投递时间
+	    insertSendTime(new SendTime(System.currentTimeMillis()));	
+	   
+		
+		
 		LogUtils.i(TagConstance.TAG_DATABASE, DBConstance.TABLE_INFOMATION_CONTROL + "数据表初始化成功");
 	}
 
