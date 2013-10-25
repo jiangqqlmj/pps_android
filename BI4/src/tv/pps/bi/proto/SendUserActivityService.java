@@ -5,6 +5,7 @@ import org.apache.commons.codec.binary.Base64;
 import tv.pps.bi.db.DBAPPManager;
 import tv.pps.bi.db.DBOperation;
 import tv.pps.bi.db.config.DBConstance;
+import tv.pps.bi.db.config.IntervalTimeConstance;
 import tv.pps.bi.db.config.TagConstance;
 import tv.pps.bi.db.config.URL4BIConfig;
 import tv.pps.bi.proto.model.SendTime;
@@ -77,12 +78,13 @@ public class SendUserActivityService extends IntentService{
 					DBOperation operation = new DBOperation(mContext);
 					long send_time=System.currentTimeMillis();
 					SendTime mSendTime=operation.getSendTime();
-					if(mSendTime!=null&&(send_time-operation.getSendTime().getSendtime()<10*60*1000))
+					if(mSendTime!=null&&(send_time-operation.getSendTime().getSendtime()<IntervalTimeConstance.PRECURSOR_DELIVER_TIME))
 					{
 						LogUtils.v(TagConstance.TAG_SENDDATA, "十分钟之内已经投递过数据，暂时不投递");
 					}else {
 						while(flag<5) //退出循环的时机：1,五次循环主动结束.2,发送成功
 						{
+							LogUtils.v(TagConstance.TAG_SENDDATA, "开启数据投递");
 							result= ProtoNetWorkManager
 									.postUserActivityByByte(
 											base64.encodeBase64Chunked(infoBytes),URL4BIConfig.DELIVER_URL);

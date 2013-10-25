@@ -114,7 +114,6 @@ public class ListenService extends Service {
 				break;
 			case DELIVERY:
 				if (NetworkUtils.isNetworkConnected(mContext)) {// 2个小时之后，有网络则进行开启服务
-					LogUtils.v(TagConstance.TAG_SERVICE, "开启数据投递");
 					Intent deliver = new Intent("deliver");
 //					deliver.setClass(mContext,
 //							tv.pps.bi.proto.SendUserActivityService.class);

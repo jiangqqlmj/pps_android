@@ -36,7 +36,7 @@ public class FileUtils {
 			   file = new File(sdCardDir, filename);
 			 
 			   if(file.exists()){
-				   LogUtils.i(TAG, "文件已存在,不做任何处理");
+				   LogUtils.i(TAG, "保存uuid文件已存在,不做任何处理");
 				  return;
 			   }
 			   

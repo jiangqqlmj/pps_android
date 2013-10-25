@@ -36,7 +36,12 @@ public class InstalledAppService {
 		List<PackageInfo> packageInfos 	=  packM.getInstalledPackages(0);
 		List<App> appinfos 				= new ArrayList<App>();
 		DBAPPManager db 					= DBAPPManager.getDBManager(mContext);
-		db.createView();//创建视图
+//		db.createView();//创建视图
+		int count = db.DBCount();
+		if(count<=300&&count>=0){
+		}else{
+			db.deleteDBData(count);
+		}
 		for (int i = 0; i < packageInfos.size(); i++) {
 			PackageInfo temp 			= packageInfos.get(i);
 			ApplicationInfo appInfo 	= temp.applicationInfo;

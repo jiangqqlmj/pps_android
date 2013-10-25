@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBAPPHelper extends SQLiteOpenHelper {
 
 	private final static String NAME = "appusage.db";
-	private final static int VERSION = 2;
+	private final static int VERSION = 1;
 
 	public DBAPPHelper(Context context) {
 		super(context, NAME, null, VERSION);
@@ -16,7 +16,7 @@ public class DBAPPHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
-		String sql = "CREATE TABLE appdata (" +
+		String sql = "CREATE TABLE IF NOT EXISTS appdata (" +
 				"appid integer primary key autoincrement," +
 				" name varchar(20), " +
 				"start varchar(20)," +

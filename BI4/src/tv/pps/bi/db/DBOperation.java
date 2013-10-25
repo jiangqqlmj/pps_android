@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tv.pps.bi.db.config.DBConstance;
+import tv.pps.bi.db.config.IntervalTimeConstance;
 import tv.pps.bi.db.config.TagConstance;
 import tv.pps.bi.proto.biz.CallLogService;
 import tv.pps.bi.proto.biz.GPSInfoService;
@@ -205,10 +206,11 @@ public class DBOperation {
 	 */
 	public SendTime getSendTime()
 	{
+		Cursor mCursor = null;
 		try {
 			List<SendTime> mList=new ArrayList<SendTime>();
 			SendTime mSendTime;
-			Cursor mCursor= db.query(DBConstance.TABLE_SEND_DATA, new String[]{"send_time"}, null, null, null, null, null);
+			mCursor= db.query(DBConstance.TABLE_SEND_DATA, new String[]{"send_time"}, null, null, null, null, null);
 		    if(mCursor!=null&&mCursor.getCount()>=0)
 		    {
 		    	while(mCursor.moveToNext())
@@ -221,6 +223,12 @@ public class DBOperation {
 		    }
 		} catch (Exception e) {
 			LogUtils.i(TagConstance.TAG_DATABASE, "send_data" + "表数据查询异常");
+		}finally
+		{
+			if(mCursor!=null)
+			{
+				mCursor.close();
+			}
 		}
 		
 		return null;
@@ -436,7 +444,7 @@ public class DBOperation {
 		}
 		
 		//初始化投递时间
-	    insertSendTime(new SendTime(System.currentTimeMillis()));	
+	    insertSendTime(new SendTime(IntervalTimeConstance.PRECURSOR_DELIVER_INIT));	
 	   
 		
 		

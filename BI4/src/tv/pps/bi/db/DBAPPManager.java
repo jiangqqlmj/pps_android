@@ -42,15 +42,17 @@ public class DBAPPManager  {
      */
 	public void delete()
 	{
+	
 	 	 db.delete("appdata", null, null);
-	 	 db.execSQL("DROP VIEW IF EXISTS app_info");  
+	 	 db.execSQL("drop view IF EXISTS appinfo");  
 	}
 	
 
 	// 显示 返回的是List集合
 	public List<AppActivity> getData(String appname) {
 		List<AppActivity> appdatas = new ArrayList<AppActivity>();
-		Cursor cursor = db.rawQuery("select * from app_info where name=?",new String[] {appname });
+		String sql = "select * from appdata where name = ?";
+		Cursor cursor = db.rawQuery(sql,new String[]{appname});
 			while (cursor.moveToNext()) {
 				String name = cursor.getString(cursor.getColumnIndex("name"));
 				String start_timestamp = cursor.getString(cursor.getColumnIndex("start"));
@@ -65,11 +67,15 @@ public class DBAPPManager  {
 		return appdatas;
 	}
 	
+	public int DBCount(){
+		Cursor cursor = db.rawQuery("select *from appdata ",null);
+		int count = cursor.getCount();
+		return count;
+	}
 	
-	// 创建视图
-	public void createView() {
-		String sql = "create view app_info as select *from appdata order by appid desc limit 300";
-		db.execSQL("DROP VIEW IF EXISTS app_info");  
+	public void deleteDBData(int count){
+		int size = count-300;
+		String sql = "delete from appdata where appid <"+size;
 		db.execSQL(sql);
 	}
 }

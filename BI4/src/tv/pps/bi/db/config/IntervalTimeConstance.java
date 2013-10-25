@@ -29,7 +29,22 @@ public class IntervalTimeConstance {
 	 */
 	public  static boolean START_SERVICE_SWITCH = false; //开启或关闭用户行为统计的开关
 	
+	
+	
+	public static int PRECURSOR_DELIVER_TIME=10*60*1000; //10分钟 
+	public static long PRECURSOR_DELIVER_INIT=0L;
+	
+    
+	
 
+
+	public static void setPrecursor_Deliver_Init(long pPrecursor_Deliver_Init) {
+		PRECURSOR_DELIVER_INIT = pPrecursor_Deliver_Init;
+	}
+
+	public static void setPrecursor_Deliver_Time(int pPrecursor_Deliver_Time) {
+		PRECURSOR_DELIVER_TIME = pPrecursor_Deliver_Time;
+	}
 
 	public static boolean isSTART_SERVICE_SWITCH() {
 		return START_SERVICE_SWITCH;
