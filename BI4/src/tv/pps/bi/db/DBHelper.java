@@ -1,6 +1,6 @@
 package tv.pps.bi.db;
 
-import tv.pps.bi.db.config.DBConstance;
+import tv.pps.bi.config.DBConstance;
 import tv.pps.bi.utils.LogUtils;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

@@ -2,8 +2,8 @@ package tv.pps.bi.receiver;
 
 import java.util.List;
 
-import tv.pps.bi.db.config.IntervalTimeConstance;
-import tv.pps.bi.db.config.TagConstance;
+import tv.pps.bi.config.IntervalTimeConstance;
+import tv.pps.bi.config.TagConstance;
 import tv.pps.bi.service.ListenService;
 import tv.pps.bi.utils.LogUtils;
 import android.app.ActivityManager;

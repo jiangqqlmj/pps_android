@@ -3,9 +3,9 @@ package tv.pps.bi.proto.imp;
 import java.util.ArrayList;
 import java.util.List;
 
+import tv.pps.bi.config.OtherConstance;
+import tv.pps.bi.config.TagConstance;
 import tv.pps.bi.db.DBOperation;
-import tv.pps.bi.db.config.OtherConstance;
-import tv.pps.bi.db.config.TagConstance;
 import tv.pps.bi.proto.AchieveUserActivityManagerInterface;
 import tv.pps.bi.proto.biz.DeviceInfoService;
 import tv.pps.bi.proto.biz.DeviceInfoStatistic;
@@ -48,7 +48,7 @@ public class AchieveUserActivityManagerImp implements
 		this.mContext = pContext;
 		operation = new DBOperation(mContext);
 		mDeviceInfoStatistic=new DeviceInfoStatistic(mContext);
-		mSharedPreferences=pContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE);
+		mSharedPreferences=mContext.getSharedPreferences("bi4sdk", Context.MODE_PRIVATE);
 		uuidAndPlatform = FileUtils.fileToStrings(OtherConstance.SDCardFilename);
 	
 	}

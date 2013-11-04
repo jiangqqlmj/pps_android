@@ -2,12 +2,12 @@ package tv.pps.bi.proto;
 
 import org.apache.commons.codec.binary.Base64;
 
+import tv.pps.bi.config.DBConstance;
+import tv.pps.bi.config.IntervalTimeConstance;
+import tv.pps.bi.config.TagConstance;
+import tv.pps.bi.config.URL4BIConfig;
 import tv.pps.bi.db.DBAPPManager;
 import tv.pps.bi.db.DBOperation;
-import tv.pps.bi.db.config.DBConstance;
-import tv.pps.bi.db.config.IntervalTimeConstance;
-import tv.pps.bi.db.config.TagConstance;
-import tv.pps.bi.db.config.URL4BIConfig;
 import tv.pps.bi.proto.model.SendTime;
 import tv.pps.bi.proto.model.UserActivity;
 import tv.pps.bi.utils.LogUtils;
@@ -18,7 +18,7 @@ import android.content.Intent;
 import android.os.IBinder;
 
 /**
- * 投递用户行为数据 服务类
+ * 投递用户行为数据 服务类  (异步任务服务  避免堵塞)
  * @author jiangqingqing
  * @time 2013/10/24
  */
@@ -34,11 +34,12 @@ public class SendUserActivityService extends IntentService{
 	{
 		super("投递数据...");
 	}
-	
 
 	@Override
 	public void onCreate() {
 		mContext=this;
+		
+		LogUtils.v(TagConstance.TAG_SENDDATA, "启动投递服务...");
 		super.onCreate();
 	}
 
@@ -60,6 +61,7 @@ public class SendUserActivityService extends IntentService{
 	@SuppressWarnings("static-access")
 	@Override
 	protected void onHandleIntent(Intent intent) {
+		
 		mMsgService = new MessageToEntityService(mContext);
 		mUserActivity = mMsgService.getMsgUserEntity();
 		//mMsgService.close();//关闭数据库
@@ -84,13 +86,15 @@ public class SendUserActivityService extends IntentService{
 					}else {
 						while(flag<5) //退出循环的时机：1,五次循环主动结束.2,发送成功
 						{
-							LogUtils.v(TagConstance.TAG_SENDDATA, "开启数据投递");
+							LogUtils.v(TagConstance.TAG_SENDDATA, "开启数据投递");  
 							result= ProtoNetWorkManager
 									.postUserActivityByByte(
-											base64.encodeBase64Chunked(infoBytes),URL4BIConfig.DELIVER_URL);
+											base64.encodeBase64Chunked(infoBytes),URL4BIConfig.DELIVER_URL); 
 							flag++;
 							if(result)
 								break;
+							
+							LogUtils.v(TagConstance.TAG_SENDDATA, "投递失败,重新投递,次数为:"+flag);
 						}
 						
 //						result= ProtoNetWorkManager

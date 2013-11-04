@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import tv.pps.bi.db.config.TagConstance;
+import tv.pps.bi.config.TagConstance;
 import tv.pps.bi.proto.model.DeviceInfo;
 import tv.pps.bi.utils.LogUtils;
 import android.content.Context;

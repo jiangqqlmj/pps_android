@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import tv.pps.bi.db.config.URL4BIConfig;
+import tv.pps.bi.config.URL4BIConfig;
 import android.content.Context;
 
 /**

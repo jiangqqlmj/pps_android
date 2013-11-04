@@ -1,6 +1,6 @@
 package tv.pps.bi.activity;
 
-import tv.pps.bi.db.config.IntervalTimeConstance;
+import tv.pps.bi.config.IntervalTimeConstance;
 import tv.pps.bi.proto.biz.DeviceInfoStatistic;
 import tv.pps.bi.service.ManagerService;
 import tv.pps.bi.utils.LogUtils;

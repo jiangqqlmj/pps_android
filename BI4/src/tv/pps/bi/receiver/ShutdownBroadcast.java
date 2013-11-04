@@ -1,6 +1,6 @@
 package tv.pps.bi.receiver;
 
-import tv.pps.bi.db.config.TagConstance;
+import tv.pps.bi.config.TagConstance;
 import tv.pps.bi.utils.LogUtils;
 import android.content.BroadcastReceiver;
 import android.content.Context;

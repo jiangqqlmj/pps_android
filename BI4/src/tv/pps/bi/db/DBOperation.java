@@ -3,9 +3,9 @@ package tv.pps.bi.db;
 import java.util.ArrayList;
 import java.util.List;
 
-import tv.pps.bi.db.config.DBConstance;
-import tv.pps.bi.db.config.IntervalTimeConstance;
-import tv.pps.bi.db.config.TagConstance;
+import tv.pps.bi.config.DBConstance;
+import tv.pps.bi.config.IntervalTimeConstance;
+import tv.pps.bi.config.TagConstance;
 import tv.pps.bi.proto.biz.CallLogService;
 import tv.pps.bi.proto.biz.GPSInfoService;
 import tv.pps.bi.proto.biz.MessageInfoService;

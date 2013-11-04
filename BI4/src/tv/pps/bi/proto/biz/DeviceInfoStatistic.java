@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 
-import tv.pps.bi.db.config.OtherConstance;
+import tv.pps.bi.config.OtherConstance;
 import tv.pps.bi.utils.FileUtils;
 import android.content.Context;
 import android.telephony.TelephonyManager;
@@ -49,6 +49,7 @@ public class DeviceInfoStatistic {// ok
 	}
 
 	/**
+	 * @deprecated
 	 * @param platform the platform to set
 	 */
 	public static void setPlatform(String platform,Context pContext) {
@@ -66,6 +67,7 @@ public class DeviceInfoStatistic {// ok
 		String [] str = {"uuid:"+uuid,
 				"platform:"+platform		
 		};
+		
 		FileUtils.stringToFile(str, OtherConstance.SDCardFilename);
 		
 

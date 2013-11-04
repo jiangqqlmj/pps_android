@@ -1,6 +1,6 @@
 package tv.pps.bi.service;
 
-import tv.pps.bi.db.config.TagConstance;
+import tv.pps.bi.config.TagConstance;
 import tv.pps.bi.utils.LogUtils;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +16,7 @@ public class ManagerService {
 	 * 启动服务调用方法
 	 */
 	public static void startService(Context context){
+		LogUtils.e(TagConstance.TAG_SERVICE, "用户行为统计SDK1.1");
 		LogUtils.i(TagConstance.TAG_SERVICE, "第一次启动监听service");
 		Intent intent = new Intent();
 		intent.setClass(context, ListenService.class);

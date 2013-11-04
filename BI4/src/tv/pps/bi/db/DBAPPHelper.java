@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBAPPHelper extends SQLiteOpenHelper {
 
 	private final static String NAME = "appusage.db";
-	private final static int VERSION = 1;
+	private final static int VERSION = 2;
 
 	public DBAPPHelper(Context context) {
 		super(context, NAME, null, VERSION);

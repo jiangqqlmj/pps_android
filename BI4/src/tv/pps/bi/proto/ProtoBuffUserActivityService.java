@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import tv.pps.bi.db.config.TagConstance;
+import tv.pps.bi.config.TagConstance;
 import tv.pps.bi.proto.model.App;
 import tv.pps.bi.proto.model.AppActivity;
 import tv.pps.bi.proto.model.DeviceInfo;

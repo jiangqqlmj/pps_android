@@ -1,6 +1,6 @@
 package tv.pps.bi.proto.biz;
 
-import tv.pps.bi.db.config.TagConstance;
+import tv.pps.bi.config.TagConstance;
 import tv.pps.bi.proto.model.GPS;
 import tv.pps.bi.utils.LogUtils;
 import android.content.Context;

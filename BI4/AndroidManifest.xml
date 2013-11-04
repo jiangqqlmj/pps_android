@@ -26,9 +26,9 @@
         <!-- 投递用户行为数据的服务类 -->
         <service android:name="tv.pps.bi.service.ListenService" />
         <service android:name="tv.pps.bi.proto.SendUserActivityService">
-            <intent-filter >
+          <!--   <intent-filter >
                 <action android:name="deliver"/>
-            </intent-filter>
+            </intent-filter> -->
         </service>
         <receiver android:name="tv.pps.bi.receiver.ScreenBroadcastReceiver" >
             <intent-filter>

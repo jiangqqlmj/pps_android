@@ -3,11 +3,12 @@ package tv.pps.bi.service;
 import java.util.Date;
 import java.util.List;
 
+import tv.pps.bi.config.DBConstance;
+import tv.pps.bi.config.IntervalTimeConstance;
+import tv.pps.bi.config.TagConstance;
 import tv.pps.bi.db.DBAPPManager;
 import tv.pps.bi.db.DBOperation;
-import tv.pps.bi.db.config.DBConstance;
-import tv.pps.bi.db.config.IntervalTimeConstance;
-import tv.pps.bi.db.config.TagConstance;
+import tv.pps.bi.proto.SendUserActivityService;
 import tv.pps.bi.proto.model.AppActivity;
 import tv.pps.bi.receiver.RegisterReceiver;
 import tv.pps.bi.utils.DataFormat;
@@ -114,7 +115,8 @@ public class ListenService extends Service {
 				break;
 			case DELIVERY:
 				if (NetworkUtils.isNetworkConnected(mContext)) {// 2个小时之后，有网络则进行开启服务
-					Intent deliver = new Intent("deliver");
+//					Intent deliver = new Intent("deliver");
+					Intent deliver=new Intent(ListenService.this,SendUserActivityService.class);
 //					deliver.setClass(mContext,
 //							tv.pps.bi.proto.SendUserActivityService.class);
 					mContext.startService(deliver);

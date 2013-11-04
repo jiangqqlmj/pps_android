@@ -1,7 +1,7 @@
 package tv.pps.bi.receiver;
 
-import tv.pps.bi.db.config.IntervalTimeConstance;
-import tv.pps.bi.db.config.TagConstance;
+import tv.pps.bi.config.IntervalTimeConstance;
+import tv.pps.bi.config.TagConstance;
 import tv.pps.bi.utils.LogUtils;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
