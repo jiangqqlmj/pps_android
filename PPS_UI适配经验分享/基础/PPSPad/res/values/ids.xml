@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="mytext" type="id">false</item>
+    <!-- 左边栏 -->
+    <item name="left_imageview_homepage" type="id">false</item>
+    <item name="left_imageview_vip" type="id">false</item>
+    <item name="left_imageview_search" type="id">false</item>
+    <item name="left_imageview_history" type="id">false</item>
+    <item name="left_imageview_favourites" type="id">false</item>
+    <item name="left_imageview_zhuij" type="id">false</item>
+    <item name="left_imageview_download" type="id">false</item>
+    <item name="left_imageview_ipd" type="id">false</item>
+    <item name="left_imageview_setting" type="id">false</item>
+    <!-- 首页 -->
+    <item name="listView" type="id">false</item>
+    <item name="gallery" type="id">false</item>
+    <item name="gridview" type="id">false</item>
+
+</resources>

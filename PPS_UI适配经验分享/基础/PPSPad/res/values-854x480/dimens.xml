@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="left_bar_item_height">32dp</dimen>
+    <dimen name="left_bar_item_width">32dp</dimen>
+    <dimen name="right_listview_margin_left">-4.5dp</dimen>
+    <dimen name="title_height">35dp</dimen>
+    <dimen name="listview_item_height">35dp</dimen>
+    <dimen name="common_size">13sp</dimen>
+    <dimen name="count_size">11sp</dimen>
+    <dimen name="title_size">12sp</dimen>
+    <dimen name="gallery_height">150dp</dimen>
+    <dimen name="gallery_info_width">100dp</dimen>
+    <dimen name="gridview_image_width">60dp</dimen>
+    <dimen name="gridview_image_height">90dp</dimen>
+	<dimen name="gallery_item_width">257dp</dimen>
+    <dimen name="gallery_item_height">165dp</dimen>
+</resources>

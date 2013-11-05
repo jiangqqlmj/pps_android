@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="left_bar_item_height">66px</dimen>
+    <dimen name="left_bar_item_width">66px</dimen>
+    <dimen name="right_listview_margin_left">-8px</dimen>
+    <dimen name="title_height">72px</dimen>
+    <dimen name="listview_item_height">65px</dimen>
+    <dimen name="common_size">20px</dimen>
+    <dimen name="count_size">16px</dimen>
+    <dimen name="title_size">16px</dimen>
+    <dimen name="gallery_height">247px</dimen>
+    <dimen name="gallery_info_width">203px</dimen>
+    <dimen name="gridview_image_width">133px</dimen>
+    <dimen name="gridview_image_height">178px</dimen>
+	<dimen name="gallery_item_width">386px</dimen>
+    <dimen name="gallery_item_height">248px</dimen>
+</resources>

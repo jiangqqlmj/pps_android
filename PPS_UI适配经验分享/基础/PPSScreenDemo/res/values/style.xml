@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- title文字样式 -->
+    <style name="textview_title">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:shadowColor">@color/title_color</item>
+        <item name="android:shadowDy">-1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+    <!-- bottom left 左侧两个按钮文字样式 -->
+    <style name="button_bottombar_left">
+        <item name="android:textColor">@color/gray_xine</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:shadowColor">#80FFFFFF</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+    <!-- bottom right 右侧一个按钮文字样式 -->
+    <style name="button_bottombar_right">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:shadowColor">#80000000</item>
+        <item name="android:shadowDy">-1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+    <!-- channel text文字样式 -->
+    <style name="textview_channel">
+        <item name="android:textColor">@color/channel_second_channel_type_textcolor</item>
+        <item name="android:textSize">12.5sp</item>
+    </style>
+    <!-- channel text type文字样式 -->
+    <style name="textview_channel_type">
+        <item name="android:textColor">@color/channel_second_channel_type_textcolor</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!-- channel text vote文字样式 -->
+    <style name="textview_channel_vote">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <!-- channel text letter文字样式 -->
+    <style name="textview_channel_letter">
+        <item name="android:textColor">@color/gray_kesou</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+    <!-- channel text pop left item文字样式 -->
+    <style name="textview_channel_pop_left">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <!-- channel text pop right item文字样式 -->
+    <style name="textview_channel_pop_right">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <!-- channel text overlay文字样式 -->
+    <style name="textview_channel_overlay">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">60sp</item>
+    </style>
+    <!-- details text type文字样式 -->
+    <style name="textview_details_type">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!-- details text button文字样式 -->
+    <style name="textview_details_button">
+        <item name="android:textColor">#4A4A4A</item>
+        <item name="android:textSize">17.3sp</item>
+        <item name="android:shadowColor">#80FFFFFF</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+    <!-- details review button文字样式 -->
+    <style name="textview_details_review_button">
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textSize">17.3sp</item>
+    </style>
+    <!-- details text introduce文字样式 -->
+    <style name="textview_details_introduce">
+        <item name="android:textColor">@color/gray_baka</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">9px</item>
+        <item name="android:paddingLeft">10px</item>
+        <item name="android:paddingRight">10px</item>
+    </style>
+    <!-- details text type源文字样式 -->
+    <style name="textview_details_resouce">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">10.6sp</item>
+    </style>
+    <!-- details 详情评分文字样式 -->
+    <style name="textview_details_grade">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- details 详情评分文字样式 -->
+    <style name="textview_details_grade_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+    <!-- details 名称文字样式 -->
+    <style name="textview_details_name">
+        <item name="android:textColor">@color/gray_shit</item>
+        <item name="android:textSize">13.3sp</item>
+    </style>
+    <!-- details 名称内容文字样式 -->
+    <style name="textview_details_name_detail">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">13.3sp</item>
+    </style>
+    <!-- details download下载项目标题文字样式 -->
+    <style name="textview_details_download_item_title">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!-- details download下载路径文字样式 -->
+    <style name="textview_details_download_dir">
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!-- share edittext文字样式 -->
+    <style name="textview_share_edittext">
+        <item name="android:textColor">@color/black_gray</item>
+        <item name="android:textSize">13.3sp</item>
+    </style>
+    <!-- search 搜索按钮文字样式 -->
+    <style name="button_search">
+        <item name="android:textColor">@color/gray_xine</item>
+        <item name="android:textSize">15.3sp</item>
+        <item name="android:shadowColor">#80FFFFFF</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+    <!-- vip 输入框文字样式 -->
+    <style name="textview_vip_edittext">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- vip checkbox文字样式 -->
+    <style name="textview_vip_checkbox">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- vip 详情文字样式 -->
+    <style name="textview_vipinfo">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">16.7sp</item>
+    </style>
+    <!-- vip 按钮文字样式 -->
+    <style name="button_vip">
+        <item name="android:textColor">@color/gray_xine</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:shadowColor">#80FFFFFF</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+    <!-- download 设置目录文字样式 -->
+    <style name="textview_download_dir">
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- setting about 内容文字样式 -->
+    <style name="textview_setting_about_info">
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textSize">13.3sp</item>
+    </style>
+    <!-- setting authorization 文字样式 -->
+    <style name="textview_setting_authorization">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- download 列表中文件大小的文字样式 -->
+    <style name="textview_download_listview_item_movie_size">
+        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!-- download 列表中文件大小的文字样式 -->
+    <style name="textview_download_listview_item_movie_state">
+        <item name="android:textColor">#585858</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 标准文字样式 -->
+    <style name="textview_common">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20px</item>
+    </style>
+    <!-- listview_频道数量文字样式 -->
+    <style name="listview_textview_count">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16px</item>
+        <item name="android:background">@drawable/textview_radius_style</item>
+    </style>
+    <!-- setting 设置目录文字样式 -->
+    <style name="textview_setting_dir">
+        <item name="android:textColor">@color/silver</item>
+        <item name="android:textSize">13.3sp</item>
+    </style>
+    <!-- setting 评分分数文字样式 -->
+    <style name="textview_evaluate_score">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">80sp</item>
+    </style>
+    <!-- setting 评分描述文字样式 -->
+    <style name="textview_evaluate_info">
+        <item name="android:textColor">@color/silver</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!-- setting 推荐文字样式 -->
+    <style name="textview_recommend_name">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">13.3sp</item>
+    </style>
+    <!-- setting 推荐文字样式 -->
+    <style name="textview_recommend_info">
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <!-- player textview  文字样式 -->
+    <style name="textview_player_buffer_small">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+    <!-- player textview  文字样式 -->
+    <style name="textview_player_buffer_big">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+    <!-- player textview  文字样式 -->
+    <style name="textview_player_buffer_little">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    <!-- player button leftbar 文字样式 -->
+    <style name="button_player_left_bar">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+    <!-- player bufferinfo view textview 文字样式 -->
+    <style name="textview_buffer_player_view">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    <!-- player ad textview 文字样式 -->
+    <style name="textview_player_ad">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <!-- player ad textview 文字样式 -->
+    <style name="textview_player_ad_red">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+    <!-- dialog textview  文字样式 -->
+    <style name="textview_dialog_tittle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <!-- dialog textview  文字样式 -->
+    <style name="textview_dialog_info">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- notification textview  文字样式 -->
+    <style name="textview_notification_title">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- notification info textview  文字样式 -->
+    <style name="textview_notification_info">
+        <item name="android:textColor">#cc000000</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ScreenDemoActivity!</string>
+    <string name="app_name">ScreenDemo</string>
+	<string name="test">values-land-hdpi-800x480</string>
+</resources>

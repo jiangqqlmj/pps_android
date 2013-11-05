@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_white"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_left"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="716" >
+
+        <tv.pps.ppsscreen.SliderNaviLeftBar
+            android:id="@+id/leftbar"
+            android:layout_width="66px"
+            android:layout_height="fill_parent"
+            android:background="@drawable/homepage_left_bg" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="-8px"
+            android:layout_toRightOf="@id/leftbar"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="72px"
+                android:background="@drawable/pps_title"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pps_logo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/background_middle"
+                android:orientation="vertical"
+                android:paddingLeft="20px"
+                android:paddingRight="20px" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/xiexian"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingBottom="10px"
+                    android:paddingTop="6px" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="首页-layout-1280x600"
+                        android:textColor="#d48951"
+                        android:textSize="16px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test" />
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:id="@+id/equipment_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <ListView
+                    android:id="@id/listView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:cacheColorHint="#00000000"
+                    android:listSelector="@drawable/listview_item_selector"
+                    android:divider="@drawable/list_line_gray"
+                    android:fadingEdge="none" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="564"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="503" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_right"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="127" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pps_pnksj" />
+
+            <ImageView
+                android:id="@+id/catoon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/pps_cartoon" />
+
+            <Gallery
+                android:id="@id/gallery"
+                android:layout_width="fill_parent"
+                android:layout_height="247px"
+                android:layout_below="@id/catoon"
+                android:fadingEdge="none"
+                android:fadingEdgeLength="0dp"
+                android:nextFocusDown="@id/gridview"
+                android:nextFocusUp="@id/gridview" />
+
+            <LinearLayout
+                android:layout_width="203px"
+                android:layout_height="247px"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="20px"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/catoon"
+                android:background="#99000000"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:padding="8px" >
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/textview_common"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/info"
+                    style="@style/textview_common"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <GridView
+                android:id="@id/gridview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/gallery"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:horizontalSpacing="9.2dp"
+                android:nextFocusDown="@id/gallery"
+                android:nextFocusUp="@id/gallery"
+                android:numColumns="4"
+                android:listSelector="@drawable/listview_item_selector"
+                android:verticalSpacing="9.2dp" >
+            </GridView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="498" >
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

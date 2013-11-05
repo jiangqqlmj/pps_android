@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <drawable name="red">#7f00</drawable>
+    <drawable name="blue">#770000ff</drawable>
+    <drawable name="green">#7700ff00</drawable>
+    <drawable name="yellow">#77ffff00</drawable>
+    <drawable name="screen_background_black">#ff000000</drawable>
+    <drawable name="translucent_background">#e0000000</drawable>
+    <drawable name="line">#AFAFAF</drawable>
+    <drawable name="orange_line">#EF8100</drawable>
+
+    <color name="green">#7700ff00</color>
+    <color name="red">#fe4223</color>
+    <color name="black">#000000</color>
+    <color name="black_gray">#373737</color>
+    <color name="transparent_bg">#a0000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_white">#56FFFFFF</color>
+    <color name="title_color">#93550c</color>
+    <color name="black_transparent">#80000000</color>
+    <color name="white">#ffffff</color>
+    <color name="solid_red">#f00</color>
+    <color name="solid_blue">#0000ff</color>
+    <color name="solid_green">#f0f0</color>
+    <color name="solid_yellow">#ffffff00</color>
+    <color name="background_white">#F3F3F3</color>
+    <color name="orange">#EF8100</color>
+    <color name="channel_second_channel_type_textcolor">#626161</color>
+    <color name="temporary_popup_bg">#00ffff</color>
+    <color name="gray">#AFAFAF</color>
+    <color name="gray_dark">#565656</color>
+    <color name="gray_light">#969696</color>
+    <color name="gray_shit">#5D5D5D</color>
+    <color name="gray_baka">#313131</color>
+    <color name="gray_xine">#4A4A4A</color>
+    <color name="gray_kesou">#7E7E7E</color>
+    <color name="silver">#8C8C8C</color>
+    <color name="white_gray">#D9D9D9</color>
+    <color name="white_half">#80FFFFFF</color>
+    <color name="white_download_path">#B2B2B2</color>
+    <color name="black_half">#80000000</color>
+    <color name="black_half_seven">#B2000000</color>
+    <color name="ppsplayer_list_text_orange">#ffa21d </color>
+    <color name="ppsplayer_ad_white">#99FFFFFF </color>
+    <color name="ppsplayer_switchbtn_notclicktext">#4b4b4b </color>
+</resources>
